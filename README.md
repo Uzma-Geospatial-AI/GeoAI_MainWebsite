@@ -21,17 +21,30 @@ npm run mirror     # serve the MIRROR    -> http://localhost:8080
 Both servers are zero-dependency Node scripts. You can also open
 `redesign/index.html` directly in a browser.
 
+## Continuous integration
+
+Every push and pull request to `main` runs [`.github/workflows/ci.yml`](.github/workflows/ci.yml),
+which checks that:
+
+- `redesign/index.html` has a `<title>`
+- every local `src`/`href` it references resolves to a real file
+  (external, `data:`, `mailto:`, `tel:` and `#anchor` references are skipped, and
+  percent-encoded paths are decoded first)
+- the stylesheet and script exist and are non-empty
+
 ## Deployment
 
-Pushing to `main` triggers [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml),
-which validates that every asset referenced by the redesign exists, then publishes
-`redesign/` to **GitHub Pages**.
+There is **no automated deploy step yet**. GitHub Pages is not enabled on this
+repository, and Pages on a private repo requires a paid plan — so a deploy job
+would only ever fail.
 
-The redesign uses relative asset paths, so it works both at a domain root and at a
-`/<repo>/` project subpath.
+`redesign/` is a plain static site with **relative** asset paths, so it can be
+dropped onto any host as-is (Netlify, Vercel, Cloudflare Pages, S3, cPanel), and it
+works both at a domain root and under a `/<repo>/` subpath. Just upload the folder.
 
-> **First-time setup:** in the repository go to **Settings → Pages** and set
-> **Source** to **GitHub Actions**. The workflow handles everything after that.
+To publish via GitHub Pages later: enable **Settings → Pages → Source → GitHub
+Actions**, then add a deploy job that uploads `redesign/` with
+`actions/upload-pages-artifact` and publishes it with `actions/deploy-pages`.
 
 ## The redesign
 
