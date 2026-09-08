@@ -1,0 +1,17 @@
+{
+  "name": "uzma-geoai-mirror",
+  "version": "1.0.0",
+  "description": "Static mirror of uzmageoai.com",
+  "main": "index.js",
+  "scripts": {
+    "start": "node redesign/serve.js",
+    "mirror": "node serve.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "website-scraper": "^5.3.1"
+  }
+}
