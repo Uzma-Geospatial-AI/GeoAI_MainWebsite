@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uzma Geospatial AI — See Better. See the Bigger Picture. See the Unseen.</title>
+<meta name="description" content="Uzma Geospatial AI — Malaysia's first commercial very high-resolution Earth Observation satellite, UzmaSAT-1. Satellite imagery, mapping & analytics, and AI platforms that turn space data into decisions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ Background ============ -->
+<div class="space-bg">
+  <span class="aurora a1"></span><span class="aurora a2"></span><span class="aurora a3"></span>
+</div>
+<canvas class="stars" id="stars"></canvas>
+
+<!-- ============ Navbar ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top"><img src="assets/img/logo-white.png" alt="Uzma Geospatial AI"></a>
+    <nav>
+      <ul class="menu">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li class="has-drop"><a href="#services">Services
+          <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></a>
+          <div class="drop">
+            <a href="#services">Hi-Reso Satellite Imagery</a>
+            <a href="#services">Mapping &amp; Analytics</a>
+            <a href="#services">AI Platform Development</a>
+            <a href="#services">Training &amp; Consultation</a>
+          </div>
+        </li>
+        <li class="has-drop"><a href="#solutions">Solutions
+          <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></a>
+          <div class="drop">
+            <a href="#solutions">Precision Agriculture</a>
+            <a href="#solutions">Plantation Management</a>
+            <a href="#solutions">Ground Movement</a>
+            <a href="#solutions">Infrastructure Monitoring</a>
+            <a href="#solutions">Sustainable Forestry Management</a>
+            <a href="#solutions">Environmental Monitoring</a>
+            <a href="#solutions">Urban Planning &amp; Development</a>
+          </div>
+        </li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary">Book an Appointment
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="hero-badge" data-reveal><span class="dot"></span> UzmaSAT-1 · Launched 15 Jan 2025 via SpaceX Falcon 9</span>
+      <h1 data-reveal data-delay="1">See Better.<br>See the <span class="grad">Bigger Picture</span><br>from Space.</h1>
+      <p class="lead" data-reveal data-delay="2">Access the best data from space to see better, see the bigger picture, and see the unseen. Unlock the insights that drive innovation and empower better decision-making with Uzma Digital Earth.</p>
+      <div class="hero-actions" data-reveal data-delay="3">
+        <a href="#uzmasat" class="btn btn-primary">UzmaSAT-1 Details
+          <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="#solutions" class="btn btn-ghost">
+          <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#fff"/></svg>Watch Our Short Film</a>
+      </div>
+      <div class="hero-mini" data-reveal data-delay="4">
+        <div><b data-count="50" data-suffix="cm">50cm</b><span>Very high resolution</span></div>
+        <div><b data-count="7" data-suffix="×">7×</b><span>Daily revisits</span></div>
+        <div><b data-count="500" data-suffix="km">500km</b><span>Low Earth orbit</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" data-reveal data-delay="2">
+      <div class="orb" id="heroOrb"><img src="assets/img/hero-satellite.png" alt="UzmaSAT-1 orbiting Earth"></div>
+      <div class="float-card fc-1 glass">
+        <span class="ic"><svg width="18" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20" stroke="#fff" stroke-width="1.6"/></svg></span>
+        <div><small>Earth Observation</small><b>Real-time monitoring</b></div>
+      </div>
+      <div class="float-card fc-2 glass">
+        <span class="ic"><svg width="18" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span>
+        <div><small>AI Analytics</small><b>Actionable insight</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Stats ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="stats glass" data-reveal>
+      <div class="stat"><b data-count="50" data-suffix="cm">0</b><span>Per-pixel resolution</span></div>
+      <div class="stat"><b data-count="7" data-suffix="×">0</b><span>Daily satellite revisits</span></div>
+      <div class="stat"><b data-count="2021" data-raw>2021</b><span>Founded in Malaysia</span></div>
+      <div class="stat"><b data-count="14" data-suffix="+">0</b><span>Global partners</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ About ============ -->
+<section id="about">
+  <div class="wrap split">
+    <div class="copy">
+      <span class="eyebrow" data-reveal>About Us</span>
+      <h2 class="title" data-reveal data-delay="1">Turning space data into certainty for Earth.</h2>
+      <p class="lead" data-reveal data-delay="2">Geospatial AI Sdn Bhd, founded in 2021, is a geospatial analytics company and a wholly owned subsidiary of <strong>Uzma Berhad</strong>. Our expertise lies in utilizing satellite imagery and cutting-edge technology to provide actionable insights about various aspects of Earth — from urban planning to environmental monitoring.</p>
+      <div class="vm">
+        <div class="glass" data-reveal data-delay="2"><h4>Our Vision</h4><p>To become a top-3 geospatial analytics company in Southeast Asia, providing near real-time insights for any surface on Earth by 2030.</p></div>
+        <div class="glass" data-reveal data-delay="3"><h4>Our Mission</h4><p>Empower decision-makers and industries with accurate, actionable insights through cutting-edge geospatial analytics — contributing to Environmental, Social and Governance (ESG) goals for sustainable development.</p></div>
+      </div>
+    </div>
+    <div class="visual" data-reveal data-delay="2">
+      <div class="visual-frame"><img src="assets/img/platform-dashboard.png" alt="Uzma Digital Earth platform"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Solutions ============ -->
+<section id="solutions">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow" data-reveal>Our Industry Solutions</span>
+      <h2 class="title" data-reveal data-delay="1">Insight for every industry, from orbit.</h2>
+      <p class="lead center" data-reveal data-delay="2">Our solutions empower industries with advanced data from space, providing unmatched clarity, precision, and insights. From urban planning to environmental monitoring, we help you make smarter, data-driven decisions.</p>
+    </div>
+    <div class="sol-grid">
+      <article class="sol-card" data-reveal>
+        <div class="sol-media"><span class="sol-tag">Agriculture</span><img src="assets/img/solutions/precision-agriculture.png" alt="Precision Agriculture"></div>
+        <div class="sol-body"><h3>Precision Agriculture</h3><p>Get precise insights into soil and crop health to optimize agricultural productivity and food security.</p><span class="sol-more">Learn more <span class="ar">→</span></span></div>
+      </article>
+      <article class="sol-card" data-reveal data-delay="1">
+        <div class="sol-media"><span class="sol-tag">Plantation</span><img src="assets/img/solutions/plantation.png" alt="Plantation Management"></div>
+        <div class="sol-body"><h3>Plantation Management</h3><p>Automate land-use classification and ensure sustainable agri-commodities production processes.</p><span class="sol-more">Learn more <span class="ar">→</span></span></div>
+      </article>
+      <article class="sol-card" data-reveal data-delay="2">
+        <div class="sol-media"><span class="sol-tag">Geohazard</span><img src="assets/img/solutions/ground-movement.png" alt="Ground Movement"></div>
+        <div class="sol-body"><h3>Ground Movement</h3><p>InSAR-based monitoring of land deformation, subsidence and slope stability for critical assets.</p><span class="sol-more">Learn more <span class="ar">→</span></span></div>
+      </article>
+      <article class="sol-card" data-reveal>
+        <div class="sol-media"><span class="sol-tag">Infrastructure</span><img src="assets/img/solutions/infrastructure.png" alt="Infrastructure Monitoring"></div>
+        <div class="sol-body"><h3>Infrastructure Monitoring</h3><p>Real-time progress updates for infrastructure projects through high-frequency satellite imagery.</p><span class="sol-more">Learn more <span class="ar">→</span></span></div>
+      </article>
+      <article class="sol-card" data-reveal data-delay="1">
+        <div class="sol-media"><span class="sol-tag">Forestry</span><img src="assets/img/solutions/forestry.png" alt="Sustainable Forestry Management"></div>
+        <div class="sol-body"><h3>Sustainable Forestry</h3><p>Monitor GHG emissions, deforestation and forest health to support ESG and conservation goals.</p><span class="sol-more">Learn more <span class="ar">→</span></span></div>
+      </article>
+      <article class="sol-card" data-reveal data-delay="2">
+        <div class="sol-media"><span class="sol-tag">Urban</span><img src="assets/img/solutions/urban.png" alt="Urban Planning & Development"></div>
+        <div class="sol-body"><h3>Urban Planning &amp; Development</h3><p>Map growth, land use and coastal change to plan resilient, sustainable cities of the future.</p><span class="sol-more">Learn more <span class="ar">→</span></span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Services ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow" data-reveal>Our Services</span>
+      <h2 class="title" data-reveal data-delay="1">High-value services across industries.</h2>
+      <p class="lead center" data-reveal data-delay="2">Comprehensive geospatial services that empower you to visualize and analyze data, enabling informed decision-making across every application.</p>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card glass" data-reveal>
+        <span class="num">01</span>
+        <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+        <h3>Hi-Reso Satellite Imagery</h3>
+        <p>High-resolution satellite imagery for clear, detailed Earth monitoring and geospatial analysis across applications.</p>
+      </article>
+      <article class="serv-card glass" data-reveal data-delay="1">
+        <span class="num">02</span>
+        <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M9 4L3 7v13l6-3 6 3 6-3V4l-6 3-6-3z"/><path d="M9 4v13M15 7v13"/></svg></div>
+        <h3>Mapping &amp; Analytics</h3>
+        <p>Unlock the full potential of your geospatial data with our advanced mapping and analytics platform development.</p>
+      </article>
+      <article class="serv-card glass" data-reveal data-delay="2">
+        <span class="num">03</span>
+        <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9zM4 10h-1M21 10h-1M4 14h-1M21 14h-1M10 4V3M14 4V3M10 21v-1M14 21v-1"/></svg></div>
+        <h3>AI Platform Development</h3>
+        <p>Leverage AI for breakthrough insights with comprehensive mapping, visualisation and analysis solutions.</p>
+      </article>
+      <article class="serv-card glass" data-reveal data-delay="3">
+        <span class="num">04</span>
+        <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-5.5"/></svg></div>
+        <h3>Training &amp; Consultation</h3>
+        <p>Empower your team with the skills and knowledge to comprehensively harness the power of geospatial technology.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UzmaSAT-1 highlight ============ -->
+<section id="uzmasat">
+  <div class="wrap split rev">
+    <div class="visual" data-reveal>
+      <div class="visual-frame"><img src="assets/img/hero-satellite.png" alt="UzmaSAT-1 in orbit"></div>
+    </div>
+    <div class="copy">
+      <span class="eyebrow" data-reveal>The Game Changer</span>
+      <h2 class="title" data-reveal data-delay="1">UzmaSAT-1 — a historic milestone.</h2>
+      <p class="lead" data-reveal data-delay="2">Malaysia's first commercial very high-resolution Earth Observation ("EO") satellite was deployed into low Earth orbit via SpaceX's Falcon 9 Transporter-12 at 4:06am on 15 January 2025 — 57 minutes 35 seconds after launching from Vandenberg Space Force Base, California.</p>
+      <div class="spec-list">
+        <div class="spec glass" data-reveal data-delay="2"><b>50 cm</b><span>Very high-resolution imagery</span></div>
+        <div class="spec glass" data-reveal data-delay="3"><b>7 / day</b><span>Revisits with multispectral imaging</span></div>
+        <div class="spec glass" data-reveal data-delay="2"><b>Falcon 9</b><span>SpaceX Transporter-12 launch</span></div>
+        <div class="spec glass" data-reveal data-delay="3"><b>MSE2030</b><span>Aligned to Malaysia's Space Plan</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Awards ============ -->
+<section id="awards">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow" data-reveal>Awards &amp; Recognitions</span>
+      <h2 class="title" data-reveal data-delay="1">Recognised for innovation.</h2>
+    </div>
+    <div class="award-grid">
+      <div class="award glass" data-reveal><div class="yr">2024 · MTEA</div><h4>Emerging Technology Award</h4><p>UzmaSAT-1 Programme — revolutionizing geospatial intelligence with high temporal and high-spectral resolution satellite imagery for sustainable ESG applications.</p></div>
+      <div class="award glass" data-reveal data-delay="1"><div class="yr">2023 · Solar Week Malaysia</div><h4>Technology &amp; Innovation Excellence</h4><p>Smart Technology Innovation of the Year — advanced ground-movement risk assessment in solar-farm environments using satellite-based InSAR technology.</p></div>
+      <div class="award glass" data-reveal data-delay="2"><div class="yr">2021 · Solar Week Malaysia</div><h4>Technology &amp; Innovation Excellence</h4><p>Satellite-driven flood risk assessment and geohazard identification for solar farms.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Partners ============ -->
+<section id="partners" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow" data-reveal>Our Partners</span>
+      <h2 class="title" data-reveal data-delay="1">Backed by a global network.</h2>
+    </div>
+  </div>
+  <div class="marquee" data-reveal>
+    <div class="marquee-track" id="ptrack"></div>
+  </div>
+</section>
+
+<!-- ============ Blog ============ -->
+<section id="blog">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow" data-reveal>From the Blog</span>
+      <h2 class="title" data-reveal data-delay="1">Latest news &amp; press.</h2>
+    </div>
+    <div class="blog-grid">
+      <article class="post glass" data-reveal>
+        <div class="post-media"><img src="assets/img/blog/post1.png" alt=""></div>
+        <div class="post-body"><div class="post-meta"><span class="cat">Press Release</span>·<span>19 Jan 2025</span></div>
+          <h3>Uzma launches Malaysia's first commercial Earth Observation satellite, UzmaSAT-1</h3></div>
+      </article>
+      <article class="post glass" data-reveal data-delay="1">
+        <div class="post-media"><img src="assets/img/blog/post2.jpg" alt=""></div>
+        <div class="post-body"><div class="post-meta"><span class="cat">UzmaSAT-1</span>·<span>16 Jan 2025</span></div>
+          <h3>Uzma Berhad cetus era baharu teknologi angkasa negara melalui pelancaran UzmaSAT-1</h3></div>
+      </article>
+      <article class="post glass" data-reveal data-delay="2">
+        <div class="post-media"><img src="assets/img/blog/post3.jpg" alt=""></div>
+        <div class="post-body"><div class="post-meta"><span class="cat">Partners</span>·<span>24 Dec 2023</span></div>
+          <h3>Uzma and Satellogic sign multi-million dollar, 3-year agreement to advance geospatial capabilities</h3></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Contact / CTA ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow" data-reveal>Experience the Technology Today</span>
+      <h2 class="title" data-reveal data-delay="1">Let's bring certainty to your decisions.</h2>
+      <p class="lead center" data-reveal data-delay="2">Connect with us to discover how space data can drive business growth and inform your next move.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info glass" data-reveal>
+        <div class="ci-item"><span class="ic"><svg width="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" opacity="0"/><path d="M6.5 5h3l1.5 4-2 1.5a12 12 0 005.5 5.5l1.5-2 4 1.5v3a2 2 0 01-2 2A16 16 0 014.5 7a2 2 0 012-2z" stroke="#ff9147" stroke-width="1.6"/></svg></span><div><small>Call us</small><b>+6011-5677 0921</b></div></div>
+        <div class="ci-item"><span class="ic"><svg width="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#ff9147" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="#ff9147" stroke-width="1.6"/></svg></span><div><small>Email</small><b>geospatial.ai@uzmagroup.com</b></div></div>
+        <div class="ci-item"><span class="ic"><svg width="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-12A7 7 0 005 9c0 5.5 7 12 7 12z" stroke="#ff9147" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" stroke="#ff9147" stroke-width="1.6"/></svg></span><div><small>Visit</small><b>Damansara Perdana, Petaling Jaya, Selangor</b></div></div>
+        <div class="ci-item"><span class="ic"><svg width="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#ff9147" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="#ff9147" stroke-width="1.6"/></svg></span><div><small>Hours</small><b>Mon – Fri · 9:00am – 6:00pm</b></div></div>
+      </div>
+      <form class="form glass" data-reveal data-delay="1" onsubmit="return false">
+        <div class="field"><label>Full name</label><input type="text" placeholder="Your name"></div>
+        <div class="field"><label>Work email</label><input type="email" placeholder="you@company.com"></div>
+        <div class="field"><label>Organisation</label><input type="text" placeholder="Company / agency"></div>
+        <div class="field"><label>How can we help?</label><textarea placeholder="Tell us about your project or the insight you need…"></textarea></div>
+        <button class="btn btn-primary" type="submit">Share More Information with Me
+          <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <p class="form-note">This is a demo form — it does not submit anywhere yet.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/img/logo-white.png" alt="Uzma Geospatial AI">
+        <p>A wholly owned subsidiary of Uzma Berhad, turning very high-resolution satellite data into actionable intelligence for a sustainable future.</p>
+        <div class="foot-soc">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 112.5 6 2.5 2.5 0 014.98 3.5zM3 8.5h4V21H3zM9 8.5h3.8v1.7h.05A4.2 4.2 0 0116.5 8c4 0 4.7 2.6 4.7 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 8.8A3.2 3.2 0 1012 15.2 3.2 3.2 0 0012 8.8zm0-2.3c-2.2 0-2.5 0-3.4.05-2.3.1-3.4 1.2-3.5 3.5C5 11 5 11.3 5 12s0 1 .05 1.9c.1 2.3 1.2 3.4 3.5 3.5.9.05 1.2.05 3.4.05s2.5 0 3.4-.05c2.3-.1 3.4-1.2 3.5-3.5.05-.9.05-1.2.05-1.9s0-1-.05-1.9c-.1-2.3-1.2-3.4-3.5-3.5C14.5 6.5 14.2 6.5 12 6.5zM18.4 6.9a.9.9 0 11-.9-.9.9.9 0 01.9.9z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h5>Services</h5><a href="#services">Hi-Reso Satellite Imagery</a><a href="#services">Mapping &amp; Analytics</a><a href="#services">AI Platform Development</a><a href="#services">Training &amp; Consultation</a></div>
+      <div class="foot-col"><h5>Solutions</h5><a href="#solutions">Precision Agriculture</a><a href="#solutions">Plantation Management</a><a href="#solutions">Ground Movement</a><a href="#solutions">Infrastructure</a><a href="#solutions">Urban Planning</a></div>
+      <div class="foot-col"><h5>Company</h5><a href="#about">About</a><a href="#uzmasat">UzmaSAT-1</a><a href="#awards">Awards</a><a href="#blog">Blog</a><a href="#contact">Contact Us</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 All Rights Reserved · Geospatial AI Sdn Bhd</span>
+      <span>See Better · See the Unseen · See the Bigger Picture</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
