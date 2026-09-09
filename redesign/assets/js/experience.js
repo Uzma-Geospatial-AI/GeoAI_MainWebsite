@@ -29,9 +29,7 @@
       gsap.fromTo('.perspective-image',{scale:1.18,yPercent:3},{scale:1,yPercent:-3,ease:'none',scrollTrigger:{trigger:'.perspective-section',start:'top top',end:'bottom bottom',scrub:1}});
       gsap.to('.perspective-word',{xPercent:-14,ease:'none',scrollTrigger:{trigger:'.perspective-section',start:'top bottom',end:'bottom top',scrub:1}});
       gsap.fromTo('.platform-frame',{rotateY:-14,rotateX:8},{rotateY:0,rotateX:0,ease:'none',scrollTrigger:{trigger:'.intelligence-layout',start:'top 85%',end:'bottom 35%',scrub:1}});
-      records.forEach(record => ScrollTrigger.create({trigger:record.host,start:'top bottom',end:'bottom top',onUpdate:self=>{
-        if (!record.host.dataset.manual && !paused) record.scene?.setProgress(self.progress);
-      }}));
+      // The component explorer is deliberately still until a component is chosen.
     });
   }
   function sync() {
@@ -56,8 +54,7 @@
       record.scene=scene;
       scene.setPaused(paused || preference.matches);
       record.host.classList.add('scene-ready');
-      const input=record.host.parentElement.querySelector('input[type="range"]');
-      if(input && record.host.dataset.manual) scene.setProgress(Number(input.value)/100,true);
+      scene.focusComponent(record.host.dataset.focus || 'overview');
     } catch {record.host.classList.remove('scene-ready');}
     finally {record.loading=false;}
   }
@@ -69,8 +66,27 @@
     const mount=record.host.querySelector('.aux-mount');
     mount.addEventListener('space-scene-error',()=>record.host.classList.remove('scene-ready'));
     mount.addEventListener('space-scene-ready',()=>record.host.classList.add('scene-ready'));
-    const input=record.host.parentElement.querySelector('input[type="range"]');
-    input?.addEventListener('input',()=>{record.host.dataset.manual='true';record.scene?.setProgress(Number(input.value)/100,true);});
+    document.querySelectorAll('[data-component]').forEach(control => {
+      control.addEventListener('click', () => {
+        const key = control.dataset.component;
+        record.host.dataset.focus = key;
+        record.scene?.focusComponent(key);
+        document.querySelectorAll('[data-component]').forEach(item => item.setAttribute('aria-pressed', String(item === control)));
+        const descriptions = {
+          overview: ['Engineered to see more.', 'Choose a component to move closer. Explore the camera, the two side instruments and the solar panels.'],
+          camera: ['Multispectral camera', 'Look into the Earth observation camera. Published spatial resolution: up to 50 cm. Swath width: 8 km. Orbital altitude: 470 km.'],
+          'star-left': ['Star tracker · Side 01', 'Explore the side-mounted optical instrument and its protective baffle.'],
+          'star-right': ['Star tracker · Side 02', 'View the second optical instrument on the facing panel.'],
+          solar: ['Solar panels', 'Explore the solar-cell surfaces around the spacecraft body.'],
+        };
+        const [title, description] = descriptions[key];
+        document.getElementById('component-title').textContent = title;
+        document.getElementById('component-description').textContent = description;
+        if (matchMedia('(max-width: 767px)').matches) {
+          record.host.scrollIntoView({ block: 'start', behavior: paused || preference.matches ? 'instant' : 'smooth' });
+        }
+      });
+    });
   });
   preference.addEventListener('change',()=>{
     records.forEach(record=>{++record.generation;record.scene?.dispose();record.scene=null;record.loading=false;record.host.classList.remove('scene-ready');if(record.visible)load(record);});

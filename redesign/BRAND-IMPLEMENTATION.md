@@ -38,11 +38,14 @@ is embedded in the original artwork and never substituted with a web font.
 White/grey content sections alternate with an atmospheric dark hero and Digital
 Earth blue services section. Rounded pastel tiles and angled photographs have
 been replaced by aligned imagery, restrained borders and consistent small radii.
-Original content, all ten Insights, contact routes, image controls and the three
-3D scenes are preserved. The landscape scene uses attributed satellite imagery.
+Original content, all ten Insights, contact routes, image controls and the full content library are preserved. The landscape scene uses attributed satellite imagery.
 Scroll motion introduces the spacecraft, imagery scale and platform perspective;
 all motion respects the page pause control and reduced-motion preferences.
 
-The updated spacecraft has a 28% shorter exposed optical assembly and a star-tracker-style baffle on the adjacent right-hand panel in the hero view,
-plus two smaller moon-sensor-style baffles on opposite left and right sides. It remains a visual
-interpretation, not dimensionally certified hardware geometry.
+The updated spacecraft has a 28% shorter exposed optical assembly and exactly two matching side instruments on facing panels. The hero rotates with scroll. The lower model is a still, selectable component explorer with camera focus transitions. It remains a visual interpretation, not dimensionally certified hardware geometry.
+
+## Current product presentation
+
+The user requested UZMA and Geospatial AI marks in place of the Digital Earth masthead. `assets/img/brand/uzma-group.png` is a direct 4x raster export of the logo on page 4 of the supplied UZMA guide (clip 279,280 to 568,346 PDF points). The Geospatial AI mark is the original `assets/library/Logo-GeoAI_300px.png`. Both appear unmodified on white backgrounds. Digital Earth remains the linked product portal.
+
+`premium.css` applies bright surfaces and selected frosted panels, with solid fallbacks for reduced transparency. The Calibri/Carlito font stack and corporate orange remain in place. The news, roadmap, component explorer and appointment calendar replace the previous layouts; the full content library is preserved.

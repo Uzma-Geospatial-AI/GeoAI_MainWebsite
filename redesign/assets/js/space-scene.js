@@ -327,15 +327,13 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   trackerRim.rotation.x = Math.PI / 2;
   const trackerLens = mesh(new THREE.CircleGeometry(0.105, 40), glass, 0, 0.19, 0, starTracker);
   trackerLens.rotation.x = -Math.PI / 2;
-  // Two opposing side sensors requested as moon sensors in the user's reference.
-  for (const side of [-1, 1]) {
-    const moonSensor = starTracker.clone(true);
-    moonSensor.name = side < 0 ? 'moon-sensor-left' : 'moon-sensor-right';
-    moonSensor.position.set(side * 0.8, 0.7, 0.05);
-    moonSensor.rotation.set(0, 0, -side * Math.PI / 2);
-    moonSensor.scale.setScalar(0.75);
-    craft.add(moonSensor);
-  }
+  // Exactly two matching instruments: retain the requested panel and mirror
+  // it onto the facing panel. The former pair on the X sides is removed.
+  const facingTracker = starTracker.clone(true);
+  facingTracker.name = 'star-tracker-facing';
+  facingTracker.position.set(0.18, 1.22, -0.8);
+  facingTracker.rotation.x = -Math.PI / 2;
+  craft.add(facingTracker);
   box(0.25, 0.006, 0.25, gold, 0.38, 1.563, -0.33);
 
 
@@ -476,6 +474,16 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   let cameraDistance = 10;
   let width = 0;
   let height = 0;
+  let focusKey = 'overview';
+  let focusAnimating = false;
+  let focusImmediate = true;
+  const focusLook = new THREE.Vector3(0.08, 0.25, 0);
+  const focusPositions = {
+    camera: { point: [0, -1.02, 0], normal: [0, -1, 0], distance: 3.8 },
+    'star-left': { point: [0.18, 1.22, 1.03], normal: [0, 0.12, 1], distance: 2.4 },
+    'star-right': { point: [0.18, 1.22, -1.03], normal: [0, 0.12, -1], distance: 2.4 },
+    solar: { point: [-0.77, 0.76, 0], normal: [-1, 0.2, 0.2], distance: 4.6 },
+  };
 
   function applyPose(delta) {
     const moving = !paused && !reducedMotion;
@@ -497,15 +505,37 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
     camera.lookAt(0.08, 0.25, 0);
   }
 
+  function applyFocus(delta) {
+    craft.rotation.set(-0.77, 0.39, 0.58);
+    satellite.position.set(0.15, 0.2, 0);
+    satellite.rotation.set(0, 0, 0);
+    orbit.visible = false;
+    scene.updateMatrixWorld(true);
+    const selected = focusPositions[focusKey];
+    const target = selected ? craft.localToWorld(new THREE.Vector3(...selected.point)) : new THREE.Vector3(0.08, 0.25, 0);
+    const destination = selected
+      ? target.clone().add(new THREE.Vector3(...selected.normal).transformDirection(craft.matrixWorld).multiplyScalar(selected.distance * Math.max(1, 0.9 / camera.aspect)))
+      : new THREE.Vector3(0, 0.3, cameraDistance);
+    const step = focusImmediate ? 1 : 1 - Math.exp(-delta * 7);
+    camera.position.lerp(destination, step);
+    focusLook.lerp(target, step);
+    camera.lookAt(focusLook);
+    focusAnimating = camera.position.distanceTo(destination) > 0.002 || focusLook.distanceTo(target) > 0.002;
+    container.dataset.focus = focusKey;
+    container.dataset.focusMoving = String(focusAnimating);
+    focusImmediate = false;
+  }
+
   function render(time) {
     frame = 0;
     if (disposed || contextUnavailable || !intersecting || document.hidden) return;
     const delta = previousTime ? Math.min((time - previousTime) / 1000, 0.05) : 1 / 60;
     previousTime = time;
     if (!paused && !reducedMotion) elapsed += delta;
-    applyPose(delta);
+    if (variant === 'product') applyFocus(delta);
+    else applyPose(delta);
     renderer.render(scene, camera);
-    if (!paused && !reducedMotion) frame = requestAnimationFrame(render);
+    if (variant === 'product' ? focusAnimating : !paused && !reducedMotion) frame = requestAnimationFrame(render);
   }
   function requestRender() {
     if (!frame && !disposed && !contextUnavailable && intersecting && !document.hidden) frame = requestAnimationFrame(render);
@@ -528,12 +558,13 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
     // Keep the satellite at a useful size on portrait and landscape stages.
     cameraDistance = Math.max(8.2, 8.9 / Math.max(camera.aspect, 0.82));
     camera.updateProjectionMatrix();
+    if (variant === 'product') focusImmediate = true;
     requestRender();
   }
 
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
   function pointerMove(event) {
-    if (!finePointer.matches || reducedMotion || paused) return;
+    if (variant === 'product' || !finePointer.matches || reducedMotion || paused) return;
     const rect = container.getBoundingClientRect();
     pointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
     pointerY = -((event.clientY - rect.top) / rect.height - 0.5) * 2;
@@ -598,7 +629,8 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
 
   try {
     resize();
-    applyPose(1);
+    if (variant === 'product') applyFocus(1);
+    else applyPose(1);
     // Compile and render before replacing the photograph, so a failed graphics
     // driver never leaves the landing page with an empty product visual.
     await renderer.compileAsync(scene, camera);
@@ -618,6 +650,12 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   }
 
   return {
+    focusComponent(key) {
+      if (disposed || variant !== 'product' || (key !== 'overview' && !focusPositions[key])) return;
+      focusKey = key;
+      focusImmediate = paused || reducedMotion;
+      requestRender();
+    },
     setProgress(value, immediate = false) {
       if (disposed || !Number.isFinite(value)) return;
       targetProgress = THREE.MathUtils.clamp(value, 0, 1);
@@ -631,7 +669,10 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
     },
     setPaused(value) {
       paused = Boolean(value);
-      if (paused) stopRender();
+      if (paused) {
+        stopRender();
+        if (variant === 'product') { focusImmediate = true; requestRender(); }
+      }
       else requestRender();
     },
     dispose,

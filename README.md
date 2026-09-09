@@ -1,4 +1,4 @@
-﻿# Uzma Digital Earth
+# Uzma Digital Earth
 
 Published website: https://uzma-geospatial-ai.github.io/GeoAI_MainWebsite/
 
@@ -23,6 +23,12 @@ The six current solutions are AGRO, ESTATE, ASSET, ENVIRO, URBAN and UzmaSATRIA.
 
 ## Branding and spacecraft
 
-See `redesign/BRAND-IMPLEMENTATION.md` for supplied brand sources, palette, logo usage and font licensing. The 3D satellite has shortened optics, a star tracker on the adjacent right-hand panel in the opening view, and two smaller moon sensors on opposite sides. It is a visual interpretation of the supplied references.
+See `redesign/BRAND-IMPLEMENTATION.md` for supplied brand sources, palette, logo usage and font licensing. The 3D satellite has shortened optics and exactly two matching side instruments on facing panels. It is a visual interpretation of the supplied references. The hero responds to scroll; the lower component explorer stays still until the visitor selects the camera, either side instrument, solar panels or the full satellite. Camera transitions respect the global pause control and reduced-motion preferences.
 
 Motion can be paused and respects reduced-motion preferences. WebGL failure retains the original satellite image. GitHub Pages is the current publication target; WordPress and the custom domain have not been changed.
+
+## Premium interface update
+
+The bright interface uses restrained frosted surfaces, the original UZMA and Geospatial AI logos, and the supplied brand palette. The roadmap, service cards, image galleries, news and contact section have been redesigned. All 18 news stories are linked from the homepage, with 15 in an expandable archive. The original rotating product gallery and contact globe have been removed.
+
+Appointment buttons open the existing Geospatial AI Calendly calendar in a modal, loaded only on request. Keyboard Escape and the close button return focus to the opener. A direct Calendly link remains available. Booking availability and confirmation are handled by Calendly; no appointment is created automatically.
