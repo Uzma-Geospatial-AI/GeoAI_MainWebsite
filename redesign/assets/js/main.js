@@ -163,11 +163,56 @@
   });
   zoom.addEventListener('input', updateZoom);
   const solutions = {
-    agriculture: { image: 'precision-agriculture.webp', alt: 'Aerial view of agricultural land', title: 'Understand every hectare.', description: 'Monitor crop conditions, map plantation boundaries and understand changes across your land with satellite imagery and geospatial analysis.', url: 'precision-agriculture/' },
-    environment: { image: 'forestry.webp', alt: 'Satellite perspective of forest cover', title: 'Protect what matters.', description: 'Map forest cover, observe environmental change and build a clearer picture of the ecosystems in your care.', url: 'sustainableforestrymanagement/' },
-    cities: { image: 'urban.webp', alt: 'Satellite imagery of an urban area', title: 'See how your city changes.', description: 'Track land use, understand urban growth and bring geospatial context to infrastructure planning and development.', url: 'urban-planning-development/' },
-    risk: { image: 'ground-movement.webp', alt: 'Geospatial ground movement assessment', title: 'Understand the ground beneath.', description: 'Combine specialist radar satellite data and InSAR analysis to assess ground movement and support geohazard monitoring.', url: 'ground-movement/' }
-  };
+  "agriculture": {
+    "image": "precision-agriculture.webp",
+    "alt": "Aerial view of agricultural land",
+    "title": "Precision Agriculture",
+    "description": "Get precise insights into soil and crop health to optimize agricultural productivity and food security.",
+    "url": "precision-agriculture/"
+  },
+  "plantation": {
+    "image": "plantation.webp",
+    "alt": "Satellite view of plantation land",
+    "title": "Plantation Management",
+    "description": "Monitor plantation health, assess crop conditions and map land boundaries to support productive, sustainable plantation management.",
+    "url": "plantationmanagement/"
+  },
+  "risk": {
+    "image": "ground-movement.webp",
+    "alt": "Geospatial ground movement assessment",
+    "title": "Ground Movement",
+    "description": "Combine specialist radar satellite data and InSAR analysis to assess ground movement and support geohazard monitoring.",
+    "url": "ground-movement/"
+  },
+  "infrastructure": {
+    "image": "infrastructure.webp",
+    "alt": "Infrastructure monitoring from space",
+    "title": "Infrastructure Monitoring",
+    "description": "Monitor critical infrastructure with satellite imagery and geospatial analytics to identify changes, assess risks and support informed maintenance decisions.",
+    "url": "infrastructuremonitoring/"
+  },
+  "forestry": {
+    "image": "forestry.webp",
+    "alt": "Satellite perspective of forest cover",
+    "title": "Sustainable Forestry Management",
+    "description": "Track forest cover, monitor deforestation and support sustainable forest management with geospatial insights.",
+    "url": "sustainableforestrymanagement/"
+  },
+  "environment": {
+    "image": "environmental.webp",
+    "alt": "Environmental monitoring using satellite imagery",
+    "title": "Environmental Monitoring",
+    "description": "Observe environmental change, assess ecosystem health and support conservation and sustainable development with satellite data.",
+    "url": "enviromentalmonitoring/"
+  },
+  "cities": {
+    "image": "urban.webp",
+    "alt": "Satellite imagery of an urban area",
+    "title": "Urban Planning & Development",
+    "description": "Track land use, understand urban growth and bring geospatial context to infrastructure planning and development.",
+    "url": "urban-planning-development/"
+  }
+};
   document.querySelectorAll('[data-solution]').forEach(button => {
     button.addEventListener('click', () => {
       const data = solutions[button.dataset.solution];

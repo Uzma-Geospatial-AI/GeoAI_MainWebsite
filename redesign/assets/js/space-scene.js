@@ -71,13 +71,13 @@ export async function initSpaceScene({ container, reducedMotion = false }) {
   };
   scene.add(new THREE.HemisphereLight(0xb6d6e8, 0x080c17, 2));
   light(0xf3f5ec, 4.2, 3, 6, 7);
-  light(0x87cee7, 3.5, -4, 2, -4);
+  light(0xadd0df, 1.8, -4, 2, -4);
   light(0xf3b886, 1.2, 3, -2, 4);
 
   const silver = new THREE.MeshStandardMaterial({ color: 0x9ba9b3, metalness: 0.85, roughness: 0.29 });
   const brightSilver = new THREE.MeshStandardMaterial({ color: 0xd2dbe0, metalness: 0.86, roughness: 0.23 });
-  const graphite = new THREE.MeshStandardMaterial({ color: 0x15212a, metalness: 0.68, roughness: 0.34 });
-  const copper = new THREE.MeshStandardMaterial({ color: 0x9a6951, metalness: 0.78, roughness: 0.3 });
+  const graphite = new THREE.MeshStandardMaterial({ color: 0x262728, metalness: 0.68, roughness: 0.34 });
+  const copper = new THREE.MeshStandardMaterial({ color: 0x80594e, metalness: 0.78, roughness: 0.3 });
   const black = new THREE.MeshStandardMaterial({ color: 0x080d14, metalness: 0.42, roughness: 0.37 });
   const foilMap = canvasTexture(128, 128, (ctx, width, height) => {
     ctx.fillStyle = '#a5a5a5';
@@ -95,11 +95,11 @@ export async function initSpaceScene({ container, reducedMotion = false }) {
     }
   });
   foilMap.colorSpace = THREE.NoColorSpace;
-  const gold = new THREE.MeshStandardMaterial({ color: 0xc1a05b, metalness: 0.82, roughness: 0.34, bumpMap: foilMap, bumpScale: 0.065 });
+  const gold = new THREE.MeshStandardMaterial({ color: 0xc6b478, metalness: 0.82, roughness: 0.34, bumpMap: foilMap, bumpScale: 0.065 });
   const solarMap = canvasTexture(128, 128, (ctx, width, height) => {
-    ctx.fillStyle = '#071624';
+    ctx.fillStyle = '#141516';
     ctx.fillRect(0, 0, width, height);
-    ctx.strokeStyle = '#24404e';
+    ctx.strokeStyle = '#303131';
     ctx.lineWidth = 0.75;
     for (let y = 8; y < height; y += 8) {
       ctx.beginPath();
@@ -107,11 +107,11 @@ export async function initSpaceScene({ container, reducedMotion = false }) {
       ctx.lineTo(width, y);
       ctx.stroke();
     }
-    ctx.fillStyle = '#647984';
+    ctx.fillStyle = '#73756d';
     ctx.fillRect(31, 0, 1.5, height);
     ctx.fillRect(95, 0, 1.5, height);
   });
-  const solar = new THREE.MeshStandardMaterial({ color: 0x8da9bd, map: solarMap, metalness: 0.48, roughness: 0.28 });
+  const solar = new THREE.MeshStandardMaterial({ color: 0xc7c8c2, map: solarMap, metalness: 0.25, roughness: 0.55 });
   const glass = new THREE.MeshPhysicalMaterial({ color: 0x071323, metalness: 0.75, roughness: 0.15, clearcoat: 1, clearcoatRoughness: 0.06 });
 
   const satellite = new THREE.Group();
@@ -137,22 +137,17 @@ export async function initSpaceScene({ container, reducedMotion = false }) {
     return result;
   }
 
-  box(1.46, 1.8, 1.28, graphite, 0, 0.46, 0);
-  box(1.49, 0.085, 1.32, silver, 0, 1.37, 0);
-  box(1.43, 0.13, 1.27, silver, 0, -0.45, 0);
-  // Structural edge rails stay visible as the spacecraft turns.
-  for (const x of [-0.744, 0.744]) {
-    for (const z of [-0.647, 0.647]) box(0.045, 1.82, 0.045, brightSilver, x, 0.47, z);
-  }
-  for (const y of [-0.35, 1.25]) {
-    box(1.48, 0.035, 0.028, brightSilver, 0, y, 0.674);
-    box(1.48, 0.035, 0.028, brightSilver, 0, y, -0.674);
-  }
+  // Proportions and component placement follow the supplied spacecraft views.
+  // The optical barrel occupies most of the exposed lower body; the rear bus
+  // is wrapped in thin solar plates rather than heavy external rails.
+  box(1.42, 1.45, 1.38, graphite, 0, 0.785, 0);
+  box(1.45, 0.045, 1.41, silver, 0, 1.535, 0);
+  box(1.42, 0.05, 1.38, copper, 0, 0.065, 0);
 
   const cellShape = new THREE.Shape();
-  const cellWidth = 0.248;
-  const cellHeight = 0.209;
-  const cut = 0.026;
+  const cellWidth = 0.274;
+  const cellHeight = 0.249;
+  const cut = 0.046;
   cellShape.moveTo(-cellWidth / 2 + cut, -cellHeight / 2);
   cellShape.lineTo(cellWidth / 2 - cut, -cellHeight / 2);
   cellShape.lineTo(cellWidth / 2, -cellHeight / 2 + cut);
@@ -163,99 +158,157 @@ export async function initSpaceScene({ container, reducedMotion = false }) {
   cellShape.lineTo(-cellWidth / 2, -cellHeight / 2 + cut);
   cellShape.closePath();
   const cellGeometry = new THREE.ShapeGeometry(cellShape);
-  // ShapeGeometry uses world-unit UVs; normalize so each cell has fine busbars.
   const uv = cellGeometry.getAttribute('uv');
   for (let i = 0; i < uv.count; i++) uv.setXY(i, (uv.getX(i) + cellWidth / 2) / cellWidth, (uv.getY(i) + cellHeight / 2) / cellHeight);
   uv.needsUpdate = true;
+
   const panelTransforms = [
-    { position: [0, 0.5, 0.67], rotation: 0, columns: 5 },
-    { position: [0, 0.5, -0.67], rotation: Math.PI, columns: 5 },
-    { position: [-0.766, 0.5, 0], rotation: -Math.PI / 2, columns: 4 },
-    { position: [0.766, 0.5, 0], rotation: Math.PI / 2, columns: 4 },
+    { position: [0, 0.76, 0.767], rotation: 0 },
+    { position: [0, 0.76, -0.767], rotation: Math.PI },
+    { position: [-0.767, 0.76, 0], rotation: -Math.PI / 2 },
+    { position: [0.767, 0.76, 0], rotation: Math.PI / 2 },
   ];
-  // Instancing keeps all 126 solar cells to one draw call per face.
+  const panelBacking = new THREE.MeshStandardMaterial({ color: 0x999b92, metalness: 0.7, roughness: 0.52 });
+  const connectorGeometry = new THREE.BoxGeometry(0.016, 0.028, 0.004);
   for (const panel of panelTransforms) {
     const group = new THREE.Group();
     group.position.set(...panel.position);
     group.rotation.y = panel.rotation;
     craft.add(group);
-    const cells = new THREE.InstancedMesh(cellGeometry, solar, panel.columns * 7);
+    box(1.48, 1.66, 0.023, panelBacking, 0, 0, -0.016, group);
+    const cells = new THREE.InstancedMesh(cellGeometry, solar, 30);
+    const connectors = new THREE.InstancedMesh(connectorGeometry, brightSilver, 60);
     const transform = new THREE.Matrix4();
-    for (let row = 0; row < 7; row++) {
-      for (let col = 0; col < panel.columns; col++) {
-        transform.makeTranslation((col - (panel.columns - 1) / 2) * 0.272, (row - 3) * 0.225, 0);
-        cells.setMatrixAt(row * panel.columns + col, transform);
+    for (let row = 0; row < 6; row++) {
+      for (let col = 0; col < 5; col++) {
+        const index = row * 5 + col;
+        const x = (col - 2) * 0.286;
+        const y = (row - 2.5) * 0.264;
+        transform.makeTranslation(x, y, 0);
+        cells.setMatrixAt(index, transform);
+        for (let side = 0; side < 2; side++) {
+          transform.makeTranslation(x + (side ? 0.094 : -0.094), y + 0.127, 0.005);
+          connectors.setMatrixAt(index * 2 + side, transform);
+        }
       }
     }
-    group.add(cells);
-  }
-
-  // Fasteners and service panels add scale without a heavy imported model.
-  const boltGeometry = new THREE.SphereGeometry(0.019, 6, 4);
-  const bolts = new THREE.InstancedMesh(boltGeometry, brightSilver, 24);
-  const boltMatrix = new THREE.Matrix4();
-  let boltIndex = 0;
-  for (const z of [-0.689, 0.689]) {
-    for (const x of [-0.704, 0.704]) {
+    group.add(cells, connectors);
+    // Small foil patch and perimeter fasteners visible in the source images.
+    box(0.2, 0.15, 0.005, gold, 0.6, 0.74, 0.004, group);
+    const panelBolts = new THREE.InstancedMesh(new THREE.SphereGeometry(0.01, 6, 4), silver, 12);
+    let index = 0;
+    for (const x of [-0.726, 0.726]) {
       for (let row = 0; row < 6; row++) {
-        boltMatrix.makeTranslation(x, -0.31 + row * 0.315, z);
-        bolts.setMatrixAt(boltIndex++, boltMatrix);
+        transform.makeTranslation(x, -0.76 + row * 0.304, 0.007);
+        panelBolts.setMatrixAt(index++, transform);
       }
     }
+    group.add(panelBolts);
   }
-  craft.add(bolts);
-  box(0.5, 0.026, 0.45, gold, 0.36, 1.425, -0.2);
-  box(0.44, 0.018, 0.36, graphite, -0.31, 1.428, 0.26);
-  box(1.23, 0.28, 1.15, gold, 0, -0.64, 0);
-  cylinder(0.575, 0.95, copper, 0, -1.065, 0);
-  ring(0.568, 0.023, silver, -0.77);
-  ring(0.57, 0.02, copper, -1.14);
-  cylinder(0.624, 0.115, graphite, 0, -1.566, 0);
-  ring(0.613, 0.027, brightSilver, -1.635);
-  ring(0.523, 0.027, black, -1.65);
-  const lens = mesh(new THREE.CircleGeometry(0.509, 64), glass, 0, -1.646, 0);
-  lens.rotation.x = Math.PI / 2;
-  ring(0.448, 0.012, graphite, -1.657);
-  const aperture = mesh(new THREE.CircleGeometry(0.224, 48), black, 0, -1.662, 0);
-  aperture.rotation.x = Math.PI / 2;
-  const reflection = mesh(new THREE.CircleGeometry(0.11, 32), new THREE.MeshBasicMaterial({ color: 0x6d9ab4, transparent: true, opacity: 0.13 }), -0.15, -1.666, 0.17);
-  reflection.rotation.x = Math.PI / 2;
-  reflection.scale.set(1, 0.35, 1);
 
-  for (const x of [-0.57, 0.57]) {
-    box(0.055, 0.87, 0.055, silver, x, -1.06, 0.42);
-    box(0.17, 0.11, 0.15, graphite, x, -1.48, 0.42);
+  // Subtle machining texture follows the barrel without adding a download.
+  const brushedMap = canvasTexture(128, 256, (ctx, width, height) => {
+    ctx.fillStyle = '#888888';
+    ctx.fillRect(0, 0, width, height);
+    for (let y = 0; y < height; y++) {
+      const value = Math.floor(115 + random() * 24);
+      ctx.fillStyle = `rgb(${value},${value},${value})`;
+      ctx.fillRect(0, y, width, 1);
+    }
+  });
+  brushedMap.colorSpace = THREE.NoColorSpace;
+  const barrelMaterial = copper.clone();
+  barrelMaterial.bumpMap = brushedMap;
+  barrelMaterial.bumpScale = 0.007;
+  barrelMaterial.roughness = 0.4;
+  // Open cylinders and a recessed mirror create an actual optical cavity.
+  mesh(new THREE.CylinderGeometry(0.735, 0.735, 1.79, 64, 1, true), barrelMaterial, 0, -0.795, 0);
+  const cavityMaterial = new THREE.MeshStandardMaterial({ color: 0x111213, metalness: 0.25, roughness: 0.72, side: THREE.DoubleSide });
+  mesh(new THREE.CylinderGeometry(0.675, 0.675, 1.0, 64, 1, true), cavityMaterial, 0, -1.175, 0);
+  ring(0.733, 0.018, copper, -1.6);
+  // A flat, machined flange replaces the previous thick rounded lens bezel.
+  const flange = mesh(new THREE.RingGeometry(0.668, 0.79, 64), silver, 0, -1.706, 0);
+  flange.rotation.x = Math.PI / 2;
+  mesh(new THREE.CylinderGeometry(0.789, 0.789, 0.038, 64, 1, true), graphite, 0, -1.687, 0);
+  ring(0.751, 0.006, brightSilver, -1.711);
+  ring(0.68, 0.009, graphite, -1.709);
+  for (let i = 0; i < 9; i++) {
+    ring(0.659 - i * 0.007, 0.011, black, -1.635 + i * 0.085);
   }
-  const instrument = box(0.4, 0.46, 0.065, graphite, 0.04, -1.04, 0.559);
-  instrument.rotation.x = -0.025;
-  const contacts = new THREE.InstancedMesh(new THREE.CircleGeometry(0.012, 6), gold, 42);
-  const contactMatrix = new THREE.Matrix4();
-  for (let row = 0; row < 7; row++) {
-    for (let col = 0; col < 6; col++) {
-      contactMatrix.makeTranslation(-0.12 + col * 0.059, -1.22 + row * 0.057, 0.6);
-      contacts.setMatrixAt(row * 6 + col, contactMatrix);
+  const mirror = mesh(new THREE.CircleGeometry(0.6, 64), glass, 0, -0.88, 0);
+  mirror.rotation.x = Math.PI / 2;
+  const mirrorFace = new THREE.MeshStandardMaterial({ color: 0x9b9c96, metalness: 0.3, roughness: 0.67 });
+  cylinder(0.225, 0.075, graphite, 0, -1.425, 0);
+  const secondary = mesh(new THREE.CircleGeometry(0.225, 48), mirrorFace, 0, -1.465, 0);
+  secondary.rotation.x = Math.PI / 2;
+  for (let i = 0; i < 3; i++) {
+    const angle = i * Math.PI * 2 / 3 + 0.2;
+    const strut = box(0.49, 0.022, 0.013, graphite, Math.cos(angle) * 0.422, -1.448, Math.sin(angle) * 0.422);
+    strut.rotation.y = -angle;
+  }
+
+  // Copper service bay alongside the telescope, with asymmetric electronics.
+  box(1.54, 1.02, 0.14, copper, 0, -0.83, -0.82);
+  box(0.045, 1.25, 1.2, copper, -0.772, -0.64, -0.25);
+  box(0.045, 1.25, 1.2, copper, 0.772, -0.64, -0.25);
+  const instrument = new THREE.Group();
+  instrument.position.set(0.08, -0.65, 0.732);
+  craft.add(instrument);
+  box(0.62, 0.65, 0.047, graphite, 0, 0, 0, instrument);
+  const patchShape = new THREE.Shape();
+  patchShape.moveTo(-0.018, -0.018);
+  patchShape.lineTo(0.011, -0.022);
+  patchShape.lineTo(0.024, -0.008);
+  patchShape.lineTo(0.018, 0.019);
+  patchShape.lineTo(-0.01, 0.023);
+  patchShape.lineTo(-0.022, 0.007);
+  patchShape.closePath();
+  const contacts = new THREE.InstancedMesh(new THREE.ShapeGeometry(patchShape), gold, 64);
+  const contactTransform = new THREE.Object3D();
+  for (let row = 0; row < 8; row++) {
+    for (let col = 0; col < 8; col++) {
+      contactTransform.position.set((col - 3.5) * 0.071, (row - 3.5) * 0.071, 0.027);
+      contactTransform.rotation.z = random() * 0.4 - 0.2;
+      contactTransform.updateMatrix();
+      contacts.setMatrixAt(row * 8 + col, contactTransform.matrix);
     }
   }
-  craft.add(contacts);
-  box(0.045, 0.72, 0.045, graphite, -0.855, 0.66, 0.12);
-  box(0.2, 0.08, 0.08, silver, -0.81, 0.34, 0.12);
-  cylinder(0.012, 0.52, gold, -0.85, 1.23, 0.12);
-  cylinder(0.008, 0.43, silver, 0.45, 1.62, -0.28);
+  instrument.add(contacts);
+  const sensorPlate = new THREE.Group();
+  sensorPlate.position.set(0.04, -1.36, 0.741);
+  craft.add(sensorPlate);
+  box(0.44, 0.36, 0.036, graphite, 0, 0, 0, sensorPlate);
+  for (const x of [-0.127, 0.127]) {
+    for (const y of [-0.09, 0.09]) box(0.09, 0.084, 0.006, gold, x, y, 0.021, sensorPlate);
+  }
+  box(0.062, 0.062, 0.02, black, 0, 0, 0.03, sensorPlate);
 
-  const labelMap = canvasTexture(512, 100, (ctx, width, height) => {
-    ctx.fillStyle = '#14202a';
-    ctx.fillRect(0, 0, width, height);
-    ctx.fillStyle = '#f7f7ee';
-    ctx.font = '700 58px Arial, sans-serif';
-    ctx.fillText('UZMA', 26, 71);
-    ctx.fillStyle = '#ff794b';
-    ctx.fillRect(226, 22, 6, 56);
-    ctx.fillStyle = '#d6e2e9';
-    ctx.font = '400 36px Arial, sans-serif';
-    ctx.fillText('SAT 1', 258, 64);
+  // Reverse-side electronics remain visible during a complete scroll rotation.
+  const rearBay = new THREE.Group();
+  rearBay.position.set(0, -0.72, -0.9);
+  rearBay.rotation.y = Math.PI;
+  craft.add(rearBay);
+  box(0.8, 0.59, 0.029, silver, 0, 0.03, 0, rearBay);
+  box(0.39, 0.43, 0.022, graphite, -0.48, -0.08, 0.02, rearBay);
+  box(0.36, 0.045, 0.15, gold, -0.17, 0.41, 0.065, rearBay);
+  const electronicsMap = canvasTexture(128, 128, (ctx, width, height) => {
+    ctx.fillStyle = '#838b8b'; ctx.fillRect(0, 0, width, height);
+    for (let y = 4; y < height; y += 7) {
+      for (let x = 4; x < width; x += 7) {
+        ctx.fillStyle = '#b5bdb9'; ctx.fillRect(x, y, 2, 2);
+      }
+    }
+    ctx.fillStyle = '#8d7652';
+    for (let y = 29; y < height; y += 32) ctx.fillRect(0, y, width, 2);
   });
-  const label = new THREE.MeshBasicMaterial({ map: labelMap });
-  mesh(new THREE.PlaneGeometry(1.14, 0.222), label, 0, -0.393, 0.705);
+  const electronics = new THREE.MeshStandardMaterial({ map: electronicsMap, metalness: 0.45, roughness: 0.6 });
+  box(0.4, 0.68, 0.008, electronics, -0.13, -0.045, 0.025, rearBay);
+  box(0.34, 0.4, 0.008, electronics, 0.265, -0.04, 0.025, rearBay);
+  // Compact conical fitting seen on the rear bus; no speculative long antennas.
+  const fitting = mesh(new THREE.ConeGeometry(0.11, 0.17, 24, 1, true), silver, -0.42, 1.64, 0.32);
+  fitting.rotation.z = 0.15;
+  box(0.25, 0.006, 0.25, gold, 0.38, 1.563, -0.33);
+
 
   // Earth is intentionally an atmospheric horizon rather than a geographic
   // data map. Noise is computed on the sphere, so it has no texture downloads.

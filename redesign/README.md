@@ -40,6 +40,25 @@ the page's skip link when editing.
 
 ## Content and attribution
 
+The renewed landing page retains the original [Geospatial AI website](https://www.uzmageoai.com/)
+content and brand palette, checked on 9 September 2026: navy `#2A3E58`, orange
+`#F26522`, secondary text `#646266`, body text `#112222`, and backgrounds
+`#FFFBF7`, `#F2F2FF` and `#FCFCFC`. The orbital hero uses a darker space background.
+The satellite illustration follows the supplied reference views: a copper optical
+barrel, open baffled telescope, compact body-mounted solar panels and gold instrument patches.
+
+The page includes all seven solutions and four services, company introduction,
+vision and mission, three award entries, fourteen partners, seven clients, selected
+news stories and the original contact directory. Copy and images come from the
+existing `site/` mirror and official homepage, About, Services, Solutions, Blog and
+Contact pages. Detailed articles and service pages continue to link to the original
+domain. The short film, Calendly booking and WhatsApp appointment links are retained.
+
+Ground movement uses the dedicated service's InSAR description, and mapping/AI
+service descriptions follow the dedicated pages rather than swapped homepage text.
+The past Map Your Route campaign links to community updates because its original
+registration destination is unavailable; it is not presented as open registration.
+
 Published specifications are linked to the [official Uzma product page](https://uzmagroup.com/uzmasat-1/).
 Keep qualifying wording such as **up to 50 cm per pixel**. The launch date is
 15 January 2025, aboard SpaceX Falcon 9 Transporter-12. Orbital numbers describe

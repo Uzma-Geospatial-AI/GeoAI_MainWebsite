@@ -44,12 +44,34 @@ test('imagery tabs, keyboard navigation and magnification work', async ({ page }
 test('industry selector updates the image, explanation and destination', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/#solutions');
-  await page.getByRole('button', { name: '03 Cities & infrastructure' }).click();
-  await expect(page.locator('#solution-title')).toHaveText('See how your city changes.');
+  await page.getByRole('button', { name: '07 Urban Planning & Development' }).click();
+  await expect(page.locator('#solution-title')).toHaveText('Urban Planning & Development');
   await expect(page.locator('#solution-link')).toHaveAttribute('href', 'https://www.uzmageoai.com/urban-planning-development/');
-  await page.getByRole('button', { name: '04 Ground & geohazards' }).click();
+  await page.getByRole('button', { name: '03 Ground Movement' }).click();
   await expect(page.locator('#solution-description')).toContainText('radar satellite data and InSAR');
   await expect(page.locator('#solution-image')).toHaveAttribute('src', 'assets/img/solutions/ground-movement.webp');
+});
+
+test('restored offerings and original brand palette stay complete', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/#solutions');
+  const buttons = page.locator('[data-solution]');
+  await expect(buttons).toHaveCount(7);
+  for (const button of await buttons.all()) {
+    const title = await button.locator('span').nth(1).textContent();
+    await button.click();
+    await expect(page.locator('#solution-title')).toHaveText(title);
+    await expect(button).toHaveAttribute('aria-expanded', 'true');
+    expect(await page.locator('#solution-image').evaluate(async image => { await image.decode(); return image.naturalWidth > 0; })).toBe(true);
+  }
+  await expect(page.locator('.service-item')).toHaveCount(4);
+  await expect(page.locator('.partner-logos img')).toHaveCount(14);
+  await expect(page.locator('.client-logos img')).toHaveCount(7);
+  await expect(page.locator('.vision-mission')).toContainText('2030');
+  await expect(page.locator('.film-link')).toHaveAttribute('href', 'https://youtu.be/T0oPHhV7D4Q');
+  await expect(page.locator('.contact-appointment')).toHaveAttribute('href', 'https://wa.me/601156770921');
+  await expect(page.locator('#services')).toHaveCSS('background-color', 'rgb(42, 62, 88)');
+  await expect(page.locator('.hero-actions .button')).toHaveCSS('background-color', 'rgb(242, 101, 34)');
 });
 
 test('mobile menu opens, closes on Escape and follows section links', async ({ page }) => {
@@ -63,8 +85,8 @@ test('mobile menu opens, closes on Escape and follows section links', async ({ p
   await expect(toggle).toBeFocused();
   await expect(toggle).toHaveAttribute('aria-expanded', 'false');
   await toggle.click();
-  await page.getByRole('navigation').getByRole('link', { name: 'Earth in detail' }).click();
-  await expect(page).toHaveURL(/#imagery$/);
+  await page.getByRole('navigation').getByRole('link', { name: 'Solutions', exact: true }).click();
+  await expect(page).toHaveURL(/#solutions$/);
   await expect(toggle).toHaveAttribute('aria-expanded', 'false');
   for (const width of [320, 390, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 900 });
@@ -105,7 +127,7 @@ test('JavaScript disabled still exposes mission and real contact links', async (
   await page.goto('http://localhost:8080');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(page.locator('#scene-fallback img')).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Discuss your project' })).toHaveAttribute('href', /^mailto:geospatial\.ai@uzmagroup\.com/);
+  await expect(page.getByRole('link', { name: 'Share more information with me' })).toHaveAttribute('href', /^mailto:geospatial\.ai@uzmagroup\.com/);
   await context.close();
 });
 

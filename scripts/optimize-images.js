@@ -7,7 +7,11 @@ const images = [
   ['site/images/Giza-Egypt_Gallery-scaled.jpg', 'redesign/assets/img/giza.webp', 1600, 86],
   ['site/images/Satellogic_Ko-Kradat-Thailand.jpg', 'redesign/assets/img/ko-kradat.webp', 1600, 86],
   ['redesign/assets/img/platform-dashboard.png', 'redesign/assets/img/platform-dashboard.webp', 1280, 86],
-  ...['precision-agriculture', 'forestry', 'urban', 'ground-movement'].map(name => [
+  ['site/images/17-1024x576.png', 'redesign/assets/img/blog/launch.webp', 1000, 84],
+  ['site/images/WhatsApp-Image-2024-10-29-at-09.51.39.jpeg', 'redesign/assets/img/blog/broga.webp', 800, 84],
+  ['site/images/uzma-and-satellogic-sign-agreement-1024x768.jpg', 'redesign/assets/img/blog/partnership.webp', 800, 84],
+  ['site/images/Poster-VC-Map-Your-Route-01-768x768.png', 'redesign/assets/img/community.webp', 600, 84],
+  ...['precision-agriculture', 'forestry', 'urban', 'ground-movement', 'plantation', 'infrastructure', 'environmental'].map(name => [
     `redesign/assets/img/solutions/${name}.png`, `redesign/assets/img/solutions/${name}.webp`, 1000, 84,
   ]),
 ];
