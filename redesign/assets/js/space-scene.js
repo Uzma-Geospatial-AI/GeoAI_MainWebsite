@@ -529,7 +529,9 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   function render(time) {
     frame = 0;
     if (disposed || contextUnavailable || !intersecting || document.hidden) return;
-    const delta = previousTime ? Math.min((time - previousTime) / 1000, 0.05) : 1 / 60;
+    // Component focus follows elapsed time even when software WebGL draws only
+    // a few frames per second. The hero keeps its tighter simulation clamp.
+    const delta = previousTime ? Math.min((time - previousTime) / 1000, variant === 'product' ? 1 : 0.05) : 1 / 60;
     previousTime = time;
     if (!paused && !reducedMotion) elapsed += delta;
     if (variant === 'product') applyFocus(delta);
@@ -654,6 +656,7 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
       if (disposed || variant !== 'product' || (key !== 'overview' && !focusPositions[key])) return;
       focusKey = key;
       focusImmediate = paused || reducedMotion;
+      previousTime = 0;
       requestRender();
     },
     setProgress(value, immediate = false) {
