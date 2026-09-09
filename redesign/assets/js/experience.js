@@ -29,6 +29,12 @@
       gsap.fromTo('.perspective-image',{scale:1.18,yPercent:3},{scale:1,yPercent:-3,ease:'none',scrollTrigger:{trigger:'.perspective-section',start:'top top',end:'bottom bottom',scrub:1}});
       gsap.to('.perspective-word',{xPercent:-14,ease:'none',scrollTrigger:{trigger:'.perspective-section',start:'top bottom',end:'bottom top',scrub:1}});
       gsap.fromTo('.platform-frame',{rotateY:-14,rotateX:8},{rotateY:0,rotateX:0,ease:'none',scrollTrigger:{trigger:'.intelligence-layout',start:'top 85%',end:'bottom 35%',scrub:1}});
+      document.querySelectorAll('.sector-stories .document-card').forEach((card,index) => {
+        gsap.fromTo(card,{y:55,rotation:index%2 ? 2 : -2},{y:-20,rotation:0,ease:'none',scrollTrigger:{trigger:card,start:'top bottom',end:'bottom center',scrub:1}});
+      });
+      document.querySelectorAll('.group-stories .document-card').forEach(card => {
+        gsap.fromTo(card,{y:45,rotateX:9},{y:0,rotateX:0,ease:'none',scrollTrigger:{trigger:card,start:'top bottom',end:'center center',scrub:1}});
+      });
       // The component explorer is deliberately still until a component is chosen.
     });
   }
@@ -74,7 +80,7 @@
         document.querySelectorAll('[data-component]').forEach(item => item.setAttribute('aria-pressed', String(item === control)));
         const descriptions = {
           overview: ['Engineered to see more.', 'Choose a component to move closer. Explore the camera, the two side instruments and the solar panels.'],
-          camera: ['Multispectral camera', 'Look into the Earth observation camera. Published spatial resolution: up to 50 cm. Swath width: 8 km. Orbital altitude: 470 km.'],
+          camera: ['Multispectral camera', 'Look into the Earth observation camera. Published spatial resolution: up to 50 cm. Swath width: 6.5 km. Orbital altitude: 460–525 km.'],
           'star-left': ['Star tracker · Side 01', 'Explore the side-mounted optical instrument and its protective baffle.'],
           'star-right': ['Star tracker · Side 02', 'View the second optical instrument on the facing panel.'],
           solar: ['Solar panels', 'Explore the solar-cell surfaces around the spacecraft body.'],

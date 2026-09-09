@@ -1,0 +1,3229 @@
+{
+  "sources": {
+    "brochure": {
+      "file": "resources/geoai-brochure-2026.pdf",
+      "sha256": "b7b32e94010f748b13fc9fa4001679f4163814abce08fd425ec03eafeb8b30eb",
+      "pages": 12
+    },
+    "presentation": {
+      "file": "resources/geoai-projects-news.pptx",
+      "sha256": "7ff44198443781e198f38d0f5590608be51eb396dc358b9b4ca18fbfa141b781",
+      "slides": 8
+    }
+  },
+  "units": [
+    {
+      "id": "brochure-01",
+      "document": "brochure",
+      "number": 1,
+      "title": "Game changer",
+      "preview": "assets/documents/brochure-page-01.webp",
+      "text": "",
+      "blocks": [],
+      "images": [
+        "pdf-8"
+      ]
+    },
+    {
+      "id": "brochure-02",
+      "document": "brochure",
+      "number": 2,
+      "title": "About Geospatial AI",
+      "preview": "assets/documents/brochure-page-02.webp",
+      "text": "ABOUT US\nWHAT WE DO\n  & ACHIEVEMENTS\nBIG DATA\nYEAR 2021\n \nTAILORED PLATFORM\n \nGeospatial AI Sdn Bhd, founded in 2021, is a leading\ngeospatial \nanalytics \nprovider, \nleveraging \nAI-driven\nsatellite-based enterprise solution for super large-scale\ndata capture and analysis.\nOur expertise lies in utilizing satellite imagery and\ncutting-edge technology to provide actionable insights\nand information about various aspects of Earth, from\nurban planning to environmental monitoring.\nA member of :\nYEAR 2023 \nAdvanced\nGround\nMovement Risk \nAssessment \nin Solar Farm \nEnvironments \nUsing Satellite-\nBased InSAR \nTechnology\nANALYTICS & SOLUTION\n \nPROFESSIONAL TRAINING\nCOURSES\nYEAR 2024\nMalaysia\nTechnology\nExcellence\nAward –\nEmerging\nTechnology\nfor UzmaSAT-1\nProgramme\nSatellite-\nDriven\nFlood Risk\nAssessment \nand \nGeohazard\nIdentification \nfor Solar\nFarms\nColombia\nEcuador\nPeru \nLibya\nMalaysia\nIndonesia\nThailand \nProvide satellite images and any\nspatial data services for various\ncommercial, \ngovernment \nand\ndefense applications.\nIntuitive \nand \nsecured \nplatform\ndevelopment tailored to end-user\nneeds and requirements \nUtilizing \nAI-driven \nsolution \nand\nexpert remote sensing analysis to\ntransform \ngeospatial \ndataset \nto\ncritical insights. \nProvide consultancy and bespoke\ntraining course on remote sensing\nand GIS for various sectors. \n1,270,637 \nHectares Analysed \nA wholly owned subsidiary of Uzma Berhad\nAWARDS\n7Countries\nOff-the-shelf and bespoke training\ntailored to your needs.\nExample:\nSatellite imagery (Optical & SAR) &\nDigital Elevation\n",
+      "blocks": [
+        {
+          "text": "ABOUT US WHAT WE DO",
+          "box": [
+            22.788898468017578,
+            144.16697692871094,
+            52.18281936645508,
+            508.7751159667969
+          ]
+        },
+        {
+          "text": "& ACHIEVEMENTS",
+          "box": [
+            49.77190399169922,
+            533.8627319335938,
+            64.4054183959961,
+            655.3251342773438
+          ]
+        },
+        {
+          "text": "BIG DATA",
+          "box": [
+            122.85503387451172,
+            337.9792175292969,
+            174.875244140625,
+            350.1707458496094
+          ]
+        },
+        {
+          "text": "YEAR 2021",
+          "box": [
+            167.05494689941406,
+            540.642822265625,
+            222.31472778320312,
+            552.8343505859375
+          ]
+        },
+        {
+          "text": "TAILORED PLATFORM",
+          "box": [
+            121.93595123291016,
+            445.23321533203125,
+            239.36537170410156,
+            457.42474365234375
+          ]
+        },
+        {
+          "text": "Geospatial AI Sdn Bhd, founded in 2021, is a leading geospatial analytics provider, leveraging AI-driven satellite-based enterprise solution for super large-scale data capture and analysis.",
+          "box": [
+            75.8550796508789,
+            127.6502685546875,
+            358.22125244140625,
+            180.35708618164062
+          ]
+        },
+        {
+          "text": "Our expertise lies in utilizing satellite imagery and cutting-edge technology to provide actionable insights and information about various aspects of Earth, from urban planning to environmental monitoring.",
+          "box": [
+            75.8550796508789,
+            188.86402893066406,
+            357.25726318359375,
+            241.57083129882812
+          ]
+        },
+        {
+          "text": "A member of :",
+          "box": [
+            75.8550796508789,
+            271.4415283203125,
+            147.95457458496094,
+            283.633056640625
+          ]
+        },
+        {
+          "text": "YEAR 2023 Advanced Ground Movement Risk Assessment in Solar Farm Environments Using Satellite- Based InSAR Technology",
+          "box": [
+            327.7039794921875,
+            540.6677856445312,
+            395.8047180175781,
+            640.1395874023438
+          ]
+        },
+        {
+          "text": "ANALYTICS & SOLUTION",
+          "box": [
+            384.52716064453125,
+            445.23321533203125,
+            513.9862060546875,
+            457.42474365234375
+          ]
+        },
+        {
+          "text": "PROFESSIONAL TRAINING COURSES",
+          "box": [
+            381.34844970703125,
+            337.47906494140625,
+            521.44775390625,
+            360.9248352050781
+          ]
+        },
+        {
+          "text": "YEAR 2024 Malaysia Technology Excellence Award – Emerging Technology for UzmaSAT-1 Programme",
+          "box": [
+            500.6591491699219,
+            540.6677856445312,
+            561.0485229492188,
+            625.8842163085938
+          ]
+        },
+        {
+          "text": "Satellite- Driven Flood Risk Assessment and Geohazard Identification for Solar Farms",
+          "box": [
+            167.05494689941406,
+            553.158447265625,
+            226.75018310546875,
+            637.18603515625
+          ]
+        },
+        {
+          "text": "Colombia Ecuador Peru Libya",
+          "box": [
+            269.6980285644531,
+            716.65966796875,
+            309.10064697265625,
+            753.4193725585938
+          ]
+        },
+        {
+          "text": "Malaysia Indonesia Thailand",
+          "box": [
+            510.1937561035156,
+            736.7942504882812,
+            550.1799926757812,
+            764.5505981445312
+          ]
+        },
+        {
+          "text": "Provide satellite images and any spatial data services for various commercial, government and defense applications.",
+          "box": [
+            135.9407196044922,
+            352.84564208984375,
+            303.5011291503906,
+            395.3326416015625
+          ]
+        },
+        {
+          "text": "Intuitive and secured platform development tailored to end-user needs and requirements",
+          "box": [
+            135.9407196044922,
+            462.72528076171875,
+            305.9764404296875,
+            494.70831298828125
+          ]
+        },
+        {
+          "text": "Utilizing AI-driven solution and expert remote sensing analysis to transform geospatial dataset to critical insights.",
+          "box": [
+            395.7958679199219,
+            462.72528076171875,
+            565.5072021484375,
+            505.2122802734375
+          ]
+        },
+        {
+          "text": "Provide consultancy and bespoke training course on remote sensing and GIS for various sectors.",
+          "box": [
+            395.7958679199219,
+            363.3765869140625,
+            565.5482788085938,
+            395.359619140625
+          ]
+        },
+        {
+          "text": "1,270,637 Hectares Analysed",
+          "box": [
+            35.548301696777344,
+            685.0054931640625,
+            237.29209899902344,
+            744.6243896484375
+          ]
+        },
+        {
+          "text": "A wholly owned subsidiary of Uzma Berhad",
+          "box": [
+            75.8550796508789,
+            249.5775604248047,
+            293.042236328125,
+            261.76910400390625
+          ]
+        },
+        {
+          "text": "AWARDS",
+          "box": [
+            24.51447105407715,
+            533.138916015625,
+            52.55594253540039,
+            647.4322509765625
+          ]
+        },
+        {
+          "text": "7Countries",
+          "box": [
+            132.92678833007812,
+            753.9782104492188,
+            216.45103454589844,
+            802.7535400390625
+          ]
+        },
+        {
+          "text": "Off-the-shelf and bespoke training tailored to your needs.",
+          "box": [
+            395.7958679199219,
+            403.1261291503906,
+            565.5413818359375,
+            424.6051940917969
+          ]
+        },
+        {
+          "text": "Example: Satellite imagery (Optical & SAR) & Digital Elevation",
+          "box": [
+            135.9407196044922,
+            398.4428405761719,
+            303.50189208984375,
+            430.4258728027344
+          ]
+        }
+      ],
+      "images": [
+        "pdf-22",
+        "pdf-28",
+        "pdf-41",
+        "pdf-47",
+        "pdf-51",
+        "pdf-59",
+        "pdf-128",
+        "pdf-132",
+        "pdf-136",
+        "pdf-143",
+        "pdf-148",
+        "pdf-152"
+      ]
+    },
+    {
+      "id": "brochure-03",
+      "document": "brochure",
+      "number": 3,
+      "title": "UZMASAT-1 specifications",
+      "preview": "assets/documents/brochure-page-03.webp",
+      "text": "G A M E C H A N G E R\nA major milestone was achieved with the successful launch of UzmaSAT-1 on January 15, 2025, aboard \nSpaceX’s Falcon 9 Transporter-12 from Vandenberg Space Force Base. UzmaSAT-1 delivers high spatial \nresolution optical imagery with frequent revisits throughout the day.\nWith the satellite now operational in orbit, we are expanding our reach and opening new opportunities \nfor geospatial intelligence across various sectors and industries that rely on satellite-based insights \nsuch as agriculture, energy, infrastructure, and environmental monitoring.\nUZMASAT-1 SPECIFICATIONS\n45.4kg\nMASS\n508mm x 575mm x 813mm​\nDIMENSIONS\n460km – 525km​\nAVERAGE OPERATION\nMultispectral camera with sub-meter \nGSD and 6.5km swath\nUp to 50cm Resolution\nWavelengths: \nBlue: 450-517 nm\nGreen: 517-583 nm\nRead: 597-690 nm\nNear-IR: 759-890 nm\n",
+      "blocks": [
+        {
+          "text": "G A M E C H A N G E R",
+          "box": [
+            41.83940124511719,
+            44.349334716796875,
+            200.21058654785156,
+            58.30613327026367
+          ]
+        },
+        {
+          "text": "A major milestone was achieved with the successful launch of UzmaSAT-1 on January 15, 2025, aboard SpaceX’s Falcon 9 Transporter-12 from Vandenberg Space Force Base. UzmaSAT-1 delivers high spatial resolution optical imagery with frequent revisits throughout the day.",
+          "box": [
+            42.51969909667969,
+            181.2404327392578,
+            557.671630859375,
+            220.62042236328125
+          ]
+        },
+        {
+          "text": "With the satellite now operational in orbit, we are expanding our reach and opening new opportunities for geospatial intelligence across various sectors and industries that rely on satellite-based insights such as agriculture, energy, infrastructure, and environmental monitoring.",
+          "box": [
+            42.51969909667969,
+            233.58042907714844,
+            557.6986083984375,
+            272.62042236328125
+          ]
+        },
+        {
+          "text": "UZMASAT-1 SPECIFICATIONS",
+          "box": [
+            41.83940124511719,
+            548.2413330078125,
+            257.3125,
+            567.225341796875
+          ]
+        },
+        {
+          "text": "45.4kg",
+          "box": [
+            231.6029052734375,
+            597.6969604492188,
+            265.0928955078125,
+            610.7369384765625
+          ]
+        },
+        {
+          "text": "MASS",
+          "box": [
+            231.6029052734375,
+            584.5177612304688,
+            258.84588623046875,
+            596.5957641601562
+          ]
+        },
+        {
+          "text": "508mm x 575mm x 813mm​",
+          "box": [
+            286.2301025390625,
+            597.6969604492188,
+            422.2000732421875,
+            610.7369384765625
+          ]
+        },
+        {
+          "text": "DIMENSIONS",
+          "box": [
+            286.2301025390625,
+            584.5177612304688,
+            348.6360778808594,
+            596.5957641601562
+          ]
+        },
+        {
+          "text": "460km – 525km​",
+          "box": [
+            437.6693115234375,
+            597.6969604492188,
+            519.8793334960938,
+            610.7369384765625
+          ]
+        },
+        {
+          "text": "AVERAGE OPERATION",
+          "box": [
+            437.6693115234375,
+            584.5177612304688,
+            543.9321899414062,
+            596.5957641601562
+          ]
+        },
+        {
+          "text": "Multispectral camera with sub-meter",
+          "box": [
+            241.0677947998047,
+            632.6452026367188,
+            430.49481201171875,
+            645.6851806640625
+          ]
+        },
+        {
+          "text": "GSD and 6.5km swath",
+          "box": [
+            241.0677947998047,
+            648.6452026367188,
+            351.1968078613281,
+            661.6851806640625
+          ]
+        },
+        {
+          "text": "Up to 50cm Resolution",
+          "box": [
+            241.0677947998047,
+            664.6452026367188,
+            355.92779541015625,
+            677.6851806640625
+          ]
+        },
+        {
+          "text": "Wavelengths:",
+          "box": [
+            240.9449005126953,
+            680.1011352539062,
+            312.5549011230469,
+            693.14111328125
+          ]
+        },
+        {
+          "text": "Blue: 450-517 nm",
+          "box": [
+            255.11810302734375,
+            696.1011352539062,
+            342.26812744140625,
+            709.14111328125
+          ]
+        },
+        {
+          "text": "Green: 517-583 nm",
+          "box": [
+            255.11810302734375,
+            712.1011352539062,
+            348.078125,
+            725.14111328125
+          ]
+        },
+        {
+          "text": "Read: 597-690 nm",
+          "box": [
+            255.11810302734375,
+            728.1011352539062,
+            346.9381103515625,
+            741.14111328125
+          ]
+        },
+        {
+          "text": "Near-IR: 759-890 nm",
+          "box": [
+            255.11810302734375,
+            744.1011352539062,
+            359.9881591796875,
+            757.14111328125
+          ]
+        }
+      ],
+      "images": [
+        "pdf-339",
+        "pdf-341",
+        "pdf-343",
+        "pdf-345",
+        "pdf-317",
+        "pdf-320",
+        "pdf-324"
+      ]
+    },
+    {
+      "id": "brochure-04",
+      "document": "brochure",
+      "number": 4,
+      "title": "Advanced satellite features",
+      "preview": "assets/documents/brochure-page-04.webp",
+      "text": "UZMASAT-1 ADVANCED FEATURES​\nLEVERAGING \nHIGH TEMPORAL \n& HIGH SPATIAL \nRESOLUTION \nSATELLITE DATA \nFOR DIVERSE \nUSE CASES\nEnsures frequent \nrevisit rates of any \npoint of interest, \noffering regular and \nconsistent updates\nHIGH \nTEMPORAL\n50 cm multispectral \ndata with top \nindustry-level \nradiometric values\nHIGH SPATIAL\nRESOLUTION\nAnalyze large areas \nof spatial data \nefficiently\nBIG \nDATA\nCalibrated Malaysian \natmospheric tropical \nmodel for accurate \ninsights and analysis\nTROPICAL\nPRECISION\nTask and access \nsatellite imagery in \nunder 6 hours\nLOW LATENCY\nFOR RAPID RESPONSE\nSEE BETTER. SEE THE BIGGER PICTURE. SEE THE UNSEEN​\nLARGE SCALE\nDEVELOPMENT \nPROGRESS \nMONITORING\nLAND\nMANAGEMENT\nAGRICULTURE\nCOASTAL \n& MARITIME \nMONITORING\nDISASTER\nMANAGEMENT\nSUSTAINABLE\nFOREST\nMANAGEMENT\n",
+      "blocks": [
+        {
+          "text": "UZMASAT-1 ADVANCED FEATURES​",
+          "box": [
+            38.086299896240234,
+            180.64044189453125,
+            301.66290283203125,
+            199.6244354248047
+          ]
+        },
+        {
+          "text": "LEVERAGING HIGH TEMPORAL",
+          "box": [
+            215.63059997558594,
+            548.736328125,
+            384.88458251953125,
+            594.7442626953125
+          ]
+        },
+        {
+          "text": "& HIGH SPATIAL",
+          "box": [
+            219.83360290527344,
+            591.9363403320312,
+            380.6816711425781,
+            616.3442993164062
+          ]
+        },
+        {
+          "text": "RESOLUTION SATELLITE DATA",
+          "box": [
+            217.13340759277344,
+            613.5363159179688,
+            383.3814392089844,
+            659.5443115234375
+          ]
+        },
+        {
+          "text": "FOR DIVERSE",
+          "box": [
+            232.3166046142578,
+            656.736328125,
+            368.1986083984375,
+            681.144287109375
+          ]
+        },
+        {
+          "text": "USE CASES",
+          "box": [
+            244.05239868164062,
+            678.3363037109375,
+            351.224365234375,
+            702.7442626953125
+          ]
+        },
+        {
+          "text": "Ensures frequent revisit rates of any",
+          "box": [
+            45.825599670410156,
+            300.07489013671875,
+            121.20162200927734,
+            320.1068115234375
+          ]
+        },
+        {
+          "text": "point of interest, offering regular and",
+          "box": [
+            41.6697998046875,
+            319.27490234375,
+            125.35781860351562,
+            339.3069152832031
+          ]
+        },
+        {
+          "text": "consistent updates",
+          "box": [
+            43.6255989074707,
+            338.47491455078125,
+            121.30561065673828,
+            348.90692138671875
+          ]
+        },
+        {
+          "text": "HIGH TEMPORAL",
+          "box": [
+            55.487998962402344,
+            267.2225036621094,
+            109.4429931640625,
+            290.1005554199219
+          ]
+        },
+        {
+          "text": "50 cm multispectral data with top industry-level radiometric values",
+          "box": [
+            142.53970336914062,
+            300.07489013671875,
+            226.4989013671875,
+            339.3069152832031
+          ]
+        },
+        {
+          "text": "HIGH SPATIAL",
+          "box": [
+            149.81149291992188,
+            267.2225036621094,
+            217.13150024414062,
+            279.3005065917969
+          ]
+        },
+        {
+          "text": "RESOLUTION",
+          "box": [
+            152.20989990234375,
+            278.0225524902344,
+            214.73292541503906,
+            290.1005554199219
+          ]
+        },
+        {
+          "text": "Analyze large areas",
+          "box": [
+            245.36549377441406,
+            300.07489013671875,
+            325.6854248046875,
+            310.50689697265625
+          ]
+        },
+        {
+          "text": "of spatial data",
+          "box": [
+            255.74929809570312,
+            309.6748046875,
+            315.30126953125,
+            320.1068115234375
+          ]
+        },
+        {
+          "text": "efficiently",
+          "box": [
+            264.2734069824219,
+            319.27490234375,
+            304.681396484375,
+            329.7069091796875
+          ]
+        },
+        {
+          "text": "BIG DATA",
+          "box": [
+            271.3100891113281,
+            267.2225036621094,
+            297.6441345214844,
+            290.1005554199219
+          ]
+        },
+        {
+          "text": "Calibrated Malaysian atmospheric tropical",
+          "box": [
+            343.0715026855469,
+            300.07489013671875,
+            429.9914855957031,
+            320.1068115234375
+          ]
+        },
+        {
+          "text": "model for accurate insights and analysis",
+          "box": [
+            343.31549072265625,
+            319.27490234375,
+            427.6513977050781,
+            339.3069152832031
+          ]
+        },
+        {
+          "text": "TROPICAL PRECISION",
+          "box": [
+            359.0008850097656,
+            267.2225036621094,
+            411.96588134765625,
+            290.1005554199219
+          ]
+        },
+        {
+          "text": "Task and access satellite imagery in",
+          "box": [
+            454.4236145019531,
+            300.07489013671875,
+            534.103515625,
+            320.1068115234375
+          ]
+        },
+        {
+          "text": "under 6 hours",
+          "box": [
+            464.6034851074219,
+            319.27490234375,
+            521.8274536132812,
+            329.7069091796875
+          ]
+        },
+        {
+          "text": "LOW LATENCY FOR RAPID RESPONSE",
+          "box": [
+            438.9413146972656,
+            267.2225036621094,
+            547.4901733398438,
+            290.1005554199219
+          ]
+        },
+        {
+          "text": "SEE BETTER. SEE THE BIGGER PICTURE. SEE THE UNSEEN​",
+          "box": [
+            91.73529815673828,
+            76.04741668701172,
+            521.9901123046875,
+            93.93541717529297
+          ]
+        },
+        {
+          "text": "LARGE SCALE DEVELOPMENT",
+          "box": [
+            108.4188003540039,
+            658.12255859375,
+            185.28782653808594,
+            681.12646484375
+          ]
+        },
+        {
+          "text": "PROGRESS MONITORING",
+          "box": [
+            118.22000122070312,
+            679.7225341796875,
+            185.2880096435547,
+            702.7265014648438
+          ]
+        },
+        {
+          "text": "LAND MANAGEMENT",
+          "box": [
+            111.37979888916016,
+            556.8546142578125,
+            182.66880798339844,
+            579.858642578125
+          ]
+        },
+        {
+          "text": "AGRICULTURE",
+          "box": [
+            206.49070739746094,
+            487.57611083984375,
+            274.38671875,
+            499.65411376953125
+          ]
+        },
+        {
+          "text": "COASTAL & MARITIME MONITORING",
+          "box": [
+            320.89678955078125,
+            469.172119140625,
+            384.9677734375,
+            502.8501281738281
+          ]
+        },
+        {
+          "text": "DISASTER MANAGEMENT",
+          "box": [
+            412.6070861816406,
+            559.7493896484375,
+            483.4281005859375,
+            582.6273803710938
+          ]
+        },
+        {
+          "text": "SUSTAINABLE FOREST MANAGEMENT",
+          "box": [
+            412.974609375,
+            659.231201171875,
+            483.7956237792969,
+            692.9091796875
+          ]
+        }
+      ],
+      "images": [
+        "pdf-554",
+        "pdf-556",
+        "pdf-558",
+        "pdf-559",
+        "pdf-561",
+        "pdf-563",
+        "pdf-565",
+        "pdf-567",
+        "pdf-569",
+        "pdf-570",
+        "pdf-572",
+        "pdf-451",
+        "pdf-455",
+        "pdf-465",
+        "pdf-469"
+      ]
+    },
+    {
+      "id": "brochure-05",
+      "document": "brochure",
+      "number": 5,
+      "title": "Agriculture management",
+      "preview": "assets/documents/brochure-page-05.webp",
+      "text": "KEY FEATURES & BENEFITS\nTRANSFORMING AGRICULTURE THROUGH SPACE AND DATA\nFertilizer Management\nDisease Detection\nIrrigation Management\nWeather Forecast\nGrowth Monitoring\nTransform your agricultural operations with Geospatial \nAI’s precision agriculture solutions, powered by advanced \nanalytics and high resolution data from UzmaSAT-1. \nBy combining satellite imagery, geospatial insights, and \npredictive modelling, we help you monitor crop health, \nsoil conditions, and climate factors in real time to enable \nsmarter decisions that boost yield, lower costs, and reduce \nenvironmental impact.\nHelps farmers to understand \ntheirland better and make \ninformeddecisions for \nhealthier cropsIdentifies\nProvides insights on ideal conditions \nforrice growth. Rainfall Predictions - helps \nplan irrigation and avoid water stress\nMonitors overall plant health. \nTracks crop growth stages to \npredict yields\nIdentifies crop diseases \ninfestations before they \nspread\nEnsures each zone gets \nthe right amount of water, \npreventing over-or-under-\nirrigation\nAGRICULTURE MANAGEMENT​\n",
+      "blocks": [
+        {
+          "text": "KEY FEATURES & BENEFITS",
+          "box": [
+            45.20000076293945,
+            443.41510009765625,
+            190.08999633789062,
+            456.8351135253906
+          ]
+        },
+        {
+          "text": "TRANSFORMING AGRICULTURE THROUGH SPACE AND DATA",
+          "box": [
+            45.20000076293945,
+            149.2999267578125,
+            498.9820861816406,
+            168.28392028808594
+          ]
+        },
+        {
+          "text": "Fertilizer Management Disease Detection Irrigation Management",
+          "box": [
+            69.44879913330078,
+            573.2839965820312,
+            516.1565551757812,
+            587.2583618164062
+          ]
+        },
+        {
+          "text": "Weather Forecast Growth Monitoring",
+          "box": [
+            155.67520141601562,
+            751.76513671875,
+            463.9338684082031,
+            765.2265625
+          ]
+        },
+        {
+          "text": "Transform your agricultural operations with Geospatial AI’s precision agriculture solutions, powered by advanced analytics and high resolution data from UzmaSAT-1.",
+          "box": [
+            45.20000076293945,
+            176.6659393310547,
+            348.08099365234375,
+            215.7059326171875
+          ]
+        },
+        {
+          "text": "By combining satellite imagery, geospatial insights, and predictive modelling, we help you monitor crop health, soil conditions, and climate factors in real time to enable smarter decisions that boost yield, lower costs, and reduce environmental impact.",
+          "box": [
+            45.20000076293945,
+            228.6659393310547,
+            348.0799865722656,
+            293.7059326171875
+          ]
+        },
+        {
+          "text": "Helps farmers to understand",
+          "box": [
+            56.95000076293945,
+            591.5821533203125,
+            206.07798767089844,
+            604.6221313476562
+          ]
+        },
+        {
+          "text": "theirland better and make",
+          "box": [
+            63.0,
+            604.5821533203125,
+            200.02999877929688,
+            617.6221313476562
+          ]
+        },
+        {
+          "text": "informeddecisions for healthier cropsIdentifies",
+          "box": [
+            68.00499725341797,
+            617.5821533203125,
+            192.40499877929688,
+            643.6221313476562
+          ]
+        },
+        {
+          "text": "Provides insights on ideal conditions forrice growth. Rainfall Predictions - helps",
+          "box": [
+            88.29440307617188,
+            769.4700317382812,
+            303.5943603515625,
+            795.510009765625
+          ]
+        },
+        {
+          "text": "plan irrigation and avoid water stress",
+          "box": [
+            100.5792007446289,
+            795.4700317382812,
+            288.6891784667969,
+            808.510009765625
+          ]
+        },
+        {
+          "text": "Monitors overall plant health.",
+          "box": [
+            336.9989929199219,
+            769.4700317382812,
+            487.7289733886719,
+            782.510009765625
+          ]
+        },
+        {
+          "text": "Tracks crop growth stages to",
+          "box": [
+            337.60369873046875,
+            782.4700317382812,
+            487.12359619140625,
+            795.510009765625
+          ]
+        },
+        {
+          "text": "predict yields",
+          "box": [
+            376.8785095214844,
+            795.4700317382812,
+            445.22857666015625,
+            808.510009765625
+          ]
+        },
+        {
+          "text": "Identifies crop diseases infestations before they",
+          "box": [
+            232.80650329589844,
+            591.5821533203125,
+            355.81646728515625,
+            617.6221313476562
+          ]
+        },
+        {
+          "text": "spread",
+          "box": [
+            275.680908203125,
+            617.5821533203125,
+            310.3208923339844,
+            630.6221313476562
+          ]
+        },
+        {
+          "text": "Ensures each zone gets the right amount of water,",
+          "box": [
+            387.1612854003906,
+            591.5821533203125,
+            524.4512329101562,
+            617.6221313476562
+          ]
+        },
+        {
+          "text": "preventing over-or-under-",
+          "box": [
+            387.79620361328125,
+            617.5821533203125,
+            521.1951904296875,
+            630.6221313476562
+          ]
+        },
+        {
+          "text": "irrigation",
+          "box": [
+            431.1506042480469,
+            630.5821533203125,
+            477.8406066894531,
+            643.6221313476562
+          ]
+        },
+        {
+          "text": "AGRICULTURE MANAGEMENT​",
+          "box": [
+            42.51969909667969,
+            48.479942321777344,
+            461.9256896972656,
+            83.73594665527344
+          ]
+        }
+      ],
+      "images": [
+        "pdf-738",
+        "pdf-740",
+        "pdf-742",
+        "pdf-744",
+        "pdf-746",
+        "pdf-748",
+        "pdf-750",
+        "pdf-714",
+        "pdf-736"
+      ]
+    },
+    {
+      "id": "brochure-06",
+      "document": "brochure",
+      "number": 6,
+      "title": "Plantation management",
+      "preview": "assets/documents/brochure-page-06.webp",
+      "text": "PLANTATION MANAGEMENT FOR A SUSTAINABLE FUTURE\nKEY FEATURES & BENEFITS\nMaximise your plantation’s productivity and sustainability with Geospatial AI’s innovative solutions \npowered by high-resolution data from UzmaSAT-1. With advanced geospatial analytics and satellite \nimagery, we deliver valuable insights into your land, crops, and climate to help you optimise planting, \nmonitoring, and harvesting for better efficiency and long-term sustainability.\nIdentify and monitor oil palm or \nrubber plantations established on \npeatlands to minimize ecological \nimpact and ensure compliance with \nsustainability standards.\nEnable \nplantation \nmanagers \nto \nmonitorland use, ensure regulatory \nadherence,and \nprovide \nverifiable, \nreal-time \nevidencefor \nsustainable \nand transparent supply chains for \nEUDR compliance.\nPrecision \nMapping \nof \nAging \nPlantations​\nReplanting Progress Tracking\nMonitoring Sustainability Practices\nCompliance and Traceability with \nHigh-Resolution Imagery​\nPLANTATION MANAGEMENT​\nIdentify and prioritize plantations \nexceeding 19 years of age, allowing \ntargeted replanting efforts.\nOil palm planted on peatland \narea; requiring environmental \nremediation\nOil palm planted on steep slope \n>25; requiring environmental \nremediation\nOil palm planted within riparian \narea; requiring environmental \nremediation\nOil Palm planted \nin 2015\nOil Palm planted\nin 2017\nOil Palm planted \nin 2024\nIdentify deforestation, land clearing, \nreplanting activities, and tree count \nfluctuations.\n",
+      "blocks": [
+        {
+          "text": "PLANTATION MANAGEMENT FOR A SUSTAINABLE FUTURE",
+          "box": [
+            45.35430145263672,
+            149.15904235839844,
+            452.7091979980469,
+            166.7870330810547
+          ]
+        },
+        {
+          "text": "KEY FEATURES & BENEFITS",
+          "box": [
+            45.35430145263672,
+            348.79559326171875,
+            190.24429321289062,
+            362.2156066894531
+          ]
+        },
+        {
+          "text": "Maximise your plantation’s productivity and sustainability with Geospatial AI’s innovative solutions powered by high-resolution data from UzmaSAT-1. With advanced geospatial analytics and satellite imagery, we deliver valuable insights into your land, crops, and climate to help you optimise planting, monitoring, and harvesting for better efficiency and long-term sustainability.",
+          "box": [
+            45.35430145263672,
+            176.6659393310547,
+            554.0133666992188,
+            228.7059326171875
+          ]
+        },
+        {
+          "text": "Identify and monitor oil palm or rubber plantations established on peatlands to minimize ecological impact and ensure compliance with sustainability standards.",
+          "box": [
+            45.39500045776367,
+            557.8245239257812,
+            236.5299530029297,
+            622.864501953125
+          ]
+        },
+        {
+          "text": "Enable plantation managers to monitorland use, ensure regulatory adherence,and provide verifiable, real-time evidencefor sustainable and transparent supply chains for EUDR compliance.",
+          "box": [
+            45.35430145263672,
+            677.2391357421875,
+            236.4842987060547,
+            755.2791137695312
+          ]
+        },
+        {
+          "text": "Precision Mapping of Aging Plantations​",
+          "box": [
+            45.35430145263672,
+            375.5046081542969,
+            236.7242889404297,
+            401.92462158203125
+          ]
+        },
+        {
+          "text": "Replanting Progress Tracking",
+          "box": [
+            45.35430145263672,
+            464.45941162109375,
+            203.77432250976562,
+            477.8794250488281
+          ]
+        },
+        {
+          "text": "Monitoring Sustainability Practices",
+          "box": [
+            45.35430145263672,
+            540.3104248046875,
+            231.78427124023438,
+            553.7304077148438
+          ]
+        },
+        {
+          "text": "Compliance and Traceability with High-Resolution Imagery​",
+          "box": [
+            45.35430145263672,
+            642.7192993164062,
+            236.73426818847656,
+            669.1392822265625
+          ]
+        },
+        {
+          "text": "PLANTATION MANAGEMENT​",
+          "box": [
+            45.35430145263672,
+            48.479942321777344,
+            449.0563049316406,
+            83.73594665527344
+          ]
+        },
+        {
+          "text": "Identify and prioritize plantations exceeding 19 years of age, allowing targeted replanting efforts.",
+          "box": [
+            45.35430145263672,
+            404.4071960449219,
+            236.4872589111328,
+            441.44720458984375
+          ]
+        },
+        {
+          "text": "Oil palm planted on peatland area; requiring environmental",
+          "box": [
+            274.9867858886719,
+            466.8627014160156,
+            396.4013671875,
+            486.89483642578125
+          ]
+        },
+        {
+          "text": "remediation",
+          "box": [
+            309.9462890625,
+            486.06280517578125,
+            359.3463134765625,
+            496.49481201171875
+          ]
+        },
+        {
+          "text": "Oil palm planted on steep slope",
+          "box": [
+            271.0548095703125,
+            624.3392944335938,
+            400.3341369628906,
+            634.7713012695312
+          ]
+        },
+        {
+          "text": ">25; requiring environmental",
+          "box": [
+            276.77880859375,
+            633.9393310546875,
+            394.609375,
+            644.371337890625
+          ]
+        },
+        {
+          "text": "remediation",
+          "box": [
+            309.9462890625,
+            643.539306640625,
+            359.3463134765625,
+            653.9713134765625
+          ]
+        },
+        {
+          "text": "Oil palm planted within riparian",
+          "box": [
+            270.9028015136719,
+            778.35400390625,
+            400.48541259765625,
+            788.7860107421875
+          ]
+        },
+        {
+          "text": "area; requiring environmental",
+          "box": [
+            274.9867858886719,
+            787.9540405273438,
+            396.4013671875,
+            798.3860473632812
+          ]
+        },
+        {
+          "text": "remediation",
+          "box": [
+            309.9462890625,
+            797.5540161132812,
+            359.3463134765625,
+            807.9860229492188
+          ]
+        },
+        {
+          "text": "Oil Palm planted",
+          "box": [
+            451.7952880859375,
+            466.8627014160156,
+            521.1465454101562,
+            477.2947082519531
+          ]
+        },
+        {
+          "text": "in 2015",
+          "box": [
+            471.9870910644531,
+            476.46282958984375,
+            498.859130859375,
+            486.89483642578125
+          ]
+        },
+        {
+          "text": "Oil Palm planted",
+          "box": [
+            448.7237854003906,
+            624.3392944335938,
+            515.9790649414062,
+            634.7713012695312
+          ]
+        },
+        {
+          "text": "in 2017",
+          "box": [
+            468.8236083984375,
+            633.9393310546875,
+            495.8796081542969,
+            644.371337890625
+          ]
+        },
+        {
+          "text": "Oil Palm planted",
+          "box": [
+            448.7237854003906,
+            779.5140991210938,
+            518.0750732421875,
+            789.9461059570312
+          ]
+        },
+        {
+          "text": "in 2024",
+          "box": [
+            467.7995910644531,
+            789.1141357421875,
+            496.90362548828125,
+            799.546142578125
+          ]
+        },
+        {
+          "text": "Identify deforestation, land clearing, replanting activities, and tree count fluctuations.",
+          "box": [
+            45.35430145263672,
+            480.439208984375,
+            236.4822998046875,
+            517.479248046875
+          ]
+        }
+      ],
+      "images": [
+        "pdf-848",
+        "pdf-850",
+        "pdf-852",
+        "pdf-854",
+        "pdf-856",
+        "pdf-858",
+        "pdf-860",
+        "pdf-862",
+        "pdf-714",
+        "pdf-842",
+        "pdf-846"
+      ]
+    },
+    {
+      "id": "brochure-07",
+      "document": "brochure",
+      "number": 7,
+      "title": "Urban planning and development",
+      "preview": "assets/documents/brochure-page-07.webp",
+      "text": "TRANSFORMATIVE ROLE OF SATELLITE-BASED \nREMOTE SENSING IN URBAN MONITORING​\nURBAN SPRAWL, GREEN SPACES, AND HEAT \nISLANDS MONITORING​\nBUILD SMARTER CITIES WITH GEOSPATIAL AI’S ADVANCED \nINFRASTRUCTURE AND URBAN PLANNING SOLUTIONS​\nLeveraging \ngeospatial \nanalytics \nand \nhigh \nresolution satellite imagery from UzmaSAT-1, our \ninfrastructure and urban planning solutions are \nset to provide valuable insights for sustainable and \nefficient development.\nBy understanding the unique characteristics \nof your urban environment, we can optimize \ninfrastructure planning, asset management, and \nurban renewal.\nSatellite-based \nremote \nsensing \nplays \na \ntransformative \nrole \nin \nurban \nmonitoring \nby \nproviding critical data to support smart city \ninitiatives, low-carbon goals, and green, sustainable \nurban development​\nWith high-resolution satellite imagery, we can track \nurban sprawl, monitor green spaces, and analyse \nheat islands, all of which inform urban planning \nfor better resource allocation and environmental \nimpact reduction.\nURBAN PLANNING \n& DEVELOPMENT​\nKEY FEATURES & BENEFITS \nURBAN PLANNING \nAND DEVELOPMENT \nOBJECT-BASED \nIMAGE ANALYSIS \nRISK ASSESSMENT \nAND MITIGATION \nGeological hazard \nassessment \nObject-oriented \nsegmentation\nSite Selection\nEmergency response \nplanning \nEarly ground movement \ndetection\nIntegration of spectral, spatial\nand textural features\nRule-based and machine\nlearning classification\nUrban Renewal\nTransportation \nplanning\n",
+      "blocks": [
+        {
+          "text": "TRANSFORMATIVE ROLE OF SATELLITE-BASED REMOTE SENSING IN URBAN MONITORING​",
+          "box": [
+            45.20000076293945,
+            333.7682189941406,
+            300.25,
+            359.3282165527344
+          ]
+        },
+        {
+          "text": "URBAN SPRAWL, GREEN SPACES, AND HEAT ISLANDS MONITORING​",
+          "box": [
+            45.20000076293945,
+            442.7401123046875,
+            288.7310485839844,
+            468.30010986328125
+          ]
+        },
+        {
+          "text": "BUILD SMARTER CITIES WITH GEOSPATIAL AI’S ADVANCED INFRASTRUCTURE AND URBAN PLANNING SOLUTIONS​",
+          "box": [
+            45.20000076293945,
+            146.02593994140625,
+            497.3301086425781,
+            180.30992126464844
+          ]
+        },
+        {
+          "text": "Leveraging geospatial analytics and high resolution satellite imagery from UzmaSAT-1, our infrastructure and urban planning solutions are set to provide valuable insights for sustainable and efficient development.",
+          "box": [
+            45.20000076293945,
+            192.43418884277344,
+            305.3699645996094,
+            257.47418212890625
+          ]
+        },
+        {
+          "text": "By understanding the unique characteristics of your urban environment, we can optimize infrastructure planning, asset management, and urban renewal.",
+          "box": [
+            45.20000076293945,
+            270.4341735839844,
+            305.3580017089844,
+            322.47418212890625
+          ]
+        },
+        {
+          "text": "Satellite-based remote sensing plays a transformative role in urban monitoring by providing critical data to support smart city initiatives, low-carbon goals, and green, sustainable urban development​",
+          "box": [
+            45.20000076293945,
+            367.01959228515625,
+            305.3699645996094,
+            432.0596008300781
+          ]
+        },
+        {
+          "text": "With high-resolution satellite imagery, we can track urban sprawl, monitor green spaces, and analyse heat islands, all of which inform urban planning for better resource allocation and environmental impact reduction.",
+          "box": [
+            45.20000076293945,
+            476.99151611328125,
+            305.3699645996094,
+            542.031494140625
+          ]
+        },
+        {
+          "text": "URBAN PLANNING & DEVELOPMENT​",
+          "box": [
+            42.51969909667969,
+            35.479942321777344,
+            309.2016906738281,
+            96.73594665527344
+          ]
+        },
+        {
+          "text": "KEY FEATURES & BENEFITS",
+          "box": [
+            43.2156982421875,
+            556.991943359375,
+            188.69371032714844,
+            570.4119262695312
+          ]
+        },
+        {
+          "text": "URBAN PLANNING AND DEVELOPMENT",
+          "box": [
+            68.53070068359375,
+            581.241943359375,
+            179.98971557617188,
+            606.8019409179688
+          ]
+        },
+        {
+          "text": "OBJECT-BASED IMAGE ANALYSIS",
+          "box": [
+            251.34579467773438,
+            581.031982421875,
+            344.5247802734375,
+            606.5919799804688
+          ]
+        },
+        {
+          "text": "RISK ASSESSMENT",
+          "box": [
+            420.7633056640625,
+            581.523681640625,
+            522.4932861328125,
+            595.0836791992188
+          ]
+        },
+        {
+          "text": "AND MITIGATION",
+          "box": [
+            424.5632019042969,
+            593.523681640625,
+            518.6922607421875,
+            607.0836791992188
+          ]
+        },
+        {
+          "text": "Geological hazard",
+          "box": [
+            425.7356872558594,
+            700.0411987304688,
+            518.07470703125,
+            713.0811767578125
+          ]
+        },
+        {
+          "text": "assessment Object-oriented",
+          "box": [
+            257.19061279296875,
+            700.0411987304688,
+            502.71038818359375,
+            725.0811767578125
+          ]
+        },
+        {
+          "text": "segmentation Site Selection",
+          "box": [
+            83.85590362548828,
+            706.0411987304688,
+            332.6353759765625,
+            725.0811767578125
+          ]
+        },
+        {
+          "text": "Emergency response",
+          "box": [
+            417.58099365234375,
+            737.1397094726562,
+            526.2300415039062,
+            750.1796875
+          ]
+        },
+        {
+          "text": "planning",
+          "box": [
+            447.9753112792969,
+            749.1397094726562,
+            495.83526611328125,
+            762.1796875
+          ]
+        },
+        {
+          "text": "Early ground movement",
+          "box": [
+            407.8429870605469,
+            773.7526245117188,
+            533.1220703125,
+            786.7926025390625
+          ]
+        },
+        {
+          "text": "detection",
+          "box": [
+            445.0675964355469,
+            785.7526245117188,
+            493.277587890625,
+            798.7926025390625
+          ]
+        },
+        {
+          "text": "Integration of spectral, spatial",
+          "box": [
+            222.81590270996094,
+            737.1397094726562,
+            371.473876953125,
+            750.1796875
+          ]
+        },
+        {
+          "text": "and textural features",
+          "box": [
+            245.24549865722656,
+            749.1397094726562,
+            349.0445556640625,
+            762.1796875
+          ]
+        },
+        {
+          "text": "Rule-based and machine",
+          "box": [
+            234.12069702148438,
+            773.7526245117188,
+            360.1687316894531,
+            786.7926025390625
+          ]
+        },
+        {
+          "text": "learning classification",
+          "box": [
+            242.67059326171875,
+            785.7526245117188,
+            351.6196594238281,
+            798.7926025390625
+          ]
+        },
+        {
+          "text": "Urban Renewal",
+          "box": [
+            79.18070220947266,
+            744.8197631835938,
+            156.2896728515625,
+            757.8597412109375
+          ]
+        },
+        {
+          "text": "Transportation",
+          "box": [
+            80.7156982421875,
+            773.7526245117188,
+            157.37570190429688,
+            786.7926025390625
+          ]
+        },
+        {
+          "text": "planning",
+          "box": [
+            95.11060333251953,
+            785.7526245117188,
+            140.359619140625,
+            798.7926025390625
+          ]
+        }
+      ],
+      "images": [
+        "pdf-993",
+        "pdf-994",
+        "pdf-995",
+        "pdf-996",
+        "pdf-979",
+        "pdf-714",
+        "pdf-991"
+      ]
+    },
+    {
+      "id": "brochure-08",
+      "document": "brochure",
+      "number": 8,
+      "title": "Environmental monitoring",
+      "preview": "assets/documents/brochure-page-08.webp",
+      "text": "ENVIRONMENTAL \nMONITORING\nINTEGRATED ENVIRONMENTAL MONITORING USING SATELLITE \nTECHNOLOGY\nSatellite technology, combined with advanced geospatial analytics, plays a vital role in detecting \nand monitoring greenhouse gases (GHG) such as methane (CH₄), carbon dioxide (CO₂), and nitrogen \ndioxide (NO₂). By using shortwave infrared (SWIR) spectral analysis, it offers accurate, real-time \ninsights into atmospheric emissions. These capabilities can support governments, industries, and \nenvironmental agencies in enhancing regulatory compliance, reducing environmental risks, and \nmaking informed decisions to promote sustainable development.\nKEY FEATURES & BENEFITS\nReal-Time GHG Monitoring\nMethane Monitoring ​\nClimate Monitoring And \nData-Driven Decision Making\nSatellite-Based Environmental \nMonitoring And Emissions Tracking\nWide Area Coverage\nActionable Environmental Intelligence\nScalable and Customizable\nSupports Climate Goals\nContinuous detection of CH₄, CO₂, and NO₂ \nemissions using satellite-based SWIR imaging.\nMonitor vast geographic regions with high \ntemporal frequency and resolution.\nGain insights for policy formulation, emission \nsource tracking, and environmental compliance.\nEasily integrates with existing systems and can \nbe tailored to specific industry or regulatory \nneeds.\nA powerful tool to support ESG initiatives, carbon \ntracking, and global climate commitments.\n",
+      "blocks": [
+        {
+          "text": "ENVIRONMENTAL MONITORING",
+          "box": [
+            42.51969909667969,
+            31.766929626464844,
+            297.2416687011719,
+            93.02293395996094
+          ]
+        },
+        {
+          "text": "INTEGRATED ENVIRONMENTAL MONITORING USING SATELLITE TECHNOLOGY",
+          "box": [
+            42.71099853515625,
+            146.02593994140625,
+            521.1749267578125,
+            180.30992126464844
+          ]
+        },
+        {
+          "text": "Satellite technology, combined with advanced geospatial analytics, plays a vital role in detecting and monitoring greenhouse gases (GHG) such as methane (CH₄), carbon dioxide (CO₂), and nitrogen dioxide (NO₂). By using shortwave infrared (SWIR) spectral analysis, it offers accurate, real-time insights into atmospheric emissions. These capabilities can support governments, industries, and environmental agencies in enhancing regulatory compliance, reducing environmental risks, and making informed decisions to promote sustainable development.",
+          "box": [
+            42.51969909667969,
+            190.27781677246094,
+            551.160888671875,
+            268.31781005859375
+          ]
+        },
+        {
+          "text": "KEY FEATURES & BENEFITS",
+          "box": [
+            42.51969909667969,
+            488.6632995605469,
+            187.40969848632812,
+            502.08331298828125
+          ]
+        },
+        {
+          "text": "Real-Time GHG Monitoring",
+          "box": [
+            54.04309844970703,
+            509.6898193359375,
+            195.24305725097656,
+            523.1098022460938
+          ]
+        },
+        {
+          "text": "Methane Monitoring ​",
+          "box": [
+            379.2283020019531,
+            751.0303955078125,
+            494.18829345703125,
+            764.4503784179688
+          ]
+        },
+        {
+          "text": "Climate Monitoring And Data-Driven Decision Making Satellite-Based Environmental Monitoring And Emissions Tracking",
+          "box": [
+            70.83899688720703,
+            437.7124938964844,
+            500.36444091796875,
+            464.13250732421875
+          ]
+        },
+        {
+          "text": "Wide Area Coverage",
+          "box": [
+            54.04309844970703,
+            561.3355102539062,
+            162.59312438964844,
+            574.7554931640625
+          ]
+        },
+        {
+          "text": "Actionable Environmental Intelligence",
+          "box": [
+            54.04309844970703,
+            616.9937133789062,
+            259.46307373046875,
+            630.4136962890625
+          ]
+        },
+        {
+          "text": "Scalable and Customizable",
+          "box": [
+            54.04309844970703,
+            672.6661376953125,
+            197.43211364746094,
+            686.0861206054688
+          ]
+        },
+        {
+          "text": "Supports Climate Goals",
+          "box": [
+            54.04309844970703,
+            736.055908203125,
+            178.423095703125,
+            749.4758911132812
+          ]
+        },
+        {
+          "text": "Continuous detection of CH₄, CO₂, and NO₂ emissions using satellite-based SWIR imaging.",
+          "box": [
+            54.04309844970703,
+            524.4872436523438,
+            291.48211669921875,
+            550.5272216796875
+          ]
+        },
+        {
+          "text": "Monitor vast geographic regions with high temporal frequency and resolution.",
+          "box": [
+            54.04309844970703,
+            576.1414184570312,
+            273.82305908203125,
+            602.181396484375
+          ]
+        },
+        {
+          "text": "Gain insights for policy formulation, emission source tracking, and environmental compliance.",
+          "box": [
+            54.04309844970703,
+            631.780029296875,
+            300.4831237792969,
+            657.8200073242188
+          ]
+        },
+        {
+          "text": "Easily integrates with existing systems and can be tailored to specific industry or regulatory needs.",
+          "box": [
+            54.04309844970703,
+            687.4579467773438,
+            295.77313232421875,
+            726.4979248046875
+          ]
+        },
+        {
+          "text": "A powerful tool to support ESG initiatives, carbon tracking, and global climate commitments.",
+          "box": [
+            54.04309844970703,
+            750.8587036132812,
+            306.1020812988281,
+            776.898681640625
+          ]
+        }
+      ],
+      "images": [
+        "pdf-1101",
+        "pdf-1103",
+        "pdf-1105",
+        "pdf-1107",
+        "pdf-714",
+        "pdf-1099"
+      ]
+    },
+    {
+      "id": "brochure-09",
+      "document": "brochure",
+      "number": 9,
+      "title": "Ground movement monitoring",
+      "preview": "assets/documents/brochure-page-09.webp",
+      "text": "GROUND MOVEMENT\nMONITORING\nWHAT IS INSAR?\nWHY SHOULD WE CARE?\nInterferometric Synthetic Aperture Radar (InSAR) is an advanced technique used to monitor ground \nmovement. It works by analysing phase differences between two or more Synthetic Aperture Radar \n(SAR) images to measure surface deformation or topography with high precision.\nThese satellites shoot radar beams at Earth, then scientists analyse how the signals bounce back to \nmeasure tiny ground shifts, down to the millimeter accuracy.\nSINKHOLE\nMONITORING\nLANDSLIDE\nMONITORING\nINFRASTRUCTURE\nMONITORING\nGround movement can silently damage buildings, roads, mines, dams, or pipelines – often before \nanyone notices​\nInSAR helps detect these risks early, enabling preventive action and protecting critical infrastructure​\nIt’s weather-proof and day-or-night capable, since radar works through clouds and darkness\nInSAR supports informed decision-making in road construction by improving maintenance \nplanning at every stage – before, during, and after construction​\n",
+      "blocks": [
+        {
+          "text": "GROUND MOVEMENT MONITORING",
+          "box": [
+            45.20000076293945,
+            31.766929626464844,
+            343.4460144042969,
+            93.02293395996094
+          ]
+        },
+        {
+          "text": "WHAT IS INSAR?",
+          "box": [
+            42.78459930419922,
+            145.02593994140625,
+            168.3505859375,
+            164.0099334716797
+          ]
+        },
+        {
+          "text": "WHY SHOULD WE CARE?",
+          "box": [
+            45.20000076293945,
+            466.7977294921875,
+            235.4040069580078,
+            485.78173828125
+          ]
+        },
+        {
+          "text": "Interferometric Synthetic Aperture Radar (InSAR) is an advanced technique used to monitor ground movement. It works by analysing phase differences between two or more Synthetic Aperture Radar (SAR) images to measure surface deformation or topography with high precision.",
+          "box": [
+            45.20000076293945,
+            169.8177947998047,
+            552.3780517578125,
+            208.8577880859375
+          ]
+        },
+        {
+          "text": "These satellites shoot radar beams at Earth, then scientists analyse how the signals bounce back to measure tiny ground shifts, down to the millimeter accuracy.",
+          "box": [
+            45.20000076293945,
+            221.8177947998047,
+            552.368896484375,
+            247.8577880859375
+          ]
+        },
+        {
+          "text": "SINKHOLE MONITORING",
+          "box": [
+            91.61720275878906,
+            421.83612060546875,
+            163.22720336914062,
+            447.3961181640625
+          ]
+        },
+        {
+          "text": "LANDSLIDE MONITORING",
+          "box": [
+            268.43310546875,
+            421.8544006347656,
+            340.0431213378906,
+            447.4143981933594
+          ]
+        },
+        {
+          "text": "INFRASTRUCTURE",
+          "box": [
+            428.0790100097656,
+            421.8037109375,
+            526.0289916992188,
+            435.36370849609375
+          ]
+        },
+        {
+          "text": "MONITORING",
+          "box": [
+            441.2489929199219,
+            433.8037109375,
+            512.8590087890625,
+            447.36370849609375
+          ]
+        },
+        {
+          "text": "Ground movement can silently damage buildings, roads, mines, dams, or pipelines – often before anyone notices​",
+          "box": [
+            57.720298767089844,
+            496.63519287109375,
+            552.3693237304688,
+            522.6751708984375
+          ]
+        },
+        {
+          "text": "InSAR helps detect these risks early, enabling preventive action and protecting critical infrastructure​",
+          "box": [
+            57.720298767089844,
+            531.06494140625,
+            552.4002685546875,
+            544.1049194335938
+          ]
+        },
+        {
+          "text": "It’s weather-proof and day-or-night capable, since radar works through clouds and darkness",
+          "box": [
+            57.720298767089844,
+            554.0236206054688,
+            526.1532592773438,
+            567.0635986328125
+          ]
+        },
+        {
+          "text": "InSAR supports informed decision-making in road construction by improving maintenance planning at every stage – before, during, and after construction​",
+          "box": [
+            57.720298767089844,
+            577.7599487304688,
+            552.3711547851562,
+            603.7999267578125
+          ]
+        }
+      ],
+      "images": [
+        "pdf-1217",
+        "pdf-1219",
+        "pdf-1220",
+        "pdf-1221",
+        "pdf-1222",
+        "pdf-1223",
+        "pdf-1197",
+        "pdf-1215"
+      ]
+    },
+    {
+      "id": "brochure-10",
+      "document": "brochure",
+      "number": 10,
+      "title": "Defense and maritime",
+      "preview": "assets/documents/brochure-page-10.webp",
+      "text": "COMMAND THE SEA FROM SPACE. FORTIFY THE DEFENSE WITH \nUZMASAT-1​\nModern defense and maritime security require real-time data, strategic foresight, and technological \nprecision. By leveraging geospatial intelligence, remote sensing and high resolution satellite imagery \nfrom UzmaSAT-1, we support maritime domain awareness, coastal defense and strategic operations. \nWe provide defense forces, naval commands and coast guard agencies with space-based actionable \nintelligence to enhance surveillance, border protection and maritime awareness.\nKEY FEATURES & BENEFITS\nSatellite-Based Surveillance and Intelligence​\nMonitor vast marine areas for vessel movement \nand border activities using high-resolution optical \nand SAR imagery, enabling effective asset tracking \nand situational awareness. ​\nDetect changes and activities across wide areas, \nor conduct regular monitoring of specific sites to \nanalyse patterns of life and operational trends. ​\nEnhanced Situational Awareness​\nReal-time tracking of maritime traffic and national \nborders, \nincluding \nsuspicious, \nnon-registered \nvessels and unauthorized development ​\nDisaster & SAR Response​\nQuickly assess and respond to oil spills, vessel \naccidents or natural disasters​\nNational Security Support​\nSupport national military base surveillance, troop \ndeployment planning, and coastal infrastructure \ndefense​\nDEFENSE & MARITIME\nGoogle Earth Imagery: Mar 27, 2019\nLocation: Nunukan, Kalimantan Utara, Indonesia\nMultispectral Imagery: Sep 28, 2024\nContainer Ship Evergreen Stuck in Suez Canal\n",
+      "blocks": [
+        {
+          "text": "COMMAND THE SEA FROM SPACE. FORTIFY THE DEFENSE WITH UZMASAT-1​",
+          "box": [
+            42.71099853515625,
+            145.02593994140625,
+            529.3817749023438,
+            179.30992126464844
+          ]
+        },
+        {
+          "text": "Modern defense and maritime security require real-time data, strategic foresight, and technological precision. By leveraging geospatial intelligence, remote sensing and high resolution satellite imagery from UzmaSAT-1, we support maritime domain awareness, coastal defense and strategic operations.",
+          "box": [
+            42.51969909667969,
+            184.56443786621094,
+            551.1697387695312,
+            223.60443115234375
+          ]
+        },
+        {
+          "text": "We provide defense forces, naval commands and coast guard agencies with space-based actionable intelligence to enhance surveillance, border protection and maritime awareness.",
+          "box": [
+            42.51969909667969,
+            236.56443786621094,
+            551.1107788085938,
+            262.60443115234375
+          ]
+        },
+        {
+          "text": "KEY FEATURES & BENEFITS",
+          "box": [
+            42.71099853515625,
+            284.37933349609375,
+            187.60098266601562,
+            297.7993469238281
+          ]
+        },
+        {
+          "text": "Satellite-Based Surveillance and Intelligence​",
+          "box": [
+            41.99580001831055,
+            304.89422607421875,
+            282.96575927734375,
+            318.3142395019531
+          ]
+        },
+        {
+          "text": "Monitor vast marine areas for vessel movement and border activities using high-resolution optical and SAR imagery, enabling effective asset tracking and situational awareness. ​",
+          "box": [
+            41.99580001831055,
+            320.2950134277344,
+            298.13482666015625,
+            372.33502197265625
+          ]
+        },
+        {
+          "text": "Detect changes and activities across wide areas, or conduct regular monitoring of specific sites to analyse patterns of life and operational trends. ​",
+          "box": [
+            41.99580001831055,
+            385.2950134277344,
+            298.1158142089844,
+            424.33502197265625
+          ]
+        },
+        {
+          "text": "Enhanced Situational Awareness​",
+          "box": [
+            41.99580001831055,
+            440.6286926269531,
+            220.0758056640625,
+            454.0487060546875
+          ]
+        },
+        {
+          "text": "Real-time tracking of maritime traffic and national borders, including suspicious, non-registered vessels and unauthorized development ​",
+          "box": [
+            41.99580001831055,
+            457.0295104980469,
+            298.1368713378906,
+            496.06951904296875
+          ]
+        },
+        {
+          "text": "Disaster & SAR Response​",
+          "box": [
+            41.99580001831055,
+            512.36328125,
+            177.9958038330078,
+            525.7832641601562
+          ]
+        },
+        {
+          "text": "Quickly assess and respond to oil spills, vessel accidents or natural disasters​",
+          "box": [
+            41.99580001831055,
+            528.7640991210938,
+            298.15576171875,
+            554.8040771484375
+          ]
+        },
+        {
+          "text": "National Security Support​",
+          "box": [
+            41.99580001831055,
+            571.097900390625,
+            182.52581787109375,
+            584.5178833007812
+          ]
+        },
+        {
+          "text": "Support national military base surveillance, troop deployment planning, and coastal infrastructure defense​",
+          "box": [
+            41.99580001831055,
+            587.4987182617188,
+            298.1457824707031,
+            626.5386962890625
+          ]
+        },
+        {
+          "text": "DEFENSE & MARITIME",
+          "box": [
+            45.03070068359375,
+            44.766929626464844,
+            353.3907165527344,
+            80.02293395996094
+          ]
+        },
+        {
+          "text": "Google Earth Imagery: Mar 27, 2019",
+          "box": [
+            45.35430145263672,
+            755.3115234375,
+            157.36834716796875,
+            763.363525390625
+          ]
+        },
+        {
+          "text": "Location: Nunukan, Kalimantan Utara, Indonesia",
+          "box": [
+            41.99580001831055,
+            779.4036865234375,
+            193.81863403320312,
+            787.2277221679688
+          ]
+        },
+        {
+          "text": "Multispectral Imagery: Sep 28, 2024 Container Ship Evergreen Stuck in Suez Canal",
+          "box": [
+            185.625,
+            755.3115234375,
+            471.6837463378906,
+            763.363525390625
+          ]
+        }
+      ],
+      "images": [
+        "pdf-1304",
+        "pdf-1305",
+        "pdf-1307",
+        "pdf-1309",
+        "pdf-1311",
+        "pdf-1313",
+        "pdf-1315",
+        "pdf-714",
+        "pdf-1303"
+      ]
+    },
+    {
+      "id": "brochure-11",
+      "document": "brochure",
+      "number": 11,
+      "title": "Uzma Digital Earth platform",
+      "preview": "assets/documents/brochure-page-11.webp",
+      "text": "Digital platform that leverages satellite \nimagery, advanced sensors, and locally-\ntrained AI to deliver deep insights across \nsectors, including agriculture, environmental \nand assets monitoring, urban planning, and \nplantation management.\nPLATFORM FEATURES\nCloud-based platform integrating AI \nand satellite imagery\nTailored to local parameters\nReal-time analytics and visualization\nModular architecture for industry-\nspecific applications\nAGRICULTURE\nMANAGEMENT\nPLANTATION\nMANAGEMENT\nURBAN PLANNING\nENVIRONMENTAL \nMANAGEMENT\nGROUND \nMOVEMENT\nDEFENSE \n& MARITIME\n",
+      "blocks": [
+        {
+          "text": "Digital platform that leverages satellite imagery, advanced sensors, and locally- trained AI to deliver deep insights across sectors, including agriculture, environmental and assets monitoring, urban planning, and plantation management.",
+          "box": [
+            337.32281494140625,
+            88.64972686767578,
+            561.8959350585938,
+            167.02972412109375
+          ]
+        },
+        {
+          "text": "PLATFORM FEATURES",
+          "box": [
+            193.49330139160156,
+            690.3058471679688,
+            404.6693420410156,
+            714.7138061523438
+          ]
+        },
+        {
+          "text": "Cloud-based platform integrating AI and satellite imagery",
+          "box": [
+            71.29930114746094,
+            730.486328125,
+            267.70928955078125,
+            756.9063110351562
+          ]
+        },
+        {
+          "text": "Tailored to local parameters Real-time analytics and visualization",
+          "box": [
+            71.29930114746094,
+            771.6024169921875,
+            478.0135803222656,
+            785.0223999023438
+          ]
+        },
+        {
+          "text": "Modular architecture for industry- specific applications",
+          "box": [
+            329.0036926269531,
+            730.486328125,
+            510.8135986328125,
+            756.9063110351562
+          ]
+        },
+        {
+          "text": "AGRICULTURE MANAGEMENT",
+          "box": [
+            60.037601470947266,
+            252.93212890625,
+            128.69271850585938,
+            275.3670349121094
+          ]
+        },
+        {
+          "text": "PLANTATION MANAGEMENT",
+          "box": [
+            233.48699951171875,
+            252.93212890625,
+            302.1421813964844,
+            275.3670349121094
+          ]
+        },
+        {
+          "text": "URBAN PLANNING",
+          "box": [
+            401.4585876464844,
+            260.22802734375,
+            487.6495056152344,
+            272.0721130371094
+          ]
+        },
+        {
+          "text": "ENVIRONMENTAL MANAGEMENT",
+          "box": [
+            57.80830001831055,
+            351.46954345703125,
+            142.45558166503906,
+            373.9044494628906
+          ]
+        },
+        {
+          "text": "GROUND MOVEMENT",
+          "box": [
+            230.4752960205078,
+            351.84844970703125,
+            285.4594421386719,
+            374.2833251953125
+          ]
+        },
+        {
+          "text": "DEFENSE & MARITIME",
+          "box": [
+            402.0945129394531,
+            348.9357604980469,
+            458.2878112792969,
+            371.3706359863281
+          ]
+        }
+      ],
+      "images": [
+        "pdf-1486",
+        "pdf-1488",
+        "pdf-1490",
+        "pdf-1492",
+        "pdf-1493",
+        "pdf-1494",
+        "pdf-1495",
+        "pdf-1496",
+        "pdf-1498",
+        "pdf-1197",
+        "pdf-1440",
+        "pdf-1445"
+      ]
+    },
+    {
+      "id": "brochure-12",
+      "document": "brochure",
+      "number": 12,
+      "title": "Connect with Geospatial AI",
+      "preview": "assets/documents/brochure-page-12.webp",
+      "text": "WANT TO REACH US FAST? \nSCAN HERE\n",
+      "blocks": [
+        {
+          "text": "WANT TO REACH US FAST?",
+          "box": [
+            227.73660278320312,
+            334.061767578125,
+            376.57098388671875,
+            347.5995788574219
+          ]
+        },
+        {
+          "text": "SCAN HERE",
+          "box": [
+            269.5600891113281,
+            346.3111572265625,
+            331.8926086425781,
+            359.8489685058594
+          ]
+        }
+      ],
+      "images": [
+        "pdf-1622",
+        "pdf-1624",
+        "pdf-1594",
+        "pdf-1598",
+        "pdf-1621"
+      ]
+    },
+    {
+      "id": "presentation-01",
+      "document": "presentation",
+      "number": 1,
+      "title": "Project reference template",
+      "preview": "assets/documents/presentation-slide-01.webp",
+      "text": "Nama project: Client :Content: 1. What kind of analysis                2.Output yang dihasilkan  \t   3.Bagaimana ianya mampu membantu client  Technology digunakan: INSAR/ GIS/ Soil investigation/satellite imagery /   Gambar2 yang boleh dishare: 1. Gambar meeting/ workshop                                                    \t2. Gambar analisis (yg x confidential)        \t\t\t\t3. etc",
+      "blocks": [
+        {
+          "text": "Nama project: Client :Content: 1. What kind of analysis                2.Output yang dihasilkan  \t   3.Bagaimana ianya mampu membantu client  Technology digunakan: INSAR/ GIS/ Soil investigation/satellite imagery /   Gambar2 yang boleh dishare: 1. Gambar meeting/ workshop                                                    \t2. Gambar analisis (yg x confidential)        \t\t\t\t3. etc"
+        }
+      ],
+      "images": [],
+      "contentType": "editorial-template"
+    },
+    {
+      "id": "presentation-02",
+      "document": "presentation",
+      "number": 2,
+      "title": "Clients and past projects",
+      "preview": "assets/documents/presentation-slide-02.webp",
+      "text": "Client and past projects\nClient \nProject \nSD Guthrie Research/ Plantation \nTree Counting \nProviding satellite imagery\nMPOB\nSoil investigation \nRSPO project \nCompliance report \nNCER\nGIS Dashboard  \nSSGP\nINSAR ",
+      "blocks": [
+        {
+          "text": "Client and past projects"
+        },
+        {
+          "text": "Client "
+        },
+        {
+          "text": "Project "
+        },
+        {
+          "text": "SD Guthrie Research/ Plantation "
+        },
+        {
+          "text": "Tree Counting "
+        },
+        {
+          "text": "Providing satellite imagery"
+        },
+        {
+          "text": "MPOB"
+        },
+        {
+          "text": "Soil investigation "
+        },
+        {
+          "text": "RSPO project "
+        },
+        {
+          "text": "Compliance report "
+        },
+        {
+          "text": "NCER"
+        },
+        {
+          "text": "GIS Dashboard  "
+        },
+        {
+          "text": "SSGP"
+        },
+        {
+          "text": "INSAR "
+        }
+      ],
+      "images": [],
+      "contentType": "business-content"
+    },
+    {
+      "id": "presentation-03",
+      "document": "presentation",
+      "number": 3,
+      "title": "EY Entrepreneur of the Year 2025",
+      "preview": "assets/documents/presentation-slide-03.webp",
+      "text": "EY Entrepreneur of the year (2025)",
+      "blocks": [
+        {
+          "text": "EY Entrepreneur of the year (2025)"
+        }
+      ],
+      "images": [
+        "ppt-ppt/media/image2.jpeg",
+        "ppt-ppt/media/image1.png",
+        "ppt-ppt/media/image5.jpeg",
+        "ppt-ppt/media/image4.jpeg",
+        "ppt-ppt/media/image3.jpeg"
+      ],
+      "contentType": "business-content"
+    },
+    {
+      "id": "presentation-04",
+      "document": "presentation",
+      "number": 4,
+      "title": "GEOINT workshop with ATM",
+      "preview": "assets/documents/presentation-slide-04.webp",
+      "text": "WORKSHOP GEOINT WITH ATM (30-31 AUGUST 2026)",
+      "blocks": [
+        {
+          "text": "WORKSHOP GEOINT WITH ATM (30-31 AUGUST 2026)"
+        }
+      ],
+      "images": [
+        "ppt-ppt/media/image6.png",
+        "ppt-ppt/media/image9.jpeg",
+        "ppt-ppt/media/image8.jpeg",
+        "ppt-ppt/media/image7.jpeg",
+        "ppt-ppt/media/hdphoto1.wdp"
+      ],
+      "contentType": "business-content"
+    },
+    {
+      "id": "presentation-05",
+      "document": "presentation",
+      "number": 5,
+      "title": "Technology update with TUDM",
+      "preview": "assets/documents/presentation-slide-05.webp",
+      "text": "TECH UPDATE WITH TUDM (24 AUGUST 2026)",
+      "blocks": [
+        {
+          "text": "TECH UPDATE WITH TUDM (24 AUGUST 2026)"
+        }
+      ],
+      "images": [
+        "ppt-ppt/media/image15.jpeg",
+        "ppt-ppt/media/image14.jpeg",
+        "ppt-ppt/media/image10.png",
+        "ppt-ppt/media/image13.jpeg",
+        "ppt-ppt/media/image12.jpeg",
+        "ppt-ppt/media/image11.jpeg",
+        "ppt-ppt/media/hdphoto1.wdp"
+      ],
+      "contentType": "business-content"
+    },
+    {
+      "id": "presentation-06",
+      "document": "presentation",
+      "number": 6,
+      "title": "Uzma Group business highlights",
+      "preview": "assets/documents/presentation-slide-06.webp",
+      "text": "6",
+      "blocks": [
+        {
+          "text": "6"
+        }
+      ],
+      "images": [
+        "ppt-ppt/media/image18.jpeg",
+        "ppt-ppt/media/image23.png",
+        "ppt-ppt/media/image17.jpeg",
+        "ppt-ppt/media/image22.png",
+        "ppt-ppt/media/image16.png",
+        "ppt-ppt/media/image21.png",
+        "ppt-ppt/media/image25.png",
+        "ppt-ppt/media/image20.png",
+        "ppt-ppt/media/image10.png",
+        "ppt-ppt/media/image19.png",
+        "ppt-ppt/media/image24.jpeg",
+        "ppt-ppt/media/hdphoto1.wdp"
+      ],
+      "contentType": "business-content"
+    },
+    {
+      "id": "presentation-07",
+      "document": "presentation",
+      "number": 7,
+      "title": "Uzma Group divisions",
+      "preview": "assets/documents/presentation-slide-07.webp",
+      "text": "7\nOIL AND GAS DIVISION\nNEW BUSINESS DIVISION",
+      "blocks": [
+        {
+          "text": "7"
+        },
+        {
+          "text": "OIL AND GAS DIVISION"
+        },
+        {
+          "text": "NEW BUSINESS DIVISION"
+        }
+      ],
+      "images": [
+        "ppt-ppt/media/image10.png",
+        "ppt-ppt/media/image16.png",
+        "ppt-ppt/media/image27.png",
+        "ppt-ppt/media/image26.png",
+        "ppt-ppt/media/hdphoto1.wdp"
+      ],
+      "contentType": "business-content"
+    },
+    {
+      "id": "presentation-08",
+      "document": "presentation",
+      "number": 8,
+      "title": "Uzma Group vision",
+      "preview": "assets/documents/presentation-slide-08.webp",
+      "text": "Our Vision\n“We aspire to be a leading energy and technology company in Malaysia while providing sustainable growth and enhancing value for all our stakeholders.”\nDato’ Kamarul Redzuan Muhamed",
+      "blocks": [
+        {
+          "text": "Our Vision"
+        },
+        {
+          "text": "“We aspire to be a leading energy and technology company in Malaysia while providing sustainable growth and enhancing value for all our stakeholders.”"
+        },
+        {
+          "text": "Dato’ Kamarul Redzuan Muhamed"
+        }
+      ],
+      "images": [
+        "ppt-ppt/media/image29.png",
+        "ppt-ppt/media/image28.png",
+        "ppt-ppt/media/image30.png"
+      ],
+      "contentType": "business-content"
+    }
+  ],
+  "assets": {
+    "pdf-8": {
+      "src": "assets/documents/brochure-image-8.webp",
+      "original": "assets/documents/brochure-image-8.jpeg",
+      "width": 2480,
+      "height": 3508,
+      "hash": "94284695ab722d30227e3f17fd3f2bba2bbc338cbf59e16764004278b798dfe1"
+    },
+    "pdf-22": {
+      "src": "assets/documents/brochure-image-22.webp",
+      "original": "assets/documents/brochure-image-22.png",
+      "width": 1240,
+      "height": 247,
+      "hash": "b2ddcfa0cc0f3d76c0c26b02e919e82b6f454f85b38088e0ec453fb33ac8e1af"
+    },
+    "pdf-28": {
+      "src": "assets/documents/brochure-image-28.webp",
+      "original": "assets/documents/brochure-image-28.png",
+      "width": 670,
+      "height": 172,
+      "hash": "7e501ac84d8eabcb134cf08b9c18f294d8abee515b54ce9ad33d0feb8418d09d"
+    },
+    "pdf-41": {
+      "src": "assets/documents/brochure-image-41.webp",
+      "original": "assets/documents/brochure-image-41.jpeg",
+      "width": 161,
+      "height": 187,
+      "hash": "e26b66e5d0cfde465f2224be67c505969aa68f069254688dab6d413ffd3a36b9"
+    },
+    "pdf-47": {
+      "src": "assets/documents/brochure-image-47.webp",
+      "original": "assets/documents/brochure-image-47.jpeg",
+      "width": 186,
+      "height": 213,
+      "hash": "3aae03980377ac6fd8ddaed6ac4e8c5b5293b4d689db7dc2fab4980592a07d32"
+    },
+    "pdf-51": {
+      "src": "assets/documents/brochure-image-51.webp",
+      "original": "assets/documents/brochure-image-51.jpeg",
+      "width": 186,
+      "height": 213,
+      "hash": "85566d4f272d3e678546ea060aec597a7ea0a3d7abd63bf974b9340ed74f0c9b"
+    },
+    "pdf-59": {
+      "src": "assets/documents/brochure-image-59.webp",
+      "original": "assets/documents/brochure-image-59.png",
+      "width": 83,
+      "height": 84,
+      "hash": "823358224944c6e2abe7915bf6d964cd1abff5a0406a185eb106516ceef1574e"
+    },
+    "pdf-128": {
+      "src": "assets/documents/brochure-image-128.webp",
+      "original": "assets/documents/brochure-image-128.jpeg",
+      "width": 430,
+      "height": 178,
+      "hash": "1eefcf2a1b93720034b1b5d722e75c84c2ad48cfd2e0c3f546645b40eda9b845"
+    },
+    "pdf-132": {
+      "src": "assets/documents/brochure-image-132.webp",
+      "original": "assets/documents/brochure-image-132.jpeg",
+      "width": 234,
+      "height": 133,
+      "hash": "4a58fa1be94eac1961dfa2ac9f054e0b61e30d4b3df43203b401a35b5df0b250"
+    },
+    "pdf-136": {
+      "src": "assets/documents/brochure-image-136.webp",
+      "original": "assets/documents/brochure-image-136.png",
+      "width": 211,
+      "height": 131,
+      "hash": "f21bf244f56865a88a4fb7a030c165dd987102453f922ebb0a7c027f9e4038e8"
+    },
+    "pdf-143": {
+      "src": "assets/documents/brochure-image-143.webp",
+      "original": "assets/documents/brochure-image-143.png",
+      "width": 939,
+      "height": 583,
+      "hash": "6edbea03756e707342dcbea02e4d9359bc4215c8bdc9a59cc2541af04b184cd0"
+    },
+    "pdf-148": {
+      "src": "assets/documents/brochure-image-148.webp",
+      "original": "assets/documents/brochure-image-148.jpeg",
+      "width": 231,
+      "height": 76,
+      "hash": "38fda5bf8e4680c9e244b08ba3d88d818e33f0d094ff98aae6798c567844bcb8"
+    },
+    "pdf-152": {
+      "src": "assets/documents/brochure-image-152.webp",
+      "original": "assets/documents/brochure-image-152.png",
+      "width": 130,
+      "height": 107,
+      "hash": "99bad5f44e28e23bbfc50370db4e2c529fa80c181a5da329563ba6733f3b9303"
+    },
+    "pdf-339": {
+      "src": "assets/documents/brochure-image-339.webp",
+      "original": "assets/documents/brochure-image-339.png",
+      "width": 1503,
+      "height": 245,
+      "hash": "38d18f26f50178f6784100c22a0a9225fe05a8479a40a71d4b0a6fe5c3ea8545"
+    },
+    "pdf-341": {
+      "src": "assets/documents/brochure-image-341.webp",
+      "original": "assets/documents/brochure-image-341.jpeg",
+      "width": 2136,
+      "height": 1049,
+      "hash": "e75343c8fa1c77de50fafc36877d063f8f8fadb4bd4be4d9a7caed5693cdce18"
+    },
+    "pdf-343": {
+      "src": "assets/documents/brochure-image-343.webp",
+      "original": "assets/documents/brochure-image-343.jpeg",
+      "width": 811,
+      "height": 793,
+      "hash": "b2e3b7234839ef4dd96b7514d6bee2d7abf576bf0ee9c16d16afdfaf52d0568d"
+    },
+    "pdf-345": {
+      "src": "assets/documents/brochure-image-345.webp",
+      "original": "assets/documents/brochure-image-345.jpeg",
+      "width": 975,
+      "height": 1024,
+      "hash": "37e0c972e4b902a6c20a91a314f7d2b9c2b30709ae7d3b39419dcb66cfa979da"
+    },
+    "pdf-317": {
+      "src": "assets/documents/brochure-image-317.webp",
+      "original": "assets/documents/brochure-image-317.jpeg",
+      "width": 4,
+      "height": 387,
+      "hash": "81f5e38197004047b4be9614bc60ff41e0830ab633f75156765ee1e9d3d45f08"
+    },
+    "pdf-320": {
+      "src": "assets/documents/brochure-image-320.webp",
+      "original": "assets/documents/brochure-image-320.jpeg",
+      "width": 1553,
+      "height": 437,
+      "hash": "ecca6441c38e24b2e56faa55c9d45d17f667e40d6ca1034ae3326c431f3c52db"
+    },
+    "pdf-324": {
+      "src": "assets/documents/brochure-image-324.webp",
+      "original": "assets/documents/brochure-image-324.jpeg",
+      "width": 1258,
+      "height": 696,
+      "hash": "7e53f2117a1f52f3049cba598b246bfa9847175aece391155ed7ee7b93e44b29"
+    },
+    "pdf-554": {
+      "src": "assets/documents/brochure-image-554.webp",
+      "original": "assets/documents/brochure-image-554.png",
+      "width": 150,
+      "height": 100,
+      "hash": "ff940f25c6e3280601798713898a7b7a80376fd4b561e0bb7e74151af148c1a8"
+    },
+    "pdf-556": {
+      "src": "assets/documents/brochure-image-556.webp",
+      "original": "assets/documents/brochure-image-556.png",
+      "width": 136,
+      "height": 136,
+      "hash": "a7c51bfd188a85e66cbf5c5f38b5de8710fcc285a6a736444d61b937eadcd156"
+    },
+    "pdf-558": {
+      "src": "assets/documents/brochure-image-558.webp",
+      "original": "assets/documents/brochure-image-558.jpeg",
+      "width": 659,
+      "height": 649,
+      "hash": "68699f8dfbe7145b503d0462bbb16bd0efadb3a46c808b0cf3d487a0105bd2b6"
+    },
+    "pdf-559": {
+      "src": "assets/documents/brochure-image-559.webp",
+      "original": "assets/documents/brochure-image-559.png",
+      "width": 96,
+      "height": 90,
+      "hash": "734e04768446f88457d117776f4122d65c96cec1b2d6a9c8a527663ab8a5cf3e"
+    },
+    "pdf-561": {
+      "src": "assets/documents/brochure-image-561.webp",
+      "original": "assets/documents/brochure-image-561.png",
+      "width": 114,
+      "height": 112,
+      "hash": "52304848c0800e97eb1a2f299a555e9e5e749bff263ad7a2328aa899305ce623"
+    },
+    "pdf-563": {
+      "src": "assets/documents/brochure-image-563.webp",
+      "original": "assets/documents/brochure-image-563.png",
+      "width": 114,
+      "height": 114,
+      "hash": "46f2b6763c6d1d2fa2471752e59978e9236aac19e9861214de5939c21862bca5"
+    },
+    "pdf-565": {
+      "src": "assets/documents/brochure-image-565.webp",
+      "original": "assets/documents/brochure-image-565.jpeg",
+      "width": 339,
+      "height": 335,
+      "hash": "3b640f5374c6feec96aa85883fcba24a9cf2a9917d5031f46c8eb658deae514c"
+    },
+    "pdf-567": {
+      "src": "assets/documents/brochure-image-567.webp",
+      "original": "assets/documents/brochure-image-567.jpeg",
+      "width": 489,
+      "height": 493,
+      "hash": "97e21241bd6f27d99645aa4d9462ca5225a42e829f09f301e32d1748351cdd87"
+    },
+    "pdf-569": {
+      "src": "assets/documents/brochure-image-569.webp",
+      "original": "assets/documents/brochure-image-569.jpeg",
+      "width": 653,
+      "height": 659,
+      "hash": "ffe70a906b3db993d47d97c1766ee1fe2ba061f954bd3d52689b02376dfd7a19"
+    },
+    "pdf-570": {
+      "src": "assets/documents/brochure-image-570.webp",
+      "original": "assets/documents/brochure-image-570.jpeg",
+      "width": 528,
+      "height": 533,
+      "hash": "57b50fa77485a92804385e18e7724ffd02060bfeff0e737214c4cd8cb3770609"
+    },
+    "pdf-572": {
+      "src": "assets/documents/brochure-image-572.webp",
+      "original": "assets/documents/brochure-image-572.jpeg",
+      "width": 583,
+      "height": 515,
+      "hash": "8818bc701913dd4b3edd3791bab799ec143077588d16eccf77eab5e57700e11c"
+    },
+    "pdf-451": {
+      "src": "assets/documents/brochure-image-451.webp",
+      "original": "assets/documents/brochure-image-451.jpeg",
+      "width": 1593,
+      "height": 958,
+      "hash": "1c24b57fd6b8a9b7e74787f2a699279233ccf7520f2a144f62c095e394ae4fb0"
+    },
+    "pdf-455": {
+      "src": "assets/documents/brochure-image-455.webp",
+      "original": "assets/documents/brochure-image-455.jpeg",
+      "width": 4,
+      "height": 513,
+      "hash": "3df0bf32a10021628b1b1556f1653a163f525e3be6a7dda3cb6e6c4f855f3f14"
+    },
+    "pdf-465": {
+      "src": "assets/documents/brochure-image-465.webp",
+      "original": "assets/documents/brochure-image-465.jpeg",
+      "width": 5,
+      "height": 535,
+      "hash": "47643e653cb015b4f28060a356b6ea565bf2b208e990d651f773af6940355367"
+    },
+    "pdf-469": {
+      "src": "assets/documents/brochure-image-469.webp",
+      "original": "assets/documents/brochure-image-469.jpeg",
+      "width": 1200,
+      "height": 540,
+      "hash": "e10e2769a82b0737a0f01fa757922c7e957d73c1d965f6ddba80fe1a3651e4c3"
+    },
+    "pdf-738": {
+      "src": "assets/documents/brochure-image-738.webp",
+      "original": "assets/documents/brochure-image-738.jpeg",
+      "width": 396,
+      "height": 538,
+      "hash": "8ec6f0b0c40ae10feee400960ee81b1b450585baf75b5041f35414ed2e030c18"
+    },
+    "pdf-740": {
+      "src": "assets/documents/brochure-image-740.webp",
+      "original": "assets/documents/brochure-image-740.jpeg",
+      "width": 1260,
+      "height": 573,
+      "hash": "be06f0fe600e107af8d4bd6ed551bf9781af7e237a14d92dc9d326e342f77942"
+    },
+    "pdf-742": {
+      "src": "assets/documents/brochure-image-742.webp",
+      "original": "assets/documents/brochure-image-742.jpeg",
+      "width": 586,
+      "height": 413,
+      "hash": "c1395656329bb3b7ecc23610c25a6fd0ba6cdf8cafcdc201b0dbbd0d1fdfad87"
+    },
+    "pdf-744": {
+      "src": "assets/documents/brochure-image-744.webp",
+      "original": "assets/documents/brochure-image-744.jpeg",
+      "width": 591,
+      "height": 412,
+      "hash": "32a76ecd5f7b98ad2c1c6b5ed54398d4e0007760f850511194c6007b13f68ac0"
+    },
+    "pdf-746": {
+      "src": "assets/documents/brochure-image-746.webp",
+      "original": "assets/documents/brochure-image-746.jpeg",
+      "width": 590,
+      "height": 417,
+      "hash": "8f6d40200d475337c44f1d9321490afd36b9c1bd490a4e43b08fbddb51ad1b1a"
+    },
+    "pdf-748": {
+      "src": "assets/documents/brochure-image-748.webp",
+      "original": "assets/documents/brochure-image-748.jpeg",
+      "width": 275,
+      "height": 196,
+      "hash": "13f1b0839db1ca6e2f24ec33a246f25cde27e61ecb3d845c99c3df4825601dc9"
+    },
+    "pdf-750": {
+      "src": "assets/documents/brochure-image-750.webp",
+      "original": "assets/documents/brochure-image-750.jpeg",
+      "width": 586,
+      "height": 413,
+      "hash": "162661c08267b331d3677cd769bd5440a6b3900c6cf0b31337401122ecfc6d14"
+    },
+    "pdf-714": {
+      "src": "assets/documents/brochure-image-714.webp",
+      "original": "assets/documents/brochure-image-714.jpeg",
+      "width": 2382,
+      "height": 513,
+      "hash": "0f602e1f6dea038253eda0aaab6419f738d8a98017ddc9cc832a69383291a29b"
+    },
+    "pdf-736": {
+      "src": "assets/documents/brochure-image-736.webp",
+      "original": "assets/documents/brochure-image-736.jpeg",
+      "width": 2481,
+      "height": 535,
+      "hash": "7fbd4233473ae2bf8bf390267103adae7df0b496a0c223d637026737933dd9ce"
+    },
+    "pdf-848": {
+      "src": "assets/documents/brochure-image-848.webp",
+      "original": "assets/documents/brochure-image-848.jpeg",
+      "width": 1036,
+      "height": 425,
+      "hash": "cb74188be789d4c9fa167b9e5c01f0719fa95c7f26e08d0872a60a0d19c6e112"
+    },
+    "pdf-850": {
+      "src": "assets/documents/brochure-image-850.webp",
+      "original": "assets/documents/brochure-image-850.jpeg",
+      "width": 187,
+      "height": 158,
+      "hash": "d767ebdebc14dbe5ad6e8bf821f2f8569d7ecb58a6c1affe965450b75c8c68be"
+    },
+    "pdf-852": {
+      "src": "assets/documents/brochure-image-852.webp",
+      "original": "assets/documents/brochure-image-852.jpeg",
+      "width": 188,
+      "height": 162,
+      "hash": "04ac266022ed57836f3d9648d466dce194c48f7a5ebdcb632e50dd0e9c9b38c2"
+    },
+    "pdf-854": {
+      "src": "assets/documents/brochure-image-854.webp",
+      "original": "assets/documents/brochure-image-854.jpeg",
+      "width": 191,
+      "height": 159,
+      "hash": "717b5602917d7a6d8f2c0e220bf5c5c3ead052d27952c0bf0ad28d262759a97d"
+    },
+    "pdf-856": {
+      "src": "assets/documents/brochure-image-856.webp",
+      "original": "assets/documents/brochure-image-856.jpeg",
+      "width": 573,
+      "height": 493,
+      "hash": "818a7fc26da2d107fdb6af45c77762eb471a5677bd617cde19b78606810aa0b7"
+    },
+    "pdf-858": {
+      "src": "assets/documents/brochure-image-858.webp",
+      "original": "assets/documents/brochure-image-858.jpeg",
+      "width": 577,
+      "height": 496,
+      "hash": "2a52e7cf55f6880263fb19eb147fc6d340bcf0f67604fea69c09df7f7e136b2d"
+    },
+    "pdf-860": {
+      "src": "assets/documents/brochure-image-860.webp",
+      "original": "assets/documents/brochure-image-860.jpeg",
+      "width": 573,
+      "height": 495,
+      "hash": "b59700c4452e4e0c027e0216d0d5b1138408061a37d8e87fab46e389da9b5bc9"
+    },
+    "pdf-862": {
+      "src": "assets/documents/brochure-image-862.webp",
+      "original": "assets/documents/brochure-image-862.jpeg",
+      "width": 762,
+      "height": 311,
+      "hash": "ce82ac375d01edf157eaf7962d40e5418813fc9f6402d8ca83dd5ddfbf480ceb"
+    },
+    "pdf-842": {
+      "src": "assets/documents/brochure-image-842.webp",
+      "original": "assets/documents/brochure-image-842.jpeg",
+      "width": 1481,
+      "height": 535,
+      "hash": "a468e14fcc4d6cbb820fab02add2a167eae8b37724634f299cfa0293fb5cfc64"
+    },
+    "pdf-846": {
+      "src": "assets/documents/brochure-image-846.webp",
+      "original": "assets/documents/brochure-image-846.jpeg",
+      "width": 4,
+      "height": 414,
+      "hash": "78660638b3979b527a6edc74e76a2f94901841d25db8b8ffafe968d5a9ca9439"
+    },
+    "pdf-993": {
+      "src": "assets/documents/brochure-image-993.webp",
+      "original": "assets/documents/brochure-image-993.jpeg",
+      "width": 999,
+      "height": 1486,
+      "hash": "237aa5dbef16fb1d66c0dec3dda8a2ae68b6718de844f74f1edb62bb2ce70d3f"
+    },
+    "pdf-994": {
+      "src": "assets/documents/brochure-image-994.webp",
+      "original": "assets/documents/brochure-image-994.jpeg",
+      "width": 659,
+      "height": 364,
+      "hash": "9503d2d0856244201c82f4ff45373a1a3bbacdae9ddec492910eb66e89c64e9a"
+    },
+    "pdf-995": {
+      "src": "assets/documents/brochure-image-995.webp",
+      "original": "assets/documents/brochure-image-995.jpeg",
+      "width": 820,
+      "height": 450,
+      "hash": "f06bf0f2b12d0d0c274cb35307437f65b3f50606bed5b57f19c3fb2f0303300e"
+    },
+    "pdf-996": {
+      "src": "assets/documents/brochure-image-996.webp",
+      "original": "assets/documents/brochure-image-996.jpeg",
+      "width": 865,
+      "height": 477,
+      "hash": "9c4cc68ff7f98e7006fabf171001413ecda3c84d444da65164467436532db458"
+    },
+    "pdf-979": {
+      "src": "assets/documents/brochure-image-979.webp",
+      "original": "assets/documents/brochure-image-979.jpeg",
+      "width": 155,
+      "height": 535,
+      "hash": "1bd2438cec90fa2f7131b00efde65eb1fbae4b4cf7a75a51c5e427e0b8cbb9ab"
+    },
+    "pdf-991": {
+      "src": "assets/documents/brochure-image-991.webp",
+      "original": "assets/documents/brochure-image-991.jpeg",
+      "width": 1920,
+      "height": 414,
+      "hash": "a67feed36ba3d9d9b183699ad1f625b1e5c311d96ff63f0851fd6e95302dab78"
+    },
+    "pdf-1101": {
+      "src": "assets/documents/brochure-image-1101.webp",
+      "original": "assets/documents/brochure-image-1101.jpeg",
+      "width": 966,
+      "height": 498,
+      "hash": "592b53175bda62ba4aae2a7ef5f6977461fce71d7ee93695a7d2be1175c23a14"
+    },
+    "pdf-1103": {
+      "src": "assets/documents/brochure-image-1103.webp",
+      "original": "assets/documents/brochure-image-1103.jpeg",
+      "width": 957,
+      "height": 514,
+      "hash": "d8e1826ba7a1341710fc451d8f8537e9e40c508cb525965cbe05d4f333333f4f"
+    },
+    "pdf-1105": {
+      "src": "assets/documents/brochure-image-1105.webp",
+      "original": "assets/documents/brochure-image-1105.jpeg",
+      "width": 911,
+      "height": 515,
+      "hash": "70f893cfc5e9c01bd1721f5dbc87b999e994d9f91fede25b8157f7da798a05ed"
+    },
+    "pdf-1107": {
+      "src": "assets/documents/brochure-image-1107.webp",
+      "original": "assets/documents/brochure-image-1107.jpeg",
+      "width": 1143,
+      "height": 562,
+      "hash": "2c990566e1b97a78254902a1532c8b79716fd0600f8ec55c624c1d8f76492074"
+    },
+    "pdf-1099": {
+      "src": "assets/documents/brochure-image-1099.webp",
+      "original": "assets/documents/brochure-image-1099.jpeg",
+      "width": 2998,
+      "height": 646,
+      "hash": "cc6356625b8fb65272992ca535e5b1a9353a03ac58056a3f9ae0f018f34d4cda"
+    },
+    "pdf-1217": {
+      "src": "assets/documents/brochure-image-1217.webp",
+      "original": "assets/documents/brochure-image-1217.jpeg",
+      "width": 2384,
+      "height": 515,
+      "hash": "1b8ddb6103b404d17dc982f3088315402b36cecc5779848a26caf9cc6ec0d788"
+    },
+    "pdf-1219": {
+      "src": "assets/documents/brochure-image-1219.webp",
+      "original": "assets/documents/brochure-image-1219.jpeg",
+      "width": 453,
+      "height": 412,
+      "hash": "5625b315b25a6f36610c36e46c20274dc719186cd73b56e927226103a4e2e4e4"
+    },
+    "pdf-1220": {
+      "src": "assets/documents/brochure-image-1220.webp",
+      "original": "assets/documents/brochure-image-1220.jpeg",
+      "width": 555,
+      "height": 504,
+      "hash": "99c7ab7d9be557af308f3c1b429b609a3724271003e94add246a1a4841e7b344"
+    },
+    "pdf-1221": {
+      "src": "assets/documents/brochure-image-1221.webp",
+      "original": "assets/documents/brochure-image-1221.jpeg",
+      "width": 439,
+      "height": 399,
+      "hash": "b1799ee9a03ab6241551f1dbf4fd57b320ef70e55affb6bd1e058422a14dc67f"
+    },
+    "pdf-1222": {
+      "src": "assets/documents/brochure-image-1222.webp",
+      "original": "assets/documents/brochure-image-1222.jpeg",
+      "width": 2480,
+      "height": 909,
+      "hash": "57440efe8a71e76440b69ecdd596fcf9e31a086284a7f9effe6e741ff37cd323"
+    },
+    "pdf-1223": {
+      "src": "assets/documents/brochure-image-1223.webp",
+      "original": "assets/documents/brochure-image-1223.jpeg",
+      "width": 1146,
+      "height": 606,
+      "hash": "59bbf797b3286d5e5bafd8504e8a4a47896ec5317840f844906f6f50af511670"
+    },
+    "pdf-1197": {
+      "src": "assets/documents/brochure-image-1197.webp",
+      "original": "assets/documents/brochure-image-1197.png",
+      "width": 9,
+      "height": 513,
+      "hash": "bf56347a06eed37833862542aa39f79e3793e3d8feb6bdade844fc2479d500b5"
+    },
+    "pdf-1215": {
+      "src": "assets/documents/brochure-image-1215.webp",
+      "original": "assets/documents/brochure-image-1215.jpeg",
+      "width": 6,
+      "height": 646,
+      "hash": "341eeace50253bcbcf99f83ef5d746d65e09f7c254cc69f33146e52d33c25d1d"
+    },
+    "pdf-1304": {
+      "src": "assets/documents/brochure-image-1304.webp",
+      "original": "assets/documents/brochure-image-1304.jpeg",
+      "width": 966,
+      "height": 482,
+      "hash": "06ceec96d3963587945d690c43057af84ca6856c7a2d09be2e4e5c6bdb72f7d3"
+    },
+    "pdf-1305": {
+      "src": "assets/documents/brochure-image-1305.webp",
+      "original": "assets/documents/brochure-image-1305.jpeg",
+      "width": 402,
+      "height": 488,
+      "hash": "503aafe07d3294fdcc7f16df5045e1cfb5a2501aabaa801c32d600176b67c08a"
+    },
+    "pdf-1307": {
+      "src": "assets/documents/brochure-image-1307.webp",
+      "original": "assets/documents/brochure-image-1307.jpeg",
+      "width": 553,
+      "height": 488,
+      "hash": "8da1261dff8cc586fe7e69690cb5fd26480035f9fea7c006c47df97af333b3dc"
+    },
+    "pdf-1309": {
+      "src": "assets/documents/brochure-image-1309.webp",
+      "original": "assets/documents/brochure-image-1309.jpeg",
+      "width": 957,
+      "height": 499,
+      "hash": "6b5617bf887bcbc9a94be1be845c3795a76c5ae7b3e570a0b14bc3ba23877006"
+    },
+    "pdf-1311": {
+      "src": "assets/documents/brochure-image-1311.webp",
+      "original": "assets/documents/brochure-image-1311.jpeg",
+      "width": 961,
+      "height": 499,
+      "hash": "b854a9275eb7cc44560cee546e92414f3fabcee11812892f9344e5995e1eead1"
+    },
+    "pdf-1313": {
+      "src": "assets/documents/brochure-image-1313.webp",
+      "original": "assets/documents/brochure-image-1313.jpeg",
+      "width": 475,
+      "height": 479,
+      "hash": "dc74a4d5824cbe4e18ba32fcba29fd7af1388d61e5e2bd239a7a43a0594c2cb7"
+    },
+    "pdf-1315": {
+      "src": "assets/documents/brochure-image-1315.webp",
+      "original": "assets/documents/brochure-image-1315.jpeg",
+      "width": 459,
+      "height": 463,
+      "hash": "9dff7c0d34f916a5861eed14bb9ff19fe71b1b5e2fdde6a394594217f361591c"
+    },
+    "pdf-1303": {
+      "src": "assets/documents/brochure-image-1303.webp",
+      "original": "assets/documents/brochure-image-1303.jpeg",
+      "width": 1741,
+      "height": 647,
+      "hash": "7b7f156d69fc45bb13e7512c30d4b1f3b2a81d2a88313bd7841a35ed0e7882f7"
+    },
+    "pdf-1486": {
+      "src": "assets/documents/brochure-image-1486.webp",
+      "original": "assets/documents/brochure-image-1486.jpeg",
+      "width": 612,
+      "height": 199,
+      "hash": "4c6dd510e1ec0517f1c8659ead5b843765d8e66c656e6f5793009a5bc1446aee"
+    },
+    "pdf-1488": {
+      "src": "assets/documents/brochure-image-1488.webp",
+      "original": "assets/documents/brochure-image-1488.jpeg",
+      "width": 632,
+      "height": 370,
+      "hash": "ff8167ce1052fff6c5df6faaafb47afa284c63dd5f7029145136f9dbb4635760"
+    },
+    "pdf-1490": {
+      "src": "assets/documents/brochure-image-1490.webp",
+      "original": "assets/documents/brochure-image-1490.jpeg",
+      "width": 632,
+      "height": 369,
+      "hash": "75982c7037294a3672dffc2026f08decf8ef04c04616f682ded9000bb8593c84"
+    },
+    "pdf-1492": {
+      "src": "assets/documents/brochure-image-1492.webp",
+      "original": "assets/documents/brochure-image-1492.jpeg",
+      "width": 632,
+      "height": 369,
+      "hash": "777beddfc807687df72857a5368242f78e1f49a70deb2c91bcaf0320cda95392"
+    },
+    "pdf-1493": {
+      "src": "assets/documents/brochure-image-1493.webp",
+      "original": "assets/documents/brochure-image-1493.jpeg",
+      "width": 632,
+      "height": 369,
+      "hash": "2e0f1647cd702a8bb52933551ce94ee43ca38e5419e3168f234cef57b0a3fdcb"
+    },
+    "pdf-1494": {
+      "src": "assets/documents/brochure-image-1494.webp",
+      "original": "assets/documents/brochure-image-1494.jpeg",
+      "width": 435,
+      "height": 254,
+      "hash": "7f32e079a2cf98f6c821a6e4dd1b7bb4da7a1e0ec8e835e7972dcb757102743e"
+    },
+    "pdf-1495": {
+      "src": "assets/documents/brochure-image-1495.webp",
+      "original": "assets/documents/brochure-image-1495.jpeg",
+      "width": 632,
+      "height": 369,
+      "hash": "c9350dc78f5553578106636cf657cfefd8e60a69775c29da1cc2d63a25140acc"
+    },
+    "pdf-1496": {
+      "src": "assets/documents/brochure-image-1496.webp",
+      "original": "assets/documents/brochure-image-1496.jpeg",
+      "width": 1146,
+      "height": 966,
+      "hash": "cfa530a3ff5ad3cb4b445aea24e6da9606ba5e86dd6234e9380964df55310e42"
+    },
+    "pdf-1498": {
+      "src": "assets/documents/brochure-image-1498.webp",
+      "original": "assets/documents/brochure-image-1498.jpeg",
+      "width": 316,
+      "height": 510,
+      "hash": "13361c61d3be77a20307098c2373e62873e4cced4c7ae97bf2a5845a89bd86ba"
+    },
+    "pdf-1440": {
+      "src": "assets/documents/brochure-image-1440.webp",
+      "original": "assets/documents/brochure-image-1440.jpeg",
+      "width": 11,
+      "height": 647,
+      "hash": "d184590e79f97493401a81df07a609501c08f554df17f61c6c61180b5a81ca75"
+    },
+    "pdf-1445": {
+      "src": "assets/documents/brochure-image-1445.webp",
+      "original": "assets/documents/brochure-image-1445.jpeg",
+      "width": 1920,
+      "height": 538,
+      "hash": "67b7cd97f5fd99b26abd674a2a5433b84927a6501dd640a67f3567eca46f8ef9"
+    },
+    "pdf-1622": {
+      "src": "assets/documents/brochure-image-1622.webp",
+      "original": "assets/documents/brochure-image-1622.png",
+      "width": 1606,
+      "height": 404,
+      "hash": "612490e3246fb706dc01b93cfaa665f09e37d91ed80e7eb00217a0effa033499"
+    },
+    "pdf-1624": {
+      "src": "assets/documents/brochure-image-1624.webp",
+      "original": "assets/documents/brochure-image-1624.png",
+      "width": 448,
+      "height": 448,
+      "hash": "0554847d14ffa3c9cbb63e251462a07855ed9c5427d26407377b15abfe3fae2c"
+    },
+    "pdf-1594": {
+      "src": "assets/documents/brochure-image-1594.webp",
+      "original": "assets/documents/brochure-image-1594.jpeg",
+      "width": 1015,
+      "height": 847,
+      "hash": "345a53a4b806425d433a875c32d2c566c5021ed3dce0af645c9a0c433f4f7490"
+    },
+    "pdf-1598": {
+      "src": "assets/documents/brochure-image-1598.webp",
+      "original": "assets/documents/brochure-image-1598.jpeg",
+      "width": 916,
+      "height": 709,
+      "hash": "867ed7ad6521e453433e950d99a6394ef87f190da1cc447307c07ea4654c2c1e"
+    },
+    "pdf-1621": {
+      "src": "assets/documents/brochure-image-1621.webp",
+      "original": "assets/documents/brochure-image-1621.jpeg",
+      "width": 2481,
+      "height": 3462,
+      "hash": "815d5c0eea7e69648b8c77d1f1eca31f39a36436f714361598e5119353c7c407"
+    },
+    "ppt-ppt/media/image9.jpeg": {
+      "src": "assets/documents/presentation-image9.webp",
+      "original": "assets/documents/presentation-image9.jpeg",
+      "width": 3711,
+      "height": 2474,
+      "hash": "9ad2eba2aa2f483f5a6302dc75f40997fe366120096ee76a6d6eb6ee775d0f88"
+    },
+    "ppt-ppt/media/image21.png": {
+      "src": "assets/documents/presentation-image21.webp",
+      "original": "assets/documents/presentation-image21.png",
+      "width": 406,
+      "height": 312,
+      "hash": "80abba9819f4adda1389d9659da16b43d2c451df712a9cfd6089e02673a0d84f"
+    },
+    "ppt-ppt/media/image28.png": {
+      "src": "assets/documents/presentation-image28.webp",
+      "original": "assets/documents/presentation-image28.png",
+      "width": 1920,
+      "height": 1081,
+      "hash": "640991ce4ae9744797c65dd954a9475334b4b813b98ed33fae7a319cc7951650"
+    },
+    "ppt-ppt/media/hdphoto1.wdp": {
+      "src": "assets/documents/presentation-hdphoto1.webp",
+      "original": "assets/documents/presentation-hdphoto1.wdp",
+      "width": 2400,
+      "height": 1200,
+      "hash": "77b30105a504643cfb0ce17f7436188ba011a4495b563878f63c46f31ac4c490",
+      "note": "HD Photo converted using Windows imaging; original preserved."
+    },
+    "ppt-ppt/media/image27.png": {
+      "src": "assets/documents/presentation-image27.webp",
+      "original": "assets/documents/presentation-image27.png",
+      "width": 3415,
+      "height": 726,
+      "hash": "2f554d8c576f2ca8f38d5bbe1d053a67e4a9bed3de33d1cc46340b874035ebc6"
+    },
+    "ppt-ppt/media/image30.png": {
+      "src": "assets/documents/presentation-image30.webp",
+      "original": "assets/documents/presentation-image30.png",
+      "width": 2848,
+      "height": 4288,
+      "hash": "6f75ddac3aa6e4b6d084b8b6bdd7d47c6ef5fd9657231d42ed80e3c349899c3e"
+    },
+    "ppt-ppt/media/image12.jpeg": {
+      "src": "assets/documents/presentation-image12.webp",
+      "original": "assets/documents/presentation-image12.jpeg",
+      "width": 2560,
+      "height": 1920,
+      "hash": "22d71dd5ae0ba29b9cda3b1127111c433f6a820487aadca5d97358a5b687250b"
+    },
+    "ppt-ppt/media/image13.jpeg": {
+      "src": "assets/documents/presentation-image13.webp",
+      "original": "assets/documents/presentation-image13.jpeg",
+      "width": 2560,
+      "height": 1920,
+      "hash": "7343038e621ae4bfa4e9cedb49dbb37b9ce1aa56e71f3d40d56d2356a0a312ff"
+    },
+    "ppt-ppt/media/image14.jpeg": {
+      "src": "assets/documents/presentation-image14.webp",
+      "original": "assets/documents/presentation-image14.jpeg",
+      "width": 2560,
+      "height": 1920,
+      "hash": "5d76bfbca83630acbd71f31b487febb1159fcc7b8b7745cfdc342921faf52c9a"
+    },
+    "ppt-ppt/media/image15.jpeg": {
+      "src": "assets/documents/presentation-image15.webp",
+      "original": "assets/documents/presentation-image15.jpeg",
+      "width": 2560,
+      "height": 1920,
+      "hash": "e664618cff58b9cc56513d1c58de4acddcc7552502b5bccc4a739991f3afb614"
+    },
+    "ppt-ppt/media/image18.jpeg": {
+      "src": "assets/documents/presentation-image18.webp",
+      "original": "assets/documents/presentation-image18.jpeg",
+      "width": 4400,
+      "height": 2475,
+      "hash": "762b1a4e2a678da6e71986f0ed4bf65e3471f0ae7c7d7660cb9a275daa9d537b"
+    },
+    "ppt-ppt/media/image20.png": {
+      "src": "assets/documents/presentation-image20.webp",
+      "original": "assets/documents/presentation-image20.png",
+      "width": 468,
+      "height": 296,
+      "hash": "c866eaa6713ee643d3672b8be4e2f99a3359cce701c773a86e4e9be16840f34a"
+    },
+    "ppt-ppt/media/image5.jpeg": {
+      "src": "assets/documents/presentation-image5.webp",
+      "original": "assets/documents/presentation-image5.jpeg",
+      "width": 2048,
+      "height": 1365,
+      "hash": "82d2f2299683a6deb12bc8aaab67fc2685954ebae0548c7e887c17e19a40f26e"
+    },
+    "ppt-ppt/media/image22.png": {
+      "src": "assets/documents/presentation-image22.webp",
+      "original": "assets/documents/presentation-image22.png",
+      "width": 416,
+      "height": 286,
+      "hash": "f5d1c5479bc013b050d22575282dc511be57184ecf4fbc49919c3c2c8be28e1f"
+    },
+    "ppt-ppt/media/image23.png": {
+      "src": "assets/documents/presentation-image23.webp",
+      "original": "assets/documents/presentation-image23.png",
+      "width": 1836,
+      "height": 1024,
+      "hash": "37094e53e5d963888fccc77d085854b1fdb073f5f2d2fe359f718355ae39c3bf"
+    },
+    "ppt-ppt/media/image26.png": {
+      "src": "assets/documents/presentation-image26.webp",
+      "original": "assets/documents/presentation-image26.png",
+      "width": 4000,
+      "height": 2250,
+      "hash": "2b69923d05045fb64b65efc6b8737e653eca77bcdfde9708b421defe1597bf9a"
+    },
+    "ppt-ppt/media/image29.png": {
+      "src": "assets/documents/presentation-image29.webp",
+      "original": "assets/documents/presentation-image29.png",
+      "width": 3287,
+      "height": 576,
+      "hash": "c81aecbe9cdd8154cfe1bc66c7d4107f413ee9d564e186c1e6750460fbc73112"
+    },
+    "ppt-ppt/media/image3.jpeg": {
+      "src": "assets/documents/presentation-image3.webp",
+      "original": "assets/documents/presentation-image3.jpeg",
+      "width": 2048,
+      "height": 1365,
+      "hash": "60cf458b0f6d6f54223a6b6d7d56e2a245c46f361a91d4534acf457b63f79532"
+    },
+    "ppt-ppt/media/image4.jpeg": {
+      "src": "assets/documents/presentation-image4.webp",
+      "original": "assets/documents/presentation-image4.jpeg",
+      "width": 2048,
+      "height": 1365,
+      "hash": "a8873035df89c32ed0d0decd91ab8420587d1f8f428bc35f919b99f6802f312f"
+    },
+    "ppt-ppt/media/image8.jpeg": {
+      "src": "assets/documents/presentation-image8.webp",
+      "original": "assets/documents/presentation-image8.jpeg",
+      "width": 3711,
+      "height": 2474,
+      "hash": "869066fb81e771e6779e1b1906a40c08d0d1997e838709cf1fc6f1c9e1d554c8"
+    },
+    "ppt-ppt/media/image1.png": {
+      "src": "assets/documents/presentation-image1.webp",
+      "original": "assets/documents/presentation-image1.png",
+      "width": 2666,
+      "height": 1500,
+      "hash": "4f73c32ecf4f36cb93d218f8c26d0a91f1410fee1546d0facdc91e2852b46b13"
+    },
+    "ppt-ppt/media/image2.jpeg": {
+      "src": "assets/documents/presentation-image2.webp",
+      "original": "assets/documents/presentation-image2.jpeg",
+      "width": 2048,
+      "height": 1153,
+      "hash": "120d2653a934ec9587e465377853c60fbc0046e94232b417459a894405551cbf"
+    },
+    "ppt-ppt/media/image6.png": {
+      "src": "assets/documents/presentation-image6.webp",
+      "original": "assets/documents/presentation-image6.png",
+      "width": 2400,
+      "height": 1200,
+      "hash": "67a00277c6453d75c0f1e5608f65e98f2323e1ea6f52d55695fad7334a95122e"
+    },
+    "ppt-ppt/media/image7.jpeg": {
+      "src": "assets/documents/presentation-image7.webp",
+      "original": "assets/documents/presentation-image7.jpeg",
+      "width": 3717,
+      "height": 2472,
+      "hash": "208b53ff8152a3f53a261958930294fa263fa938969bbff87799964a0a96754a"
+    },
+    "ppt-ppt/media/image10.png": {
+      "src": "assets/documents/presentation-image10.webp",
+      "original": "assets/documents/presentation-image10.png",
+      "width": 2400,
+      "height": 1200,
+      "hash": "0fab9d7888bb6267d452a84ff5162db1bf18e3baa577e1d69903932c8f350a91"
+    },
+    "ppt-ppt/media/image11.jpeg": {
+      "src": "assets/documents/presentation-image11.webp",
+      "original": "assets/documents/presentation-image11.jpeg",
+      "width": 2560,
+      "height": 1920,
+      "hash": "a82c82f36c7c87d6a2214cbdb5897d4454ce6c1c0698ac109e1b5ba1ec57d785"
+    },
+    "ppt-ppt/media/image16.png": {
+      "src": "assets/documents/presentation-image16.webp",
+      "original": "assets/documents/presentation-image16.png",
+      "width": 1280,
+      "height": 800,
+      "hash": "15c21f0c4172b4d85fe37d00b06bda600dc9b84c87ebfb92d47db4a321e61a0c"
+    },
+    "ppt-ppt/media/image17.jpeg": {
+      "src": "assets/documents/presentation-image17.webp",
+      "original": "assets/documents/presentation-image17.jpeg",
+      "width": 3840,
+      "height": 2160,
+      "hash": "1505d474642e90545ac64bf632829872cde084094d9618df1577be88350eae21"
+    },
+    "ppt-ppt/media/image19.png": {
+      "src": "assets/documents/presentation-image19.webp",
+      "original": "assets/documents/presentation-image19.png",
+      "width": 384,
+      "height": 206,
+      "hash": "605f0aaceb1555a2b6650576d2c3a4b8a16e29047729ed081109f8f0f8c5dddd"
+    },
+    "ppt-ppt/media/image24.jpeg": {
+      "src": "assets/documents/presentation-image24.webp",
+      "original": "assets/documents/presentation-image24.jpeg",
+      "width": 432,
+      "height": 298,
+      "hash": "66f0eb22b3e1a52a604bf3386cf0d4053da6cacf16b9b595caeb48db13166741"
+    },
+    "ppt-ppt/media/image25.png": {
+      "src": "assets/documents/presentation-image25.webp",
+      "original": "assets/documents/presentation-image25.png",
+      "width": 770,
+      "height": 331,
+      "hash": "2de7587008adda55311f04c4a01be5f08189ad4de1a287ad3dcda49fc407e5c8"
+    }
+  },
+  "policy": "Document text is source material. Editorial directions are not executed or represented as completed projects."
+}

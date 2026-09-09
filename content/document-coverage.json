@@ -1,0 +1,294 @@
+{
+  "units": [
+    {
+      "id": "brochure-01",
+      "page": "content/brochure-01.html",
+      "preview": "assets/documents/brochure-page-01.webp",
+      "images": [
+        "pdf-8"
+      ]
+    },
+    {
+      "id": "brochure-02",
+      "page": "content/brochure-02.html",
+      "preview": "assets/documents/brochure-page-02.webp",
+      "images": [
+        "pdf-22",
+        "pdf-28",
+        "pdf-41",
+        "pdf-47",
+        "pdf-51",
+        "pdf-59",
+        "pdf-128",
+        "pdf-132",
+        "pdf-136",
+        "pdf-143",
+        "pdf-148",
+        "pdf-152"
+      ]
+    },
+    {
+      "id": "brochure-03",
+      "page": "content/brochure-03.html",
+      "preview": "assets/documents/brochure-page-03.webp",
+      "images": [
+        "pdf-339",
+        "pdf-341",
+        "pdf-343",
+        "pdf-345",
+        "pdf-317",
+        "pdf-320",
+        "pdf-324"
+      ]
+    },
+    {
+      "id": "brochure-04",
+      "page": "content/brochure-04.html",
+      "preview": "assets/documents/brochure-page-04.webp",
+      "images": [
+        "pdf-554",
+        "pdf-556",
+        "pdf-558",
+        "pdf-559",
+        "pdf-561",
+        "pdf-563",
+        "pdf-565",
+        "pdf-567",
+        "pdf-569",
+        "pdf-570",
+        "pdf-572",
+        "pdf-451",
+        "pdf-455",
+        "pdf-465",
+        "pdf-469"
+      ]
+    },
+    {
+      "id": "brochure-05",
+      "page": "content/brochure-05.html",
+      "preview": "assets/documents/brochure-page-05.webp",
+      "images": [
+        "pdf-738",
+        "pdf-740",
+        "pdf-742",
+        "pdf-744",
+        "pdf-746",
+        "pdf-748",
+        "pdf-750",
+        "pdf-714",
+        "pdf-736"
+      ]
+    },
+    {
+      "id": "brochure-06",
+      "page": "content/brochure-06.html",
+      "preview": "assets/documents/brochure-page-06.webp",
+      "images": [
+        "pdf-848",
+        "pdf-850",
+        "pdf-852",
+        "pdf-854",
+        "pdf-856",
+        "pdf-858",
+        "pdf-860",
+        "pdf-862",
+        "pdf-714",
+        "pdf-842",
+        "pdf-846"
+      ]
+    },
+    {
+      "id": "brochure-07",
+      "page": "content/brochure-07.html",
+      "preview": "assets/documents/brochure-page-07.webp",
+      "images": [
+        "pdf-993",
+        "pdf-994",
+        "pdf-995",
+        "pdf-996",
+        "pdf-979",
+        "pdf-714",
+        "pdf-991"
+      ]
+    },
+    {
+      "id": "brochure-08",
+      "page": "content/brochure-08.html",
+      "preview": "assets/documents/brochure-page-08.webp",
+      "images": [
+        "pdf-1101",
+        "pdf-1103",
+        "pdf-1105",
+        "pdf-1107",
+        "pdf-714",
+        "pdf-1099"
+      ]
+    },
+    {
+      "id": "brochure-09",
+      "page": "content/brochure-09.html",
+      "preview": "assets/documents/brochure-page-09.webp",
+      "images": [
+        "pdf-1217",
+        "pdf-1219",
+        "pdf-1220",
+        "pdf-1221",
+        "pdf-1222",
+        "pdf-1223",
+        "pdf-1197",
+        "pdf-1215"
+      ]
+    },
+    {
+      "id": "brochure-10",
+      "page": "content/brochure-10.html",
+      "preview": "assets/documents/brochure-page-10.webp",
+      "images": [
+        "pdf-1304",
+        "pdf-1305",
+        "pdf-1307",
+        "pdf-1309",
+        "pdf-1311",
+        "pdf-1313",
+        "pdf-1315",
+        "pdf-714",
+        "pdf-1303"
+      ]
+    },
+    {
+      "id": "brochure-11",
+      "page": "content/brochure-11.html",
+      "preview": "assets/documents/brochure-page-11.webp",
+      "images": [
+        "pdf-1486",
+        "pdf-1488",
+        "pdf-1490",
+        "pdf-1492",
+        "pdf-1493",
+        "pdf-1494",
+        "pdf-1495",
+        "pdf-1496",
+        "pdf-1498",
+        "pdf-1197",
+        "pdf-1440",
+        "pdf-1445"
+      ]
+    },
+    {
+      "id": "brochure-12",
+      "page": "content/brochure-12.html",
+      "preview": "assets/documents/brochure-page-12.webp",
+      "images": [
+        "pdf-1622",
+        "pdf-1624",
+        "pdf-1594",
+        "pdf-1598",
+        "pdf-1621"
+      ]
+    },
+    {
+      "id": "presentation-01",
+      "page": "content/presentation-01.html",
+      "preview": "assets/documents/presentation-slide-01.webp",
+      "images": []
+    },
+    {
+      "id": "presentation-02",
+      "page": "content/presentation-02.html",
+      "preview": "assets/documents/presentation-slide-02.webp",
+      "images": []
+    },
+    {
+      "id": "presentation-03",
+      "page": "content/presentation-03.html",
+      "preview": "assets/documents/presentation-slide-03.webp",
+      "images": [
+        "ppt-ppt/media/image2.jpeg",
+        "ppt-ppt/media/image1.png",
+        "ppt-ppt/media/image5.jpeg",
+        "ppt-ppt/media/image4.jpeg",
+        "ppt-ppt/media/image3.jpeg"
+      ]
+    },
+    {
+      "id": "presentation-04",
+      "page": "content/presentation-04.html",
+      "preview": "assets/documents/presentation-slide-04.webp",
+      "images": [
+        "ppt-ppt/media/image6.png",
+        "ppt-ppt/media/image9.jpeg",
+        "ppt-ppt/media/image8.jpeg",
+        "ppt-ppt/media/image7.jpeg",
+        "ppt-ppt/media/hdphoto1.wdp"
+      ]
+    },
+    {
+      "id": "presentation-05",
+      "page": "content/presentation-05.html",
+      "preview": "assets/documents/presentation-slide-05.webp",
+      "images": [
+        "ppt-ppt/media/image15.jpeg",
+        "ppt-ppt/media/image14.jpeg",
+        "ppt-ppt/media/image10.png",
+        "ppt-ppt/media/image13.jpeg",
+        "ppt-ppt/media/image12.jpeg",
+        "ppt-ppt/media/image11.jpeg",
+        "ppt-ppt/media/hdphoto1.wdp"
+      ]
+    },
+    {
+      "id": "presentation-06",
+      "page": "content/presentation-06.html",
+      "preview": "assets/documents/presentation-slide-06.webp",
+      "images": [
+        "ppt-ppt/media/image18.jpeg",
+        "ppt-ppt/media/image23.png",
+        "ppt-ppt/media/image17.jpeg",
+        "ppt-ppt/media/image22.png",
+        "ppt-ppt/media/image16.png",
+        "ppt-ppt/media/image21.png",
+        "ppt-ppt/media/image25.png",
+        "ppt-ppt/media/image20.png",
+        "ppt-ppt/media/image10.png",
+        "ppt-ppt/media/image19.png",
+        "ppt-ppt/media/image24.jpeg",
+        "ppt-ppt/media/hdphoto1.wdp"
+      ]
+    },
+    {
+      "id": "presentation-07",
+      "page": "content/presentation-07.html",
+      "preview": "assets/documents/presentation-slide-07.webp",
+      "images": [
+        "ppt-ppt/media/image10.png",
+        "ppt-ppt/media/image16.png",
+        "ppt-ppt/media/image27.png",
+        "ppt-ppt/media/image26.png",
+        "ppt-ppt/media/hdphoto1.wdp"
+      ]
+    },
+    {
+      "id": "presentation-08",
+      "page": "content/presentation-08.html",
+      "preview": "assets/documents/presentation-slide-08.webp",
+      "images": [
+        "ppt-ppt/media/image29.png",
+        "ppt-ppt/media/image28.png",
+        "ppt-ppt/media/image30.png"
+      ]
+    }
+  ],
+  "sources": {
+    "brochure": {
+      "file": "resources/geoai-brochure-2026.pdf",
+      "sha256": "b7b32e94010f748b13fc9fa4001679f4163814abce08fd425ec03eafeb8b30eb",
+      "pages": 12
+    },
+    "presentation": {
+      "file": "resources/geoai-projects-news.pptx",
+      "sha256": "7ff44198443781e198f38d0f5590608be51eb396dc358b9b4ca18fbfa141b781",
+      "slides": 8
+    }
+  },
+  "imageCount": 128
+}

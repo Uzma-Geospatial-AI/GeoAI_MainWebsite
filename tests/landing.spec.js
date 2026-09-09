@@ -84,7 +84,7 @@ test('restored offerings and supplied brand palette stay complete', async ({ pag
   await expect(page.locator('.vision-mission')).toContainText('2030');
   await expect(page.locator('.film-link')).toHaveAttribute('href', 'https://youtu.be/T0oPHhV7D4Q');
   await expect(page.locator('.contact-appointment')).toHaveAttribute('data-booking', '');
-  await expect(page.locator('#services')).toHaveCSS('background-color', 'rgb(255, 255, 255)');
+  await expect(page.locator('#services')).toHaveCSS('background-color', 'rgb(224, 234, 240)');
   await expect(page.locator('.nav .brand img')).toHaveCount(2);
   await expect(page.locator('.hero-actions .button')).toHaveCSS('background-color', 'rgb(226, 111, 57)');
 });
@@ -220,7 +220,7 @@ test('appointment calendar opens on demand and restores keyboard focus', async (
 test('all news stories are available from the homepage', async ({ page }) => {
   await page.emulateMedia({ reducedMotion:'reduce' });
   await page.goto('/#blog');
-  await expect(page.locator('.journal-card')).toHaveCount(18);
+  await expect(page.locator('.journal-card')).toHaveCount(21);
   await page.locator('.journal-archive summary').click();
   await expect(page.locator('.journal-grid .journal-card').last()).toBeVisible();
   await page.locator('.journal-grid .journal-card').last().getByRole('link').click();

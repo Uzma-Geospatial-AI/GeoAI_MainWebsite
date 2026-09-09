@@ -495,7 +495,7 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
     }
     const scroll = manualPose ? progress : reducedMotion ? 0 : progress;
     craft.rotation.set(-0.77 + scroll * 0.22, 0.39 + scroll * Math.PI * 1.82, 0.58 - scroll * 0.32);
-    satellite.position.set(0.15, 0.63 + (!reducedMotion ? Math.sin(elapsed * 0.45) * 0.064 : 0), 0);
+    satellite.position.set(0.15, -0.12 + (!reducedMotion ? Math.sin(elapsed * 0.45) * 0.064 : 0), 0);
     satellite.rotation.y = !reducedMotion ? Math.sin(elapsed * 0.22) * 0.045 : 0;
     earth.rotation.y = scroll * 0.18;
     if (variant === 'planet') earth.rotation.y = scroll + elapsed * 0.04;

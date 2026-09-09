@@ -6,8 +6,8 @@ test('homepage readers can reach the complete content library and local service 
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
   await page.getByRole('link', { name: 'Explore all content', exact: true }).click();
-  await expect(page.locator('.library-section .card')).toHaveCount(36);
-  await expect(page.locator('#news .card')).toHaveCount(18);
+  await expect(page.locator('.library-section .card')).toHaveCount(56);
+  await expect(page.locator('#news .card')).toHaveCount(21);
   await page.locator('a.card[href="satellite-imagery.html"]').click();
   await expect(page.locator('article')).toContainText('OPTICAL IMAGERY');
   await expect(page.locator('article')).toContainText('Sentosa');
