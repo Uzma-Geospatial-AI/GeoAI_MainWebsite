@@ -1,0 +1,2 @@
+# Preserve upstream vendor formatting, including whitespace inside GLSL strings.
+redesign/assets/vendor/** -whitespace linguist-vendored

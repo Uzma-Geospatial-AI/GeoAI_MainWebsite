@@ -1,148 +1,186 @@
-/* Uzma Geospatial AI — redesign interactions */
-(function () {
+(() => {
   'use strict';
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+  const nav = document.getElementById('nav');
+  const menuToggle = document.getElementById('menu-toggle');
+  const navigation = document.getElementById('navigation');
+  const motionToggle = document.getElementById('motion-toggle');
+  let scene = null;
+  let paused = motionPreference.matches;
+  let progress = 0;
+  let triggers = [];
+  let revealObserver;
+  let gsapContext;
+  let sceneGeneration = 0;
 
-  /* ---- Navbar glass on scroll ---- */
-  var nav = document.getElementById('nav');
-  function onScroll() {
-    if (window.scrollY > 30) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
+  function closeMenu(returnFocus = false) {
+    nav.classList.remove('menu-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation');
+    if (returnFocus) menuToggle.focus();
   }
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
+  menuToggle.addEventListener('click', () => {
+    const open = menuToggle.getAttribute('aria-expanded') !== 'true';
+    nav.classList.toggle('menu-open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  });
+  navigation.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && nav.classList.contains('menu-open')) closeMenu(true); });
+  document.addEventListener('click', event => { if (!nav.contains(event.target)) closeMenu(); });
+  matchMedia('(min-width: 768px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
+  const topObserver = new IntersectionObserver(entries => {
+    nav.classList.toggle('is-scrolled', !entries[0].isIntersecting);
+  }, { rootMargin: '-85px 0px 0px 0px', threshold: 0 });
+  topObserver.observe(document.querySelector('.hero-copy'));
 
-  /* ---- Mobile menu ---- */
-  var burger = document.getElementById('burger');
-  burger && burger.addEventListener('click', function () { nav.classList.toggle('open'); });
-  document.querySelectorAll('.menu a').forEach(function (a) {
-    a.addEventListener('click', function () { nav.classList.remove('open'); });
+  function updateMotionControl() {
+    motionToggle.disabled = motionPreference.matches;
+    motionToggle.setAttribute('aria-pressed', String(paused));
+    motionToggle.setAttribute('aria-label', motionPreference.matches ? 'Motion disabled by your device preference' : paused ? 'Resume animation' : 'Pause animation');
+    document.getElementById('motion-label').textContent = motionPreference.matches ? 'Reduced motion' : paused ? 'Resume motion' : 'Pause motion';
+    document.getElementById('motion-icon').textContent = paused ? '▷' : 'Ⅱ';
+    scene?.setPaused(paused);
+    if (!paused) scene?.setProgress(progress);
+  }
+  motionToggle.addEventListener('click', () => { paused = !paused; updateMotionControl(); });
+  updateMotionControl();
+
+  function setupMotion() {
+    triggers.forEach(trigger => trigger.kill());
+    triggers = [];
+    gsapContext?.revert();
+    revealObserver?.disconnect();
+    document.querySelectorAll('[data-reveal]').forEach(el => { el.style.opacity = ''; el.style.transform = ''; });
+    if (motionPreference.matches || !window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+    const reveals = [...document.querySelectorAll('[data-reveal]')];
+    gsapContext = gsap.context(() => {
+      // No script or a failed library still leaves every section readable.
+      gsap.set(reveals, { opacity: 0, y: 32 });
+      revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          gsap.to(entry.target, { opacity: 1, y: 0, duration: .85, ease: 'power3.out', clearProps: 'opacity,transform' });
+          revealObserver.unobserve(entry.target);
+        });
+      }, { threshold: .08 });
+      reveals.forEach(el => revealObserver.observe(el));
+      const flight = document.querySelector('.flight');
+      const stage = document.querySelector('.flight-stage');
+      triggers.push(ScrollTrigger.create({
+        trigger: flight, start: 'top top',
+        end: () => '+=' + Math.max(1, flight.offsetHeight - (matchMedia('(min-width: 768px)').matches ? stage.offsetHeight : stage.offsetHeight * .35)),
+        onUpdate: self => {
+          progress = self.progress;
+          if (!paused) scene?.setProgress(progress);
+          document.getElementById('flight-progress').style.transform = `scaleX(${progress})`;
+          document.getElementById('scene-caption').textContent = progress < .34 ? 'A closer look at our eye in the sky.' : progress < .7 ? 'Precision, from every angle.' : 'Space technology. Earth-sized possibilities.';
+        }, invalidateOnRefresh: true
+      }));
+      gsap.from('.hero-copy > *', { y: 20, opacity: 0, duration: 1, stagger: .12, ease: 'power3.out', clearProps: 'opacity,transform' });
+    });
+  }
+  setupMotion();
+  motionPreference.addEventListener('change', () => {
+    paused = motionPreference.matches;
+    scene?.dispose(); scene = null;
+    document.getElementById('space-visual').classList.remove('scene-ready');
+    setupMotion(); updateMotionControl(); loadScene();
   });
 
-  /* ---- Scroll reveal ---- */
-  var reveals = document.querySelectorAll('[data-reveal]');
-  function revealAll() { reveals.forEach(function (el) { el.classList.add('in'); }); }
-  var forceReveal = /[?&]reveal/.test(location.search);   // static-capture / debug mode
-  if (forceReveal) {                                       // snap to final state, no transition
-    var s = document.createElement('style');
-    s.textContent = '[data-reveal]{transition:none!important}.hero{min-height:auto!important}';
-    document.head.appendChild(s);
+  const mount = document.getElementById('webgl-mount');
+  function showFallback() {
+    document.getElementById('space-visual').classList.remove('scene-ready');
+    motionToggle.hidden = true;
   }
-  if (reduce || forceReveal) {
-    revealAll();
-  } else if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    reveals.forEach(function (el) { io.observe(el); });
-    /* Safety net: nothing should ever stay invisible. If, for any reason,
-       an element never enters the viewport / observer stalls, reveal it. */
-    setTimeout(revealAll, 4000);
-  } else {
-    revealAll();
-  }
-
-  /* ---- Count-up numbers ---- */
-  function animateCount(el) {
-    if (el.dataset.raw !== undefined) { return; }         // leave raw numbers (e.g. 2021)
-    var target = parseFloat(el.dataset.count);
-    var suffix = el.dataset.suffix || '';
-    if (isNaN(target)) return;
-    if (reduce) { el.textContent = target + suffix; return; }
-    var start = performance.now(), dur = 1400;
-    function step(now) {
-      var p = Math.min((now - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(target * eased) + suffix;
-      if (p < 1) requestAnimationFrame(step);
+  mount.addEventListener('space-scene-error', showFallback);
+  mount.addEventListener('space-scene-ready', () => {
+    document.getElementById('space-visual').classList.add('scene-ready');
+    motionToggle.hidden = false;
+  });
+  async function loadScene() {
+    const generation = ++sceneGeneration;
+    try {
+      const { initSpaceScene } = await import('./space-scene.js');
+      if (generation !== sceneGeneration) return;
+      const nextScene = await initSpaceScene({ container: mount, reducedMotion: motionPreference.matches });
+      if (generation !== sceneGeneration) { nextScene.dispose(); return; }
+      scene = nextScene;
+      scene.setProgress(progress);
+      scene.setPaused(paused);
+      motionToggle.hidden = false;
+      document.getElementById('space-visual').classList.add('scene-ready');
+    } catch (error) {
+      console.info('Using the satellite image fallback:', error.message);
+      showFallback();
     }
-    requestAnimationFrame(step);
   }
-  var counters = document.querySelectorAll('[data-count]');
-  if (forceReveal) {
-    counters.forEach(function (el) {
-      if (el.dataset.raw === undefined) el.textContent = el.dataset.count + (el.dataset.suffix || '');
+  // Paint the lightweight product image before downloading and compiling 3D.
+  // Deep links below the hero do not pay the rendering cost until it is visible.
+  const sceneObserver = new IntersectionObserver(entries => {
+    if (!entries.some(entry => entry.isIntersecting)) return;
+    sceneObserver.disconnect();
+    const poster = document.querySelector('#scene-fallback img');
+    poster.decode().catch(() => {}).then(() => {
+      requestAnimationFrame(() => requestAnimationFrame(loadScene));
     });
-  } else if ('IntersectionObserver' in window) {
-    var cio = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { animateCount(e.target); cio.unobserve(e.target); }
-      });
-    }, { threshold: 0.6 });
-    counters.forEach(function (el) { cio.observe(el); });
-  } else {
-    counters.forEach(animateCount);
-  }
+  }, { rootMargin: '100px' });
+  sceneObserver.observe(mount);
 
-  /* ---- Hero image subtle tilt on mouse ---- */
-  var orb = document.getElementById('heroOrb');
-  if (orb && !reduce && window.matchMedia('(pointer:fine)').matches) {
-    var frame = orb.parentElement;
-    frame.addEventListener('mousemove', function (ev) {
-      var r = frame.getBoundingClientRect();
-      var x = (ev.clientX - r.left) / r.width - 0.5;
-      var y = (ev.clientY - r.top) / r.height - 0.5;
-      orb.style.transform = 'rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 8) + 'deg) translateZ(0)';
-    });
-    frame.addEventListener('mouseleave', function () {
-      orb.style.transform = 'rotateY(0) rotateX(0)';
-    });
+  const imageData = {
+    bohayen: { src: 'assets/img/bohayen.webp', location: 'Pulau Bohayen, Sabah, Malaysia', alt: 'Satellogic satellite image of Pulau Bohayen, Malaysia, showing turquoise coastal waters and island vegetation' },
+    giza: { src: 'assets/img/giza.webp', location: 'Giza, Egypt', alt: 'Satellogic satellite image of the pyramids of Giza beside the city and desert' },
+    kradat: { src: 'assets/img/ko-kradat.webp', location: 'Ko Kradat, Thailand', alt: 'Satellogic satellite image of Ko Kradat island and surrounding reefs in Thailand' }
+  };
+  const imageTabs = [...document.querySelectorAll('[data-image]')];
+  const earthImage = document.getElementById('earth-image');
+  const zoom = document.getElementById('image-zoom');
+  function updateZoom() {
+    earthImage.style.transform = `scale(${Number(zoom.value)})`;
+    document.getElementById('zoom-output').value = `${Number(zoom.value).toFixed(1)}×`;
+    zoom.setAttribute('aria-valuetext', `${Number(zoom.value).toFixed(1)} times magnification`);
   }
-
-  /* ---- Card spotlight (glass follows cursor) ---- */
-  if (!reduce && window.matchMedia('(pointer:fine)').matches) {
-    document.querySelectorAll('.serv-card, .award, .spec, .vm .glass').forEach(function (card) {
-      card.addEventListener('mousemove', function (e) {
-        var r = card.getBoundingClientRect();
-        card.style.background =
-          'radial-gradient(320px circle at ' + (e.clientX - r.left) + 'px ' + (e.clientY - r.top) +
-          'px, rgba(255,255,255,.12), var(--glass) 40%)';
-      });
-      card.addEventListener('mouseleave', function () { card.style.background = ''; });
+  function selectImage(tab) {
+    const data = imageData[tab.dataset.image];
+    imageTabs.forEach(item => { item.setAttribute('aria-selected', String(item === tab)); item.tabIndex = item === tab ? 0 : -1; });
+    earthImage.src = data.src; earthImage.alt = data.alt;
+    document.getElementById('image-location').textContent = data.location;
+    document.getElementById('imagery-panel').setAttribute('aria-labelledby', tab.id);
+    zoom.value = '1'; updateZoom();
+  }
+  imageTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => selectImage(tab));
+    tab.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % imageTabs.length;
+      if (event.key === 'ArrowLeft') next = (index + imageTabs.length - 1) % imageTabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = imageTabs.length - 1;
+      if (next === undefined) return;
+      event.preventDefault(); imageTabs[next].focus(); selectImage(imageTabs[next]);
     });
-  }
-
-  /* ---- Partner marquee (duplicated for seamless loop) ---- */
-  var track = document.getElementById('ptrack');
-  if (track) {
-    var partners = [
-      'MYSA', 'MASIC', 'MIGHT', 'MIMOS', 'MDA', 'Satellogic-Uruguay', 'GHGSat',
-      'SatVu', 'Umbra', 'Rezatec', 'SkyGeo', 'Sunway-university', 'Vasundharaa', 'Apa-Di-Langit'
-    ];
-    var html = '';
-    partners.forEach(function (p) {
-      html += '<div class="plogo"><img src="assets/img/partners/Partners-' + p + '.png" alt="' + p + '" loading="lazy"></div>';
+  });
+  zoom.addEventListener('input', updateZoom);
+  const solutions = {
+    agriculture: { image: 'precision-agriculture.webp', alt: 'Aerial view of agricultural land', title: 'Understand every hectare.', description: 'Monitor crop conditions, map plantation boundaries and understand changes across your land with satellite imagery and geospatial analysis.', url: 'precision-agriculture/' },
+    environment: { image: 'forestry.webp', alt: 'Satellite perspective of forest cover', title: 'Protect what matters.', description: 'Map forest cover, observe environmental change and build a clearer picture of the ecosystems in your care.', url: 'sustainableforestrymanagement/' },
+    cities: { image: 'urban.webp', alt: 'Satellite imagery of an urban area', title: 'See how your city changes.', description: 'Track land use, understand urban growth and bring geospatial context to infrastructure planning and development.', url: 'urban-planning-development/' },
+    risk: { image: 'ground-movement.webp', alt: 'Geospatial ground movement assessment', title: 'Understand the ground beneath.', description: 'Combine specialist radar satellite data and InSAR analysis to assess ground movement and support geohazard monitoring.', url: 'ground-movement/' }
+  };
+  document.querySelectorAll('[data-solution]').forEach(button => {
+    button.addEventListener('click', () => {
+      const data = solutions[button.dataset.solution];
+      document.querySelectorAll('[data-solution]').forEach(item => { item.classList.toggle('is-active', item === button); item.setAttribute('aria-expanded', String(item === button)); });
+      const image = document.getElementById('solution-image'); image.src = `assets/img/solutions/${data.image}`; image.alt = data.alt;
+      document.getElementById('solution-title').textContent = data.title;
+      document.getElementById('solution-description').textContent = data.description;
+      document.getElementById('solution-link').href = `https://www.uzmageoai.com/${data.url}`;
     });
-    track.innerHTML = html + html; // duplicate => seamless -50% scroll
-  }
-
-  /* ---- Star field ---- */
-  var cv = document.getElementById('stars');
-  if (cv && !reduce) {
-    var ctx = cv.getContext('2d'), stars = [], W, H;
-    function resize() {
-      W = cv.width = window.innerWidth;
-      H = cv.height = window.innerHeight;
-      var n = Math.min(140, Math.floor(W * H / 14000));
-      stars = [];
-      for (var i = 0; i < n; i++) {
-        stars.push({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.3 + 0.2, a: Math.random(), s: Math.random() * 0.02 + 0.004 });
-      }
-    }
-    function draw() {
-      ctx.clearRect(0, 0, W, H);
-      for (var i = 0; i < stars.length; i++) {
-        var st = stars[i];
-        st.a += st.s; if (st.a > 1 || st.a < 0) st.s = -st.s;
-        ctx.globalAlpha = Math.abs(st.a) * 0.8 + 0.1;
-        ctx.fillStyle = '#cfe0ff';
-        ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, 6.28); ctx.fill();
-      }
-      requestAnimationFrame(draw);
-    }
-    resize(); draw();
-    window.addEventListener('resize', resize);
-  }
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+  window.addEventListener('pagehide', event => {
+    if (event.persisted) return;
+    ++sceneGeneration; sceneObserver.disconnect(); scene?.dispose(); triggers.forEach(trigger => trigger.kill()); gsapContext?.revert(); revealObserver?.disconnect(); topObserver.disconnect();
+  });
 })();

@@ -3,6 +3,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const { gzip } = require('zlib');
 
 const ROOT = __dirname;
 const PORT = process.env.PORT || 8080;
@@ -21,7 +22,14 @@ http.createServer((req, res) => {
   if (!file.startsWith(ROOT)) { res.writeHead(403); return res.end('Forbidden'); }
   fs.readFile(file, (err, data) => {
     if (err) { res.writeHead(404, { 'Content-Type': 'text/html' }); return res.end('<h1>404</h1>'); }
-    res.writeHead(200, { 'Content-Type': MIME[path.extname(file).toLowerCase()] || 'application/octet-stream' });
-    res.end(data);
+    const ext = path.extname(file).toLowerCase();
+    const headers = { 'Content-Type': MIME[ext] || 'application/octet-stream', Vary: 'Accept-Encoding' };
+    if (/\b gzip\b|^gzip\b/.test(req.headers['accept-encoding'] || '') && ['.html', '.css', '.js', '.json', '.svg'].includes(ext)) {
+      gzip(data, (error, compressed) => {
+        if (error) { res.writeHead(200, headers); return res.end(data); }
+        res.writeHead(200, { ...headers, 'Content-Encoding': 'gzip' });
+        res.end(compressed);
+      });
+    } else { res.writeHead(200, headers); res.end(data); }
   });
 }).listen(PORT, () => console.log(`\n  Uzma GeoAI (redesign) running at:  http://localhost:${PORT}\n  Press Ctrl+C to stop.\n`));

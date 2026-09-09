@@ -1,11 +1,6 @@
 name: CI
 
-# Validates the static site on every push and pull request.
-#
-# Publishing is intentionally NOT handled here. GitHub Pages is not enabled on
-# this repository (and Pages on a private repo requires a paid plan), so a
-# deploy job would only ever fail. Add one back when a hosting target is chosen.
-
+# Validate the committed static website. Publishing is configured separately.
 on:
   push:
     branches: [main]
@@ -29,50 +24,19 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Verify every asset referenced by the redesign exists
-        run: |
-          node - <<'EOF'
-          const fs = require('fs');
-          const path = require('path');
+      # The validator only uses Node.js built-ins; npm install is unnecessary.
+      - name: Validate assets, module imports and anchors
+        run: npm run check
 
-          const root = 'redesign';
-          const page = path.join(root, 'index.html');
-          const html = fs.readFileSync(page, 'utf8');
-
-          // Basic sanity: the page must carry a title.
-          if (!/<title>[^<]+<\/title>/.test(html)) {
-            console.error('FAIL: redesign/index.html has no <title>.');
-            process.exit(1);
-          }
-
-          const refs = [...html.matchAll(/(?:src|href)="([^"]+)"/g)].map(m => m[1]);
-          const missing = [];
-          let checked = 0;
-
-          for (const ref of refs) {
-            if (/^(https?:|data:|mailto:|tel:|#|javascript:)/.test(ref)) continue;
-            // Strip fragment/query, then percent-decode so filenames containing
-            // encoded characters resolve to the real file on disk.
-            const clean = decodeURIComponent(ref.split('#')[0].split('?')[0]);
-            if (!clean) continue;
-            checked++;
-            if (!fs.existsSync(path.join(root, clean))) missing.push(clean);
-          }
-
-          console.log(`Checked ${checked} local references in ${page}`);
-          if (missing.length) {
-            console.error('FAIL: missing assets:\n  ' + missing.join('\n  '));
-            process.exit(1);
-          }
-          console.log('PASS: all local assets resolve.');
-          EOF
-
-      - name: Verify the stylesheet and script are present and non-empty
-        run: |
-          for f in redesign/assets/css/style.css redesign/assets/js/main.js; do
-            if [ ! -s "$f" ]; then
-              echo "FAIL: $f is missing or empty"
-              exit 1
-            fi
-            echo "OK: $f ($(wc -c < "$f") bytes)"
-          done
+  browser:
+    name: Browser and accessibility checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm test

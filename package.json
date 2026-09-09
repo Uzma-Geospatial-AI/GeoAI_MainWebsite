@@ -5,13 +5,26 @@
   "main": "index.js",
   "scripts": {
     "start": "node redesign/serve.js",
-    "mirror": "node serve.js"
+    "mirror": "node serve.js",
+    "check": "node scripts/validate-site.js",
+    "vendor": "node scripts/sync-vendor.js",
+    "test": "playwright test",
+    "images": "node scripts/optimize-images.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "gsap": "^3.15.0",
+    "three": "^0.186.0",
     "website-scraper": "^5.3.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "esbuild": "^0.28.2",
+    "lighthouse": "^13.4.1",
+    "sharp": "^0.35.4"
   }
 }

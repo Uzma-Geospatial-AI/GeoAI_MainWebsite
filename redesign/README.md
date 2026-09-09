@@ -1,70 +1,100 @@
-# Uzma Geospatial AI — Redesign (Glass / Apple-style)
+# UZMA-Sat 1 landing page
 
-A ground-up redesign of the Uzma Geospatial AI homepage: modern, animated, and clean,
-built around an Apple-style **"liquid glass"** language on a deep-space field.
-All copy, imagery, contact details and partner logos are the **real content** taken
-from the live site — nothing is placeholder text.
+A product-focused, cinematic website for Uzma Geospatial AI. A dark orbital scene
+introduces UZMA-Sat 1, followed by clear mission specifications, an imagery explorer,
+industry applications, the company story and direct enquiry links.
 
-## Run it
+## Local preview
 
-```bash
-npm start          # from the project root  ->  http://localhost:8080
-```
-or
+From the repository root:
 
-```bash
-node redesign/serve.js
+```sh
+npm start
 ```
 
-You can also open `redesign/index.html` directly in a browser.
+Visit **http://localhost:8080**. The Node.js server requires no dependencies.
+Use an HTTP server instead of opening the HTML file directly: the 3D scene uses
+ES modules, which browsers restrict on `file://` URLs.
 
-## Design language
+## Files and runtime
 
-| Element | Treatment |
-|---|---|
-| **Background** | Deep space gradient with three slowly drifting aurora blobs + a live twinkling star canvas |
-| **Glass** | `backdrop-filter: blur(22px) saturate(150%)`, translucent white fill, 1px light border, soft inner top highlight |
-| **Accent** | Brand orange `#ff6a1e` → `#ff9147`, with `#49b6ff` space-blue and `#7c8cff` violet |
-| **Type** | Inter, tight tracking, large confident headings |
-| **Shape** | Generous radii (14 / 20 / 28px), pill buttons, airy spacing |
+| File or folder | Role |
+| --- | --- |
+| `index.html` | Content, navigation, accessible controls and fallback imagery. |
+| `assets/css/style.css` | Layout, responsive styling and reduced-motion treatment. |
+| `assets/js/main.js` | Page interactions, scroll choreography and scene integration. |
+| `assets/js/space-scene.js` | Three.js satellite and Earth illustration. |
+| `assets/vendor/` | Local Three.js, GSAP and ScrollTrigger distributions. |
+| `assets/fonts/` | Self-hosted typeface. |
+| `assets/img/` | Satellite artwork, sample imagery, application images and logos. |
 
-## Animations
+The 3D spacecraft and orbital presentation are illustrative, not an engineering
+model or live position feed. The product image remains visible if WebGL is
+unavailable. The page respects the operating system's `prefers-reduced-motion`
+setting and provides a pause control for motion.
 
-- **Scroll reveal** — sections fade/slide/un-blur in on entry (IntersectionObserver), with stagger delays
-- **Glass navbar** — transparent at rest, frosts and lifts once you scroll
-- **Hero tilt** — the satellite panel tilts subtly toward the cursor (3D perspective)
-- **Count-up stats** — figures animate from 0 when scrolled into view
-- **Card spotlight** — a soft light follows the cursor across glass cards
-- **Hover choreography** — solution cards lift, image zooms, description expands, arrow slides
-- **Partner marquee** — seamless infinite scroll, pauses on hover
-- **Floating cards** — gentle drift on the hero panel
-- Full `prefers-reduced-motion` support — all motion disabled for users who ask for it
+The imagery explorer supports selecting a location and magnifying the displayed
+sample. Its keyboard controls should remain usable when changing the layout.
+Preserve visible focus styles, semantic buttons, descriptive image text and
+the page's skip link when editing.
 
-## Sections
+## Content and attribution
 
-1. **Hero** — UzmaSAT-1 launch badge, headline, CTAs, key figures, glass satellite panel
-2. **Stats strip** — 50cm resolution · 7× daily revisits · founded 2021 · 14+ partners
-3. **About** — company story, Vision & Mission, Uzma Digital Earth platform visual
-4. **Solutions** — 6 industry cards on real satellite imagery (agriculture, plantation, ground movement, infrastructure, forestry, urban)
-5. **Services** — the 4 core services
-6. **UzmaSAT-1** — the launch story with spec tiles
-7. **Awards** — MTEA 2024 and both Solar Week Malaysia awards
-8. **Partners** — scrolling logo marquee
-9. **Blog** — three latest posts with real dates and categories
-10. **Contact** — real contact details + enquiry form
-11. **Footer** — full navigation, socials, legal line
+Published specifications are linked to the [official Uzma product page](https://uzmagroup.com/uzmasat-1/).
+Keep qualifying wording such as **up to 50 cm per pixel**. The launch date is
+15 January 2025, aboard SpaceX Falcon 9 Transporter-12. Orbital numbers describe
+published specifications rather than current telemetry.
 
-## Notes
+Pulau Bohayen, Giza and Ko Kradat are **sample imagery © Satellogic** from the
+existing company asset collection. They represent the satellite partner network;
+do not describe them as confirmed UZMA-Sat 1 captures. The zoom control performs
+digital magnification and does not establish the samples' native ground resolution.
 
-- The **contact form is visual only** — it does not submit anywhere yet (as agreed).
-  To make it live, point it at a service such as Formspree or your own endpoint.
-- Nav links currently scroll to sections on this single page. When the inner pages
-  (Blog, individual Solutions/Services) are built, swap the `#anchors` for real URLs.
-- Add `?reveal=1` to the URL to force all animations to their final state — useful
-  for screenshots and print.
-- The original mirrored site is untouched in `../site/` (run it with `npm run mirror`).
+Contact destinations are `geospatial.ai@uzmagroup.com`, `+6011 5677 0921` and the
+team's WhatsApp account. The site has no enquiry form backend. Email and WhatsApp
+links open the visitor's chosen communication service.
 
-## Deploying
+## Check and refresh vendor files
 
-`redesign/` is a plain static site. Upload its contents to any static host
-(Netlify, Vercel, Cloudflare Pages, GitHub Pages, S3, cPanel). No build step.
+From the repository root:
+
+```sh
+npm run check
+```
+
+This checks local HTML `src`/`href`/`srcset` references, anchor destinations, CSS
+URLs, explicit JavaScript imports, quoted `assets/...` mappings and required
+runtime files. It does not execute JavaScript, resolve computed paths or check
+remote link availability. Review the desktop and mobile layouts, scrolling,
+navigation, imagery controls, reduced motion and WebGL fallback in a browser.
+
+To refresh the local vendor files reproducibly:
+
+```sh
+npm ci
+npm run vendor
+npm run check
+```
+
+The refresh script minifies `three.module.js` and `three.core.js` using esbuild,
+and copies Three.js's MIT license, `gsap.min.js` and `ScrollTrigger.min.js` from
+the installed packages. GSAP's package has no separate license file; its distribution headers
+retain the copyright and license link. Commit vendor changes alongside lockfile
+changes when updating dependency versions.
+
+Run `npm run images` to regenerate WebP assets from the original repository images.
+Run `npm test` for the browser regression and accessibility checks (installed Chrome
+locally, Playwright Chromium in CI). Runtime image and code assets are local; no
+third-party font or JavaScript CDN is required. The scene waits for the product
+image and a visible container before loading. The preview server uses gzip for
+text assets; enable gzip or Brotli when configuring production hosting.
+
+## Hosting
+
+This is a static site with **no build step and no automatic deployment**. Pushing
+to GitHub validates the committed files but does not publish a website.
+
+Upload this folder's contents to a static host and retain the directory structure.
+Use a host that serves `.js` as JavaScript and `.woff2` as a font. Assets use relative
+paths so hosting at a domain root or under a repository subpath both work.
+The previous WordPress mirror is kept separately in `../site/`.
