@@ -2,7 +2,7 @@ import * as THREE from '../vendor/three.module.js';
 
 // A lightweight, self-contained interpretation of the UZMA-Sat 1 spacecraft.
 // The product photograph remains the fallback if WebGL cannot start.
-export async function initSpaceScene({ container, reducedMotion = false }) {
+export async function initSpaceScene({ container, reducedMotion = false, variant = 'hero' }) {
   if (!(container instanceof HTMLElement)) throw new Error('A scene container is required.');
 
   const scene = new THREE.Scene();
@@ -312,7 +312,7 @@ export async function initSpaceScene({ container, reducedMotion = false }) {
 
   // Earth is intentionally an atmospheric horizon rather than a geographic
   // data map. Noise is computed on the sphere, so it has no texture downloads.
-  const earthUniforms = { uSun: { value: new THREE.Vector3(-0.5, 0.75, 0.6).normalize() } };
+  const earthUniforms = { uSun: { value: new THREE.Vector3(-0.5, 0.75, 0.6).normalize() }, uBright: { value: variant === 'planet' ? 1 : 0 } };
   const earthVertex = `
     varying vec3 vNormal;
     varying vec3 vPosition;
@@ -329,6 +329,7 @@ export async function initSpaceScene({ container, reducedMotion = false }) {
     vertexShader: earthVertex,
     fragmentShader: `
       uniform vec3 uSun;
+      uniform float uBright;
       varying vec3 vNormal;
       varying vec3 vPosition;
       varying vec3 vWorld;
@@ -356,6 +357,12 @@ export async function initSpaceScene({ container, reducedMotion = false }) {
         surface += vec3(0.1, 0.16, 0.18) * wisps * day * 0.45;
         surface *= 0.22 + day * 0.85;
         surface += vec3(0.025, 0.2, 0.31) * edge * (0.3 + day * 0.7);
+        // A brighter illustrative globe for the peach contact section.
+        float land = smoothstep(0.51, 0.56, noise(vPosition * 0.6));
+        vec3 brightSurface = mix(vec3(0.035, 0.3, 0.48), vec3(0.26, 0.48, 0.26), land);
+        brightSurface = mix(brightSurface, vec3(0.82, 0.9, 0.91), wisps * 0.5);
+        brightSurface *= 0.5 + day * 0.6;
+        surface = mix(surface, brightSurface, uBright);
         gl_FragColor = vec4(surface, 1.0);
         #include <tonemapping_fragment>
         #include <colorspace_fragment>
@@ -413,6 +420,16 @@ export async function initSpaceScene({ container, reducedMotion = false }) {
   const stars = new THREE.Points(starGeometry, new THREE.PointsMaterial({ color: 0xb9d0df, size: 0.027, transparent: true, opacity: 0.45, sizeAttenuation: true, depthWrite: false }));
   scene.add(stars);
 
+  if (variant !== 'hero') stars.visible = false;
+  if (variant === 'product') earth.visible = false;
+  if (variant === 'planet') {
+    satellite.visible = false;
+    earth.position.set(0, 0, 0);
+    earth.scale.setScalar(0.38);
+    orbit.position.set(0, 0, 0);
+    orbit.rotation.x = 0.8;
+  }
+
   let disposed = false;
   let contextUnavailable = false;
   let paused = false;
@@ -422,6 +439,7 @@ export async function initSpaceScene({ container, reducedMotion = false }) {
   let previousTime = 0;
   let targetProgress = 0;
   let progress = 0;
+  let manualPose = false;
   let pointerX = 0;
   let pointerY = 0;
   let cameraX = 0;
@@ -438,11 +456,12 @@ export async function initSpaceScene({ container, reducedMotion = false }) {
       cameraX += (pointerX - cameraX) * smoothing;
       cameraY += (pointerY - cameraY) * smoothing;
     }
-    const scroll = reducedMotion ? 0 : progress;
+    const scroll = manualPose ? progress : reducedMotion ? 0 : progress;
     craft.rotation.set(-0.77 + scroll * 0.22, 0.39 + scroll * Math.PI * 1.82, 0.58 - scroll * 0.32);
     satellite.position.set(0.15, 0.63 + (!reducedMotion ? Math.sin(elapsed * 0.45) * 0.064 : 0), 0);
     satellite.rotation.y = !reducedMotion ? Math.sin(elapsed * 0.22) * 0.045 : 0;
     earth.rotation.y = scroll * 0.18;
+    if (variant === 'planet') earth.rotation.y = scroll + elapsed * 0.04;
     orbit.rotation.z = -0.4 + scroll * 0.16;
     marker.scale.setScalar(!reducedMotion ? 1 + Math.sin(elapsed * 1.6) * 0.12 : 1);
     camera.position.set(cameraX * 0.24, 0.3 + cameraY * 0.13, cameraDistance - scroll * 0.35);
@@ -570,9 +589,15 @@ export async function initSpaceScene({ container, reducedMotion = false }) {
   }
 
   return {
-    setProgress(value) {
+    setProgress(value, immediate = false) {
       if (disposed || !Number.isFinite(value)) return;
       targetProgress = THREE.MathUtils.clamp(value, 0, 1);
+      if (immediate) {
+        manualPose = true;
+        progress = targetProgress;
+        applyPose(0);
+        renderer.render(scene, camera);
+      }
       if (!paused) requestRender();
     },
     setPaused(value) {

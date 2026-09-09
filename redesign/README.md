@@ -1,8 +1,9 @@
 # UZMA-Sat 1 landing page
 
-A product-focused, cinematic website for Uzma Geospatial AI. A dark orbital scene
-introduces UZMA-Sat 1, followed by clear mission specifications, an imagery explorer,
-industry applications, the company story and direct enquiry links.
+A bright, photographic landing page for Uzma Geospatial AI. Logo navy and orange
+anchor warm white, sky blue and peach sections. Three lazy-loaded 3D scenes,
+scroll-linked landscape imagery and photographic galleries connect the satellite
+to its Earth observation applications.
 
 ## Local preview
 
@@ -21,7 +22,9 @@ ES modules, which browsers restrict on `file://` URLs.
 | File or folder | Role |
 | --- | --- |
 | `index.html` | Content, navigation, accessible controls and fallback imagery. |
-| `assets/css/style.css` | Layout, responsive styling and reduced-motion treatment. |
+| `assets/css/style.css` | Base layout and accessible controls. |
+| `assets/css/editorial.css` | Bright photographic redesign, responsive galleries and product content. |
+| `assets/js/experience.js` | Scroll layers, global pause, additional lazy 3D scenes and gallery controls. |
 | `assets/js/main.js` | Page interactions, scroll choreography and scene integration. |
 | `assets/js/space-scene.js` | Three.js satellite and Earth illustration. |
 | `assets/vendor/` | Local Three.js, GSAP and ScrollTrigger distributions. |
@@ -43,7 +46,8 @@ the page's skip link when editing.
 The renewed landing page retains the original [Geospatial AI website](https://www.uzmageoai.com/)
 content and brand palette, checked on 9 September 2026: navy `#2A3E58`, orange
 `#F26522`, secondary text `#646266`, body text `#112222`, and backgrounds
-`#FFFBF7`, `#F2F2FF` and `#FCFCFC`. The orbital hero uses a darker space background.
+`#FFFBF7`, `#F2F2FF` and `#FCFCFC`. The current visual direction expands these with
+sky blue `#E4F2FF`, peach `#FFE2CC` and soft green `#E8EFDB`.
 The satellite illustration follows the supplied reference views: a copper optical
 barrel, open baffled telescope, compact body-mounted solar panels and gold instrument patches.
 
@@ -120,3 +124,32 @@ Upload this folder's contents to a static host and retain the directory structur
 Use a host that serves `.js` as JavaScript and `.woff2` as a font. Assets use relative
 paths so hosting at a domain root or under a repository subpath both work.
 The previous WordPress mirror is kept separately in `../site/`.
+
+## Original UZMASAT-1 content migration
+
+The complete product-body content from https://uzmagroup.com/uzmasat-1/ was
+checked on 9 September 2026 and incorporated alongside the GeoAI company content:
+
+- Launch status and the Uzma–Satellogic partnership introduction.
+- Multispectral camera resolution, swath and altitude; tasking control; calibration.
+- Original 2023 and 2025+ constellation graphics with capacity, quality and pace-of-change statements. These retain their published roadmap context.
+- All ten original Insights images and captions, with full-resolution source links.
+- Unlock the Universe / Join the Waiting List, linking to the original registration page. The existing registration form remains on Uzma Group; this static site does not submit or store registrations.
+- Links to the source privacy policy, legal notice and terms of use.
+
+The source corporate navigation and corporate copyright are not presented as
+Geospatial AI navigation or copyright. Existing company routes and contact destinations
+remain unchanged. WordPress was not modified; the approved publishing target is
+GitHub Pages first. Credentials must never be stored in this repository.
+
+`assets/img/uzmasat/` contains optimized copies of the original product graphics
+from `uzmagroup.com/wp-content/uploads/2024/02/` and the ten original `image1.jpg`
+through `image10.jpg` files from `www.uzmageoai.com/wp-content/uploads/2024/02/`.
+The file `editorial/perspective.webp` is generated conceptual landscape artwork,
+labelled as such on the page, and is not presented as satellite imagery. Other
+editorial images come from the company’s existing asset collection.
+
+Motion uses the existing local GSAP/Three.js distributions. All three scenes stop
+rendering offscreen; global pause and reduced-motion settings apply across scenes
+and scroll effects. The product slider still permits deliberate angle changes
+with motion disabled. The extra scenes retain image/CSS fallbacks if WebGL fails.

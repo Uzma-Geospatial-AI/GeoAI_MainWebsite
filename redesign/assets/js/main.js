@@ -41,7 +41,10 @@
     document.getElementById('motion-label').textContent = motionPreference.matches ? 'Reduced motion' : paused ? 'Resume motion' : 'Pause motion';
     document.getElementById('motion-icon').textContent = paused ? '▷' : 'Ⅱ';
     scene?.setPaused(paused);
+    if (paused) gsapContext?.getTweens().forEach(tween => tween.progress(1));
     if (!paused) scene?.setProgress(progress);
+    document.body.classList.toggle('motion-paused', paused);
+    document.dispatchEvent(new CustomEvent('geo-motion', { detail: { paused, reduced: motionPreference.matches } }));
   }
   motionToggle.addEventListener('click', () => { paused = !paused; updateMotionControl(); });
   updateMotionControl();
@@ -61,7 +64,7 @@
       revealObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;
-          gsap.to(entry.target, { opacity: 1, y: 0, duration: .85, ease: 'power3.out', clearProps: 'opacity,transform' });
+          gsap.to(entry.target, { opacity: 1, y: 0, duration: paused ? 0 : .85, ease: 'power3.out', clearProps: 'opacity,transform' });
           revealObserver.unobserve(entry.target);
         });
       }, { threshold: .08 });

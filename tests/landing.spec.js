@@ -44,10 +44,10 @@ test('imagery tabs, keyboard navigation and magnification work', async ({ page }
 test('industry selector updates the image, explanation and destination', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/#solutions');
-  await page.getByRole('button', { name: '07 Urban Planning & Development' }).click();
+  await page.getByRole('button', { name: 'Urban Planning & Development' }).click();
   await expect(page.locator('#solution-title')).toHaveText('Urban Planning & Development');
   await expect(page.locator('#solution-link')).toHaveAttribute('href', 'https://www.uzmageoai.com/urban-planning-development/');
-  await page.getByRole('button', { name: '03 Ground Movement' }).click();
+  await page.getByRole('button', { name: 'Ground Movement' }).click();
   await expect(page.locator('#solution-description')).toContainText('radar satellite data and InSAR');
   await expect(page.locator('#solution-image')).toHaveAttribute('src', 'assets/img/solutions/ground-movement.webp');
 });
@@ -139,9 +139,58 @@ test('desktop and mobile have no serious accessibility violations or missing ima
     for (const section of await page.locator('main > section').all()) {
       await section.scrollIntoViewIfNeeded();
     }
+    await page.locator('img').evaluateAll(images => images.forEach(image => { image.loading = 'eager'; }));
     await page.locator('img').evaluateAll(images => Promise.all(images.map(image => image.decode().catch(() => {}))));
     expect(await page.locator('img').evaluateAll(images => images.filter(image => !image.complete || !image.naturalWidth).map(image => image.src))).toEqual([]);
     const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
     expect(results.violations.map(item => ({ id: item.id, impact: item.impact, nodes: item.nodes.map(node => node.target) }))).toEqual([]);
   }
+});
+
+
+test('additional 3D scenes, manual rotation and global pause work', async ({ page }) => {
+  const errors=[];
+  page.on('pageerror',error=>errors.push(error.message));
+  await page.goto('/');
+  const product=page.locator('[data-scene="product"]');
+  await product.scrollIntoViewIfNeeded();
+  await expect(product).toHaveClass(/scene-ready/);
+  await page.getByRole('button',{name:'Pause all motion',exact:true}).click();
+  await expect(page.locator('body')).toHaveClass(/motion-paused/);
+  const before=fingerprint(await product.screenshot());
+  await page.getByRole('slider',{name:'Satellite viewing angle'}).fill('65');
+  expect(fingerprint(await product.screenshot())).not.toEqual(before);
+  const still=fingerprint(await product.screenshot());
+  await page.waitForTimeout(200);
+  expect(fingerprint(await product.screenshot())).toEqual(still);
+  const planet=page.locator('[data-scene="planet"]');
+  await planet.scrollIntoViewIfNeeded();
+  await expect(planet).toHaveClass(/scene-ready/);
+  const globe=fingerprint(await planet.screenshot());
+  await page.waitForTimeout(200);
+  expect(fingerprint(await planet.screenshot())).toEqual(globe);
+  await page.getByRole('button',{name:'Resume all motion',exact:true}).click();
+  await expect(page.locator('body')).not.toHaveClass(/motion-paused/);
+  expect(errors).toEqual([]);
+});
+
+test('all original product insight images and capability sections are available', async ({ page }) => {
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.goto('/#imagery');
+  await expect(page.locator('.insight-card')).toHaveCount(10);
+  await expect(page.locator('.frontier-story')).toContainText('Satellogic');
+  await expect(page.locator('.capability-grid')).toContainText('Tasking control capabilities');
+  await expect(page.locator('.capability-grid')).toContainText('Calibration process');
+  await expect(page.locator('.capacity-roadmap')).toContainText('7 revisits per day/site');
+  await expect(page.locator('.capacity-roadmap')).toContainText('70 cm multispectral data');
+  const gallery=page.locator('.insight-gallery');
+  await gallery.scrollIntoViewIfNeeded();
+  await page.getByRole('button',{name:'Next insight image'}).click();
+  await expect.poll(()=>gallery.evaluate(el=>el.scrollLeft)).toBeGreaterThan(0);
+  await gallery.focus();
+  await page.keyboard.press('End');
+  await page.locator('.insight-card').last().scrollIntoViewIfNeeded();
+  await expect(page.locator('.insight-card').last()).toBeInViewport();
+  await page.locator('.insight-card img').last().evaluate(image=>image.decode());
+  await expect(page.locator('.waiting-section a')).toHaveAttribute('href','https://uzmagroup.com/uzmasat-1/');
 });
