@@ -42,24 +42,26 @@ test('imagery tabs, keyboard navigation and magnification work', async ({ page }
   await expect(page.locator('#image-zoom')).toHaveValue('1');
 });
 
-test('industry selector updates the image, explanation and destination', async ({ page }) => {
+test('solution selector updates the selected product and portal destination', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/#solutions');
-  await page.getByRole('button', { name: 'Urban Planning & Development' }).click();
-  await expect(page.locator('#solution-title')).toHaveText('Urban Planning & Development');
-  await expect(page.locator('#solution-link')).toHaveAttribute('href', 'https://www.uzmageoai.com/urban-planning-development/');
-  await page.getByRole('button', { name: 'Ground Movement' }).click();
-  await expect(page.locator('#solution-description')).toContainText('radar satellite data and InSAR');
-  await expect(page.locator('#solution-image')).toHaveAttribute('src', 'assets/img/solutions/ground-movement.webp');
+  await page.getByRole('button', { name: 'URBAN GAI', exact: true }).click();
+  await expect(page.locator('#solution-title')).toHaveText('URBAN');
+  await expect(page.locator('#solution-link')).toHaveAttribute('href', 'https://uzmadigitalearth.app/projects');
+  await page.getByRole('button', { name: 'UzmaSATRIA', exact: true }).click();
+  await expect(page.locator('#solution-title')).toHaveText('UzmaSATRIA');
+  await expect(page.locator('#solution-description')).toContainText('Sign in');
+  await expect(page.locator('#solution-link')).toHaveAttribute('href', 'https://uzmadigitalearth.app/uzmasatria');
 });
 
 test('restored offerings and supplied brand palette stay complete', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/#solutions');
   const buttons = page.locator('[data-solution]');
-  await expect(buttons).toHaveCount(7);
+  await expect(buttons).toHaveCount(6);
+  await expect(page.locator(".solution-name")).toHaveText(["AGRO", "ESTATE", "ASSET", "ENVIRO", "URBAN", "UzmaSATRIA"]);
   for (const button of await buttons.all()) {
-    const title = await button.locator('span').nth(1).textContent();
+    const title = await button.locator('.solution-name').textContent();
     await button.click();
     await expect(page.locator('#solution-title')).toHaveText(title);
     await expect(button).toHaveAttribute('aria-expanded', 'true');

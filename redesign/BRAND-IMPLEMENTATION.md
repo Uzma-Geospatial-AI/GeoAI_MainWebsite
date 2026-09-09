@@ -43,6 +43,6 @@ Original content, all ten Insights, contact routes, image controls and the three
 Scroll motion introduces the spacecraft, imagery scale and platform perspective;
 all motion respects the page pause control and reduced-motion preferences.
 
-The updated spacecraft has a 28% shorter exposed optical assembly and a rear-left
-star-tracker-style baffle based on the latest supplied photo. It remains a visual
+The updated spacecraft has a 28% shorter exposed optical assembly and a star-tracker-style baffle on the adjacent right-hand panel in the hero view,
+plus two smaller moon-sensor-style baffles on opposite left and right sides. It remains a visual
 interpretation, not dimensionally certified hardware geometry.

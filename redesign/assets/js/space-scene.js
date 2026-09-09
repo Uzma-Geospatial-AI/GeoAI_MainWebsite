@@ -313,10 +313,11 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   box(0.4, 0.68, 0.008, electronics, -0.13, -0.045, 0.025, rearBay);
   box(0.34, 0.4, 0.008, electronics, 0.265, -0.04, 0.025, rearBay);
   assembly = craft;
-  // Rear-side optical baffle: opposite the main camera end, per the user's correction.
+  // Star sensor on the adjacent right-hand panel in the supplied view.
   const starTracker = new THREE.Group();
-  starTracker.position.set(-0.8, 1.22, 0.15);
-  starTracker.rotation.z = Math.PI / 2;
+  starTracker.name = 'star-tracker';
+  starTracker.position.set(0.18, 1.22, 0.8);
+  starTracker.rotation.x = Math.PI / 2;
   craft.add(starTracker);
   box(0.34, 0.035, 0.32, silver, 0, 0, 0, starTracker);
   cylinder(0.115, 0.14, gold, 0, 0.08, 0, starTracker);
@@ -326,6 +327,15 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   trackerRim.rotation.x = Math.PI / 2;
   const trackerLens = mesh(new THREE.CircleGeometry(0.105, 40), glass, 0, 0.19, 0, starTracker);
   trackerLens.rotation.x = -Math.PI / 2;
+  // Two opposing side sensors requested as moon sensors in the user's reference.
+  for (const side of [-1, 1]) {
+    const moonSensor = starTracker.clone(true);
+    moonSensor.name = side < 0 ? 'moon-sensor-left' : 'moon-sensor-right';
+    moonSensor.position.set(side * 0.8, 0.7, 0.05);
+    moonSensor.rotation.set(0, 0, -side * Math.PI / 2);
+    moonSensor.scale.setScalar(0.75);
+    craft.add(moonSensor);
+  }
   box(0.25, 0.006, 0.25, gold, 0.38, 1.563, -0.33);
 
 

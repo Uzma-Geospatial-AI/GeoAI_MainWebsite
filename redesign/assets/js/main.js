@@ -170,54 +170,53 @@
   });
   zoom.addEventListener('input', updateZoom);
   const solutions = {
-  "agriculture": {
+  "agro": {
+    "id": "agro",
+    "title": "AGRO",
     "image": "precision-agriculture.webp",
-    "alt": "Aerial view of agricultural land",
-    "title": "Precision Agriculture",
-    "description": "Get precise insights into soil and crop health to optimize agricultural productivity and food security.",
-    "url": "precision-agriculture/"
+    "alt": "Satellite imagery of agricultural land",
+    "description": "Access AGRO in the Uzma Digital Earth portal. Sign in to view your available projects and tools.",
+    "url": "https://uzmadigitalearth.app/projects"
   },
-  "plantation": {
-    "image": "plantation.webp",
-    "alt": "Satellite view of plantation land",
-    "title": "Plantation Management",
-    "description": "Monitor plantation health, assess crop conditions and map land boundaries to support productive, sustainable plantation management.",
-    "url": "plantationmanagement/"
-  },
-  "risk": {
-    "image": "ground-movement.webp",
-    "alt": "Geospatial ground movement assessment",
-    "title": "Ground Movement",
-    "description": "Combine specialist radar satellite data and InSAR analysis to assess ground movement and support geohazard monitoring.",
-    "url": "ground-movement/"
-  },
-  "infrastructure": {
-    "image": "infrastructure.webp",
-    "alt": "Infrastructure monitoring from space",
-    "title": "Infrastructure Monitoring",
-    "description": "Monitor critical infrastructure with satellite imagery and geospatial analytics to identify changes, assess risks and support informed maintenance decisions.",
-    "url": "infrastructuremonitoring/"
-  },
-  "forestry": {
+  "estate": {
+    "id": "estate",
+    "title": "ESTATE",
     "image": "forestry.webp",
-    "alt": "Satellite perspective of forest cover",
-    "title": "Sustainable Forestry Management",
-    "description": "Track forest cover, monitor deforestation and support sustainable forest management with geospatial insights.",
-    "url": "sustainableforestrymanagement/"
+    "alt": "Aerial imagery of forest and estate land",
+    "description": "Access ESTATE in the Uzma Digital Earth portal. Sign in to view your available projects and tools.",
+    "url": "https://uzmadigitalearth.app/projects"
   },
-  "environment": {
+  "asset": {
+    "id": "asset",
+    "title": "ASSET",
+    "image": "infrastructure.webp",
+    "alt": "Geospatial imagery of infrastructure",
+    "description": "Access ASSET in the Uzma Digital Earth portal. Sign in to view your available projects and tools.",
+    "url": "https://uzmadigitalearth.app/projects"
+  },
+  "enviro": {
+    "id": "enviro",
+    "title": "ENVIRO",
     "image": "environmental.webp",
-    "alt": "Environmental monitoring using satellite imagery",
-    "title": "Environmental Monitoring",
-    "description": "Observe environmental change, assess ecosystem health and support conservation and sustainable development with satellite data.",
-    "url": "enviromentalmonitoring/"
+    "alt": "Environmental monitoring imagery",
+    "description": "Access ENVIRO in the Uzma Digital Earth portal. Sign in to view your available projects and tools.",
+    "url": "https://uzmadigitalearth.app/projects"
   },
-  "cities": {
+  "urban": {
+    "id": "urban",
+    "title": "URBAN",
     "image": "urban.webp",
     "alt": "Satellite imagery of an urban area",
-    "title": "Urban Planning & Development",
-    "description": "Track land use, understand urban growth and bring geospatial context to infrastructure planning and development.",
-    "url": "urban-planning-development/"
+    "description": "Access URBAN in the Uzma Digital Earth portal. Sign in to view your available projects and tools.",
+    "url": "https://uzmadigitalearth.app/projects"
+  },
+  "uzmasatria": {
+    "id": "uzmasatria",
+    "title": "UzmaSATRIA",
+    "image": "../uzmasat/earth-2025.webp",
+    "alt": "Satellite constellation illustration",
+    "description": "Access UzmaSATRIA in the Uzma Digital Earth portal. Sign in to view your available projects and tools.",
+    "url": "https://uzmadigitalearth.app/uzmasatria"
   }
 };
   document.querySelectorAll('[data-solution]').forEach(button => {
@@ -227,7 +226,7 @@
       const image = document.getElementById('solution-image'); image.src = `assets/img/solutions/${data.image}`; image.alt = data.alt;
       document.getElementById('solution-title').textContent = data.title;
       document.getElementById('solution-description').textContent = data.description;
-      document.getElementById('solution-link').href = `https://www.uzmageoai.com/${data.url}`;
+      document.getElementById('solution-link').href = data.url;
     });
   });
   document.getElementById('year').textContent = new Date().getFullYear();

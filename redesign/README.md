@@ -1,170 +1,28 @@
-# UZMA-Sat 1 landing page
+﻿# Uzma Digital Earth
 
-A minimal, professional landing page for Uzma Digital Earth and Geospatial AI.
-The supplied UZMA 2024 and Digital Earth guides determine the official logo,
-corporate orange/grey palette, supporting Digital Earth blue and Calibri-first
-typography. Three lazy 3D scenes and imagery galleries explain the satellite and
-its Earth observation applications. See BRAND-IMPLEMENTATION.md for source details.
+Published website: https://uzma-geospatial-ai.github.io/GeoAI_MainWebsite/
 
-## Local preview
+The root redirects to `redesign/`, the complete deployable static website. The WordPress mirror, templates, scripts and scraper have been retired. Only the content and media have been carried into the new design.
 
-From the repository root:
+## Development
 
-```sh
-npm start
-```
+- `npm ci`
+- `npm start` serves the site at http://localhost:8080
+- `npm run content:build` regenerates the 36 reading pages and library index from `content/pages.json`.
+- `npm run check` validates local assets, imports and anchors throughout the linked site.
+- `npm test` runs browser, motion, responsive and accessibility checks.
+- `npm run images` regenerates optimized homepage imagery from retained original assets.
 
-Visit **http://localhost:8080**. The Node.js server requires no dependencies.
-Use an HTTP server instead of opening the HTML file directly: the 3D scene uses
-ES modules, which browsers restrict on `file://` URLs.
+## Content
 
-## Files and runtime
+`content/pages.json` contains editorial content without WordPress layout or runtime dependencies. `content/migration-audit.json` records the 39 public sitemap URLs and the disposition of all 47 mirrored HTML files. The new library contains 18 news articles and 18 company/capability pages. Category listings are consolidated; the temporary maintenance page, 404 and unrelated restaurant template are excluded. Every retained source text node was checked against the converted page during migration.
 
-| File or folder | Role |
-| --- | --- |
-| `index.html` | Content, navigation, accessible controls and fallback imagery. |
-| `assets/css/style.css` | Base layout and accessible controls. |
-| `assets/css/editorial.css` | Photographic layouts, responsive galleries and product content. |
-| `assets/css/brand.css` | Final supplied-guide brand tokens, typography and minimal visual treatment. |
-| `assets/js/experience.js` | Scroll layers, global pause, additional lazy 3D scenes and gallery controls. |
-| `assets/js/main.js` | Page interactions, scroll choreography and scene integration. |
-| `assets/js/space-scene.js` | Three.js satellite and Earth illustration. |
-| `assets/vendor/` | Local Three.js, GSAP and ScrollTrigger distributions. |
-| `assets/fonts/` | Self-hosted typeface. |
-| `assets/img/` | Satellite artwork, sample imagery, application images and logos. |
+Original images and video are retained under `redesign/assets/library/`. Five third-party reference images were unavailable (403, 404, timeout or connection failure); their original links remain in the relevant articles and are listed in the audit. Contact fields remain documented; enquiries use an email link, because this static deployment has no WordPress form backend.
 
-The 3D spacecraft and orbital presentation are illustrative, not an engineering
-model or live position feed. The product image remains visible if WebGL is
-unavailable. The page respects the operating system's `prefers-reduced-motion`
-setting and provides a pause control for motion.
+The six current solutions are AGRO, ESTATE, ASSET, ENVIRO, URBAN and UzmaSATRIA. Product links open the supplied Digital Earth portal; project access requires sign-in. Earlier application descriptions remain in the capabilities library to preserve the requested content.
 
-The imagery explorer supports selecting a location and magnifying the displayed
-sample. Its keyboard controls should remain usable when changing the layout.
-Preserve visible focus styles, semantic buttons, descriptive image text and
-the page's skip link when editing.
+## Branding and spacecraft
 
-## Content and attribution
+See `redesign/BRAND-IMPLEMENTATION.md` for supplied brand sources, palette, logo usage and font licensing. The 3D satellite has shortened optics, a star tracker on the adjacent right-hand panel in the opening view, and two smaller moon sensors on opposite sides. It is a visual interpretation of the supplied references.
 
-The renewed landing page retains the original [Geospatial AI website](https://www.uzmageoai.com/)
-content and brand palette, checked on 9 September 2026: navy `#2A3E58`, orange
-`#F26522`, secondary text `#646266`, body text `#112222`, and backgrounds
-`#FFFBF7`, `#F2F2FF` and `#FCFCFC`. The current visual direction expands these with
-sky blue `#E4F2FF`, peach `#FFE2CC` and soft green `#E8EFDB`.
-The satellite illustration follows the supplied reference views: a copper optical
-barrel, open baffled telescope, compact body-mounted solar panels and gold instrument patches.
-
-The page includes all seven solutions and four services, company introduction,
-vision and mission, three award entries, fourteen partners, seven clients, selected
-news stories and the original contact directory. Copy and images come from the
-existing `site/` mirror and official homepage, About, Services, Solutions, Blog and
-Contact pages. Detailed articles and service pages continue to link to the original
-domain. The short film, Calendly booking and WhatsApp appointment links are retained.
-
-Ground movement uses the dedicated service's InSAR description, and mapping/AI
-service descriptions follow the dedicated pages rather than swapped homepage text.
-The past Map Your Route campaign links to community updates because its original
-registration destination is unavailable; it is not presented as open registration.
-
-Published specifications are linked to the [official Uzma product page](https://uzmagroup.com/uzmasat-1/).
-Keep qualifying wording such as **up to 50 cm per pixel**. The launch date is
-15 January 2025, aboard SpaceX Falcon 9 Transporter-12. Orbital numbers describe
-published specifications rather than current telemetry.
-
-Pulau Bohayen, Giza and Ko Kradat are **sample imagery © Satellogic** from the
-existing company asset collection. They represent the satellite partner network;
-do not describe them as confirmed UZMA-Sat 1 captures. The zoom control performs
-digital magnification and does not establish the samples' native ground resolution.
-
-Contact destinations are `geospatial.ai@uzmagroup.com`, `+6011 5677 0921` and the
-team's WhatsApp account. The site has no enquiry form backend. Email and WhatsApp
-links open the visitor's chosen communication service.
-
-## Check and refresh vendor files
-
-From the repository root:
-
-```sh
-npm run check
-```
-
-This checks local HTML `src`/`href`/`srcset` references, anchor destinations, CSS
-URLs, explicit JavaScript imports, quoted `assets/...` mappings and required
-runtime files. It does not execute JavaScript, resolve computed paths or check
-remote link availability. Review the desktop and mobile layouts, scrolling,
-navigation, imagery controls, reduced motion and WebGL fallback in a browser.
-
-To refresh the local vendor files reproducibly:
-
-```sh
-npm ci
-npm run vendor
-npm run check
-```
-
-The refresh script minifies `three.module.js` and `three.core.js` using esbuild,
-and copies Three.js's MIT license, `gsap.min.js` and `ScrollTrigger.min.js` from
-the installed packages. GSAP's package has no separate license file; its distribution headers
-retain the copyright and license link. Commit vendor changes alongside lockfile
-changes when updating dependency versions.
-
-Run `npm run images` to regenerate WebP assets from the original repository images.
-Run `npm test` for the browser regression and accessibility checks (installed Chrome
-locally, Playwright Chromium in CI). Runtime image and code assets are local; no
-third-party font or JavaScript CDN is required. The scene waits for the product
-image and a visible container before loading. The preview server uses gzip for
-text assets; enable gzip or Brotli when configuring production hosting.
-
-## Hosting
-
-This is a static site with **no application build step**. GitHub Pages is enabled
-in the repository settings and publishes through GitHub's Pages workflow after a
-push to the publishing branch. The repository root `index.html` forwards to this
-folder. The public URL is https://uzma-geospatial-ai.github.io/GeoAI_MainWebsite/.
-Check the deployment workflow to confirm the latest version is published.
-
-Upload this folder's contents to a static host and retain the directory structure.
-Use a host that serves `.js` as JavaScript and `.woff2` as a font. Assets use relative
-paths so hosting at a domain root or under a repository subpath both work.
-The previous WordPress mirror is kept separately in `../site/`.
-
-## Original UZMASAT-1 content migration
-
-The complete product-body content from https://uzmagroup.com/uzmasat-1/ was
-checked on 9 September 2026 and incorporated alongside the GeoAI company content:
-
-- Launch status and the Uzma–Satellogic partnership introduction.
-- Multispectral camera resolution, swath and altitude; tasking control; calibration.
-- Original 2023 and 2025+ constellation graphics with capacity, quality and pace-of-change statements. These retain their published roadmap context.
-- All ten original Insights images and captions, with full-resolution source links.
-- Unlock the Universe / Join the Waiting List, linking to the original registration page. The existing registration form remains on Uzma Group; this static site does not submit or store registrations.
-- Links to the source privacy policy, legal notice and terms of use.
-
-The source corporate navigation and corporate copyright are not presented as
-Geospatial AI navigation or copyright. Existing company routes and contact destinations
-remain unchanged. WordPress was not modified; the approved publishing target is
-GitHub Pages first. Credentials must never be stored in this repository.
-
-`assets/img/uzmasat/` contains optimized copies of the original product graphics
-from `uzmagroup.com/wp-content/uploads/2024/02/` and the ten original `image1.jpg`
-through `image10.jpg` files from `www.uzmageoai.com/wp-content/uploads/2024/02/`.
-The earlier generated `editorial/perspective.webp` asset is retained but no longer
-used by the page. The landscape scroll section now uses the original attributed
-Pulau Bohayen satellite image. Other
-editorial images come from the company’s existing asset collection.
-
-Motion uses the existing local GSAP/Three.js distributions. All three scenes stop
-rendering offscreen; global pause and reduced-motion settings apply across scenes
-and scroll effects. The product slider still permits deliberate angle changes
-with motion disabled. The extra scenes retain image/CSS fallbacks if WebGL fails.
-
-## Current branding refinement
-
-The latest supplied PDF guides supersede the earlier website-derived palette and
-bright pastel direction documented above. Official Digital Earth light/dark marks
-are exported directly from the PDF and never recolored, distorted, rotated or
-shadowed. Local Calibri is preferred; self-hosted, OFL-licensed Carlito provides a
-metric-compatible web fallback. No Microsoft font binaries are redistributed.
-
-The optical assembly has been shortened 28% around its bus interface. A silver,
-flared star-tracker-style optical baffle is mounted on the rear-left side, following
-the user’s physical-model photograph. Component dimensions remain illustrative.
+Motion can be paused and respects reduced-motion preferences. WebGL failure retains the original satellite image. GitHub Pages is the current publication target; WordPress and the custom domain have not been changed.

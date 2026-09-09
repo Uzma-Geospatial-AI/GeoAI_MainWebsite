@@ -1,15 +1,14 @@
 {
-  "name": "uzma-geoai-mirror",
+  "name": "uzma-digital-earth",
   "version": "1.0.0",
-  "description": "Static mirror of uzmageoai.com",
-  "main": "index.js",
+  "description": "Uzma Digital Earth website and content library",
   "scripts": {
     "start": "node redesign/serve.js",
-    "mirror": "node serve.js",
     "check": "node scripts/validate-site.js",
     "vendor": "node scripts/sync-vendor.js",
     "test": "playwright test",
-    "images": "node scripts/optimize-images.js"
+    "images": "node scripts/optimize-images.js",
+    "content:build": "node scripts/build-content.js"
   },
   "keywords": [],
   "author": "",
@@ -17,8 +16,7 @@
   "type": "commonjs",
   "dependencies": {
     "gsap": "^3.15.0",
-    "three": "^0.186.0",
-    "website-scraper": "^5.3.1"
+    "three": "^0.186.0"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",

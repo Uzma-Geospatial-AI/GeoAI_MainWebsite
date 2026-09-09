@@ -1,114 +1,28 @@
-# Uzma Geospatial AI
+﻿# Uzma Digital Earth
 
-A cinematic landing page built around **UZMA-Sat 1**, Malaysia's first commercial
-very high-resolution Earth observation satellite. The experience combines a
-scroll-driven 3D satellite and Earth scene, an interactive satellite imagery
-explorer, industry applications and direct contact with the GeoAI team.
+Published website: https://uzma-geospatial-ai.github.io/GeoAI_MainWebsite/
 
-| Folder | Purpose |
-| --- | --- |
-| `redesign/` | Current landing page and all assets needed to host it. |
-| `site/` | Reference mirror of the previous WordPress website at `uzmageoai.com`. |
-| `scripts/` | Static-site validation and reproducible vendor asset refresh. |
+The root redirects to `redesign/`, the complete deployable static website. The WordPress mirror, templates, scripts and scraper have been retired. Only the content and media have been carried into the new design.
 
-## Run locally
+## Development
 
-```sh
-npm start
-```
+- `npm ci`
+- `npm start` serves the site at http://localhost:8080
+- `npm run content:build` regenerates the 36 reading pages and library index from `content/pages.json`.
+- `npm run check` validates local assets, imports and anchors throughout the linked site.
+- `npm test` runs browser, motion, responsive and accessibility checks.
+- `npm run images` regenerates optimized homepage imagery from retained original assets.
 
-Open **http://localhost:8080**. The development server uses Node.js built-ins and
-needs no package installation. Serve the page over HTTP: opening `index.html`
-directly with `file://` prevents browser ES modules from loading correctly.
+## Content
 
-Use `npm run mirror` to serve the reference website instead. Both servers use
-port 8080 by default, so run one at a time.
+`content/pages.json` contains editorial content without WordPress layout or runtime dependencies. `content/migration-audit.json` records the 39 public sitemap URLs and the disposition of all 47 mirrored HTML files. The new library contains 18 news articles and 18 company/capability pages. Category listings are consolidated; the temporary maintenance page, 404 and unrelated restaurant template are excluded. Every retained source text node was checked against the converted page during migration.
 
-## Experience
+Original images and video are retained under `redesign/assets/library/`. Five third-party reference images were unavailable (403, 404, timeout or connection failure); their original links remain in the relevant articles and are listed in the audit. Contact fields remain documented; enquiries use an email link, because this static deployment has no WordPress form backend.
 
-- UZMA-Sat 1 leads the page, with a 3D satellite illustration, Earth, orbital
-  details and camera movement tied to scrolling.
-- Motion respects `prefers-reduced-motion`, and visitors can pause it. A static
-  satellite image remains available if WebGL cannot run.
-- The imagery explorer switches between Pulau Bohayen, Giza and Ko Kradat, with
-  keyboard-accessible controls and digital magnification.
-- Applications connect satellite imagery with agriculture, environmental,
-  infrastructure and urban decision-making.
-- Enquiries use the team's real email, telephone and WhatsApp links. There is
-  no contact form backend and no simulated submission confirmation.
+The six current solutions are AGRO, ESTATE, ASSET, ENVIRO, URBAN and UzmaSATRIA. Product links open the supplied Digital Earth portal; project access requires sign-in. Earlier application descriptions remain in the capabilities library to preserve the requested content.
 
-Sample imagery is **© Satellogic**. These samples illustrate the partner imagery
-network; they are not presented as verified UZMA-Sat 1 captures. Explorer zoom is
-digital magnification, not a demonstration of native 50 cm resolution. Published
-mission specifications link to the [official Uzma product page](https://uzmagroup.com/uzmasat-1/).
+## Branding and spacecraft
 
-See [`redesign/README.md`](redesign/README.md) for implementation and hosting notes.
+See `redesign/BRAND-IMPLEMENTATION.md` for supplied brand sources, palette, logo usage and font licensing. The 3D satellite has shortened optics, a star tracker on the adjacent right-hand panel in the opening view, and two smaller moon sensors on opposite sides. It is a visual interpretation of the supplied references.
 
-## Validation and dependencies
-
-```sh
-npm run check
-```
-
-The dependency-free validator checks local HTML references and anchors, CSS
-URLs, explicit JavaScript module imports and document-relative asset literals,
-plus the required runtime files. Computed JavaScript paths and remote URLs are
-outside this static check; verify interactions in a browser before release.
-GitHub Actions runs the same check for pushes and pull requests to `main`.
-
-Browser regression tests cover scroll rotation, pause, keyboard controls, image
-selection, mobile navigation, responsive overflow, reduced motion, WebGL fallback,
-content without JavaScript, and desktop/mobile accessibility:
-
-```sh
-npm ci
-npm test
-```
-
-Local tests use installed Google Chrome. CI installs Playwright Chromium.
-
-Three.js, GSAP and ScrollTrigger are committed under `redesign/assets/vendor/`.
-The deployed page loads these local copies. To reproduce them from the lockfile:
-
-```sh
-npm ci
-npm run vendor
-npm run check
-```
-
-`npm run vendor` minifies Three.js modules with esbuild and copies its MIT license,
-plus the unmodified GSAP and ScrollTrigger distributions. License notices are retained;
-GSAP's installed package does not include a separate `LICENSE` file.
-
-`npm run images` regenerates the optimized WebP assets using Sharp and the original
-images in this repository. The local server compresses text assets with gzip;
-enable Brotli or gzip on the production host too. The scene starts after the
-product image is decoded and only when its container approaches the viewport.
-
-## Deployment
-
-GitHub Pages is enabled through the repository's Pages settings. Pushes to the
-publishing branch trigger GitHub's **pages build and deployment** workflow,
-alongside the CI checks in this repository.
-
-Published site: **https://uzma-geospatial-ai.github.io/GeoAI_MainWebsite/**.
-The root `index.html` forwards visitors to `redesign/`, where the landing page
-and its assets live. Check the Pages workflow before assuming a push is live.
-
-Upload the contents of `redesign/` to a static host. There is no build step. Keep
-the asset directory structure intact and serve `.js` files with a JavaScript MIME
-type so the local ES modules can load. Relative URLs support both a domain root
-and a repository subpath. These instructions also support an independent static host.
-
-## Reference mirror tooling
-
-The original scraper is retained for maintaining `site/`:
-
-```sh
-node scrape.js
-node fixlinks.js
-node audit.js
-```
-
-Install the locked dependencies before running the scraper. WordPress server-side
-features in the mirror do not function on a static host.
+Motion can be paused and respects reduced-motion preferences. WebGL failure retains the original satellite image. GitHub Pages is the current publication target; WordPress and the custom domain have not been changed.

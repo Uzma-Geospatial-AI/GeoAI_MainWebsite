@@ -1,0 +1,496 @@
+{
+  "source": "https://www.uzmageoai.com/wp-sitemap.xml",
+  "sourcePages": 39,
+  "migratedPages": 36,
+  "textCheck": "Every retained source text node checked against the converted content.",
+  "exclusions": {
+    "blog": "Article listing replaced by the new content library; all 18 articles retained.",
+    "gallery": "Uncustomised restaurant template, including Lorem ipsum and unrelated restaurant contact details.",
+    "temp-homepage": "Temporary maintenance message; superseded by the working homepage."
+  },
+  "pages": [
+    {
+      "slug": "uzma-and-satellogic-sign-multi-million-dollar-3-year-agreement",
+      "url": "https://www.uzmageoai.com/uzma-and-satellogic-sign-multi-million-dollar-3-year-agreement/",
+      "words": 945,
+      "mediaCount": 2,
+      "sourceHash": "1d87f8804dc1c152e4b05439b81b2f1bb5c25f82b19ebf8ae1ca13bb86b76f66"
+    },
+    {
+      "slug": "uzma-berhad-unveils-uzmasat-1-a-new-era-in-geospatial-technology",
+      "url": "https://www.uzmageoai.com/uzma-berhad-unveils-uzmasat-1-a-new-era-in-geospatial-technology/",
+      "words": 1343,
+      "mediaCount": 4,
+      "sourceHash": "e8fdf56ccccb33116897b8fb7bbe76a4661a6ff494a717b5ce5caedeaba02a0c"
+    },
+    {
+      "slug": "a-case-study-of-broga-hills-the-role-of-earth-observation-satellites-in-environmental-monitoring",
+      "url": "https://www.uzmageoai.com/a-case-study-of-broga-hills-the-role-of-earth-observation-satellites-in-environmental-monitoring/",
+      "words": 690,
+      "mediaCount": 3,
+      "sourceHash": "8fc0defdfdb66a512a6a03d5d5a8b9affce53331035cf957585f59284e8fbb49"
+    },
+    {
+      "slug": "uzma-berhad-pioneers-the-uzmasat-1-programme-for-advanced-geospatial-intelligence-2",
+      "url": "https://www.uzmageoai.com/uzma-berhad-pioneers-the-uzmasat-1-programme-for-advanced-geospatial-intelligence-2/",
+      "words": 705,
+      "mediaCount": 4,
+      "sourceHash": "4a16fcc21aca41682b9cf85ccd1ab3ad8cfd0755e31e5149f233f1236ec2c6fe"
+    },
+    {
+      "slug": "satelit-uzmasat-1-jadi-pemantau-bumi",
+      "url": "https://www.uzmageoai.com/satelit-uzmasat-1-jadi-pemantau-bumi/",
+      "words": 595,
+      "mediaCount": 3,
+      "sourceHash": "6e6646ab69e7eded86c769fac44aa345496ec512b95a4d06d7bc0dc7ec79e369"
+    },
+    {
+      "slug": "uzmasat-1-beri-nilai-tambah-pembangunan-satelit-negara",
+      "url": "https://www.uzmageoai.com/uzmasat-1-beri-nilai-tambah-pembangunan-satelit-negara/",
+      "words": 378,
+      "mediaCount": 3,
+      "sourceHash": "d28d4d099afb353b34c7147b8f3cc74a0e7984836147305fb5efb369962ed48c"
+    },
+    {
+      "slug": "uzma-partners-with-key-organisations-to-advance-malaysias-geospatial-industry",
+      "url": "https://www.uzmageoai.com/uzma-partners-with-key-organisations-to-advance-malaysias-geospatial-industry/",
+      "words": 331,
+      "mediaCount": 4,
+      "sourceHash": "cde2aaa8ee3443ae86832c8708e62b9c93ed83c5b2e44a5fe46f8e048ef5903b"
+    },
+    {
+      "slug": "uzma-gears-up-for-the-launch-of-uzmasat-1-satellite",
+      "url": "https://www.uzmageoai.com/uzma-gears-up-for-the-launch-of-uzmasat-1-satellite/",
+      "words": 140,
+      "mediaCount": 7,
+      "sourceHash": "c1f1d00302b2f335eb4888e6f62e0b3ecd4968bdded5f42118584cf3205f5eeb"
+    },
+    {
+      "slug": "satelit-uzmasat-1-boleh-lihat-jelas-kereta-dari-ketinggian-500km-di-angkasa",
+      "url": "https://www.uzmageoai.com/satelit-uzmasat-1-boleh-lihat-jelas-kereta-dari-ketinggian-500km-di-angkasa/",
+      "words": 529,
+      "mediaCount": 2,
+      "sourceHash": "f088c205f2919e352083dfa923c6c5da1d5a6595a17d59f70053c52c5c4d1be4"
+    },
+    {
+      "slug": "satelit-penderiaan-jauh-malaysia-uzmasat-1-dilancar",
+      "url": "https://www.uzmageoai.com/satelit-penderiaan-jauh-malaysia-uzmasat-1-dilancar/",
+      "words": 375,
+      "mediaCount": 3,
+      "sourceHash": "d150e7bf3914e7e190b30c1c40b72f356faf7188d4e69ad0a28fb3f2f57f5c18"
+    },
+    {
+      "slug": "malaysia-launches-remote-sensing-satellite-uzmasat-1",
+      "url": "https://www.uzmageoai.com/malaysia-launches-remote-sensing-satellite-uzmasat-1/",
+      "words": 389,
+      "mediaCount": 2,
+      "sourceHash": "fd4b676a3e773eed6c4c3a936912a10826fb19b3b2c27048c1b7ee98081642cc"
+    },
+    {
+      "slug": "uzma-berhad-cetus-era-baharu-teknologi-angkasa-negara-melalui-pelancaran-satelit-uzmasat-1",
+      "url": "https://www.uzmageoai.com/uzma-berhad-cetus-era-baharu-teknologi-angkasa-negara-melalui-pelancaran-satelit-uzmasat-1/",
+      "words": 792,
+      "mediaCount": 4,
+      "sourceHash": "2672599d0ee0fdc55100d7a97116c32fa4937bd77d7b70155162fc99a36a32e9"
+    },
+    {
+      "slug": "pelancaran-uzma-sat-1-bukti-kejayaan-dasar-angkasa-negara-2030-mosti",
+      "url": "https://www.uzmageoai.com/pelancaran-uzma-sat-1-bukti-kejayaan-dasar-angkasa-negara-2030-mosti/",
+      "words": 371,
+      "mediaCount": 5,
+      "sourceHash": "a88e4093f7ef0c835b9b10f8053feca33ffcddfe8e166082f3b90ae44dc0d57d"
+    },
+    {
+      "slug": "uzma-launches-malaysias-first-commercial-earth-observation-satellite-uzmasat-1",
+      "url": "https://www.uzmageoai.com/uzma-launches-malaysias-first-commercial-earth-observation-satellite-uzmasat-1/",
+      "words": 411,
+      "mediaCount": 2,
+      "sourceHash": "82341a8326dfe2051f55bc84111b5b94546b8a5c9ed4e60bc71262373298026b"
+    },
+    {
+      "slug": "uzmasat-1-berjaya-dilancarkan",
+      "url": "https://www.uzmageoai.com/uzmasat-1-berjaya-dilancarkan/",
+      "words": 337,
+      "mediaCount": 3,
+      "sourceHash": "f067f019d131542741ff2e270c4bf0d23fbfd5196b87099405755ea93223d43e"
+    },
+    {
+      "slug": "satelit-penderiaan-jauh-keluaran-syarikat-tempatan-uzmasat-1-berjaya-dilancar-pada-rabu-video",
+      "url": "https://www.uzmageoai.com/satelit-penderiaan-jauh-keluaran-syarikat-tempatan-uzmasat-1-berjaya-dilancar-pada-rabu-video/",
+      "words": 355,
+      "mediaCount": 2,
+      "sourceHash": "8a302c4ce588ba8d21a56b7d4372f5f29fa2450e54c714fdf2e89bba208ac52c"
+    },
+    {
+      "slug": "uzma-berhad-launches-malaysias-first-high-resolution-earth-observation-satellite-uzmasat-1",
+      "url": "https://www.uzmageoai.com/uzma-berhad-launches-malaysias-first-high-resolution-earth-observation-satellite-uzmasat-1/",
+      "words": 414,
+      "mediaCount": 3,
+      "sourceHash": "6b6da02378650bbe27c9929b5ba254f469cecb839024b0888dd25045d9121004"
+    },
+    {
+      "slug": "uzma-berhad-marks-a-historic-milestone-with-the-launch-of-uzmasat-1",
+      "url": "https://www.uzmageoai.com/uzma-berhad-marks-a-historic-milestone-with-the-launch-of-uzmasat-1/",
+      "words": 965,
+      "mediaCount": 8,
+      "sourceHash": "b58960701b01d0ed6a49e5332aa9833a93d206804b581af6faa90afbc5a6f7b2"
+    },
+    {
+      "slug": "about",
+      "url": "https://www.uzmageoai.com/about/",
+      "words": 203,
+      "mediaCount": 19,
+      "sourceHash": "cbcb96cecb50428a8e6c7259b88a765dc4a47fc15806eed4d647f3e6d295b3f9"
+    },
+    {
+      "slug": "uzmasat-1",
+      "url": "https://www.uzmageoai.com/uzmasat-1/",
+      "words": 635,
+      "mediaCount": 18,
+      "sourceHash": "521ec0e94c1b87558f39e8e134863cccd9ff73f72f01c225d91a7a9d47514066"
+    },
+    {
+      "slug": "solutions",
+      "url": "https://www.uzmageoai.com/solutions/",
+      "words": 213,
+      "mediaCount": 15,
+      "sourceHash": "21b092ea5d89b7803c197ebdc3e299cf455ba4e7c058af0dbe8f695db40feb24"
+    },
+    {
+      "slug": "contact-us",
+      "url": "https://www.uzmageoai.com/contact-us/",
+      "words": 61,
+      "mediaCount": 0,
+      "sourceHash": "f1200fd66b7db5e3d7a8e6d18b1a1bfda1347b110fd86d24d5b3bd88e911c9e8"
+    },
+    {
+      "slug": "satellite-imagery",
+      "url": "https://www.uzmageoai.com/satellite-imagery/",
+      "words": 450,
+      "mediaCount": 20,
+      "sourceHash": "29d0119cdb17ffe8e91ff63fdbbdd1ed20ddf3582f6d4c505a88bb4f22d629b8"
+    },
+    {
+      "slug": "mapping-analytics",
+      "url": "https://www.uzmageoai.com/mapping-analytics/",
+      "words": 198,
+      "mediaCount": 9,
+      "sourceHash": "67d4f73cd411fb804ea8e6f3b956c0de1a95266ab0e878e5113cdea09db86752"
+    },
+    {
+      "slug": "infrastructuremonitoring",
+      "url": "https://www.uzmageoai.com/infrastructuremonitoring/",
+      "words": 259,
+      "mediaCount": 12,
+      "sourceHash": "4fc7a2eac30749915fc024f1074e0a96ed8ca86a10ea492ff7f1e37585b2cbec"
+    },
+    {
+      "slug": "plantationmanagement",
+      "url": "https://www.uzmageoai.com/plantationmanagement/",
+      "words": 330,
+      "mediaCount": 10,
+      "sourceHash": "356d5239c5bf88d62451da8091cfdd28049bc87790949c0f9a3d63fe5361bf6d"
+    },
+    {
+      "slug": "enviromentalmonitoring",
+      "url": "https://www.uzmageoai.com/enviromentalmonitoring/",
+      "words": 274,
+      "mediaCount": 10,
+      "sourceHash": "1b6ac980e03e8db2e17bdfee95e4339ac59d499f403b6d7f471c9bf037b734ab"
+    },
+    {
+      "slug": "sustainableforestrymanagement",
+      "url": "https://www.uzmageoai.com/sustainableforestrymanagement/",
+      "words": 280,
+      "mediaCount": 11,
+      "sourceHash": "7e5368e6c4e9c8d2858f122bdc0b63916a117ffd6d80d487e3b3b1e8ada2fb0d"
+    },
+    {
+      "slug": "services",
+      "url": "https://www.uzmageoai.com/services/",
+      "words": 858,
+      "mediaCount": 14,
+      "sourceHash": "c796de73929998543a9c997a749efd84e7a3289b35d504c387b1647a33959931"
+    },
+    {
+      "slug": "company-overview",
+      "url": "https://www.uzmageoai.com/",
+      "words": 414,
+      "mediaCount": 20,
+      "sourceHash": "22992e74549ace6805d07ac07f53973d33fa26aa788572dddbd21aa597d21be6"
+    },
+    {
+      "slug": "ground-movement",
+      "url": "https://www.uzmageoai.com/ground-movement/",
+      "words": 337,
+      "mediaCount": 7,
+      "sourceHash": "14e207414f8d8ed8ca1b193ab12ae3b7f1af6dc9f8cefccccd22aceb11507ee1"
+    },
+    {
+      "slug": "urban-planning-development",
+      "url": "https://www.uzmageoai.com/urban-planning-development/",
+      "words": 263,
+      "mediaCount": 9,
+      "sourceHash": "389d0b19e6b3c23cbc4e11c535aa4037ce02d89842cc070f7d24c27f578c6f41"
+    },
+    {
+      "slug": "precision-agriculture",
+      "url": "https://www.uzmageoai.com/precision-agriculture/",
+      "words": 279,
+      "mediaCount": 9,
+      "sourceHash": "b260a11f8433d12e04f16b58a69ac4c934bdf9278d873a1b94346df9cb047fa2"
+    },
+    {
+      "slug": "ai-platform-development",
+      "url": "https://www.uzmageoai.com/ai-platform-development/",
+      "words": 176,
+      "mediaCount": 14,
+      "sourceHash": "1a00d4f85b3650c291672bcf48f436a663cc5ed04c91e4807e16616aa850ee95"
+    },
+    {
+      "slug": "training-consultation",
+      "url": "https://www.uzmageoai.com/training-consultation/",
+      "words": 367,
+      "mediaCount": 14,
+      "sourceHash": "4c675e53f1d7ed50fb82a31c01358eb54f473ddcfe7a52a1d5a7e5ad51aff4e7"
+    },
+    {
+      "slug": "career",
+      "url": "https://www.uzmageoai.com/career/",
+      "words": 99,
+      "mediaCount": 2,
+      "sourceHash": "b3832cdfe89651e601895faae2995d57abce5d0a7d8bba87cf666d2541d29cf9"
+    }
+  ],
+  "legacyFiles": [
+    {
+      "file": "a-case-study-of-broga-hills-the-role-of-earth-observation-satellites-in-environmental-monitoring_index.html",
+      "destination": "content/a-case-study-of-broga-hills-the-role-of-earth-observation-satellites-in-environmental-monitoring.html"
+    },
+    {
+      "file": "about_index.html",
+      "destination": "content/about.html"
+    },
+    {
+      "file": "ai-platform-development_index.html",
+      "destination": "content/ai-platform-development.html"
+    },
+    {
+      "file": "blog_index.html",
+      "destination": "content/index.html"
+    },
+    {
+      "file": "career_index.html",
+      "destination": "content/career.html"
+    },
+    {
+      "file": "category_partners_index.html",
+      "destination": "content/index.html",
+      "reason": "Duplicate category listing; its articles are included in the library."
+    },
+    {
+      "file": "category_partners_satellogic_index.html",
+      "destination": "content/index.html",
+      "reason": "Duplicate category listing; its articles are included in the library."
+    },
+    {
+      "file": "category_press-release_index.html",
+      "destination": "content/index.html",
+      "reason": "Duplicate category listing; its articles are included in the library."
+    },
+    {
+      "file": "category_programme_award_index.html",
+      "destination": "content/index.html",
+      "reason": "Duplicate category listing; its articles are included in the library."
+    },
+    {
+      "file": "category_programme_index.html",
+      "destination": "content/index.html",
+      "reason": "Duplicate category listing; its articles are included in the library."
+    },
+    {
+      "file": "category_solutions_enviromental-monitoring_index.html",
+      "destination": "content/index.html",
+      "reason": "Duplicate category listing; its articles are included in the library."
+    },
+    {
+      "file": "category_solutions_index.html",
+      "destination": "content/index.html",
+      "reason": "Duplicate category listing; its articles are included in the library."
+    },
+    {
+      "file": "category_uzmasat-1_index.html",
+      "destination": "content/index.html",
+      "reason": "Duplicate category listing; its articles are included in the library."
+    },
+    {
+      "file": "contact-us_index.html",
+      "destination": "content/contact-us.html"
+    },
+    {
+      "file": "enviromentalmonitoring_index.html",
+      "destination": "content/enviromentalmonitoring.html"
+    },
+    {
+      "file": "gallery_index.html",
+      "destination": null,
+      "reason": "Unrelated restaurant template."
+    },
+    {
+      "file": "ground-movement_index.html",
+      "destination": "content/ground-movement.html"
+    },
+    {
+      "file": "index.html",
+      "destination": "content/company-overview.html"
+    },
+    {
+      "file": "infrastructuremonitoring_index.html",
+      "destination": "content/infrastructuremonitoring.html"
+    },
+    {
+      "file": "malaysia-launches-remote-sensing-satellite-uzmasat-1_index.html",
+      "destination": "content/malaysia-launches-remote-sensing-satellite-uzmasat-1.html"
+    },
+    {
+      "file": "mapping-analytics_index.html",
+      "destination": "content/mapping-analytics.html"
+    },
+    {
+      "file": "pelancaran-uzma-sat-1-bukti-kejayaan-dasar-angkasa-negara-2030-mosti_index.html",
+      "destination": "content/pelancaran-uzma-sat-1-bukti-kejayaan-dasar-angkasa-negara-2030-mosti.html"
+    },
+    {
+      "file": "plantationmanagement_index.html",
+      "destination": "content/plantationmanagement.html"
+    },
+    {
+      "file": "precision-agriculture_index.html",
+      "destination": "content/precision-agriculture.html"
+    },
+    {
+      "file": "satelit-penderiaan-jauh-keluaran-syarikat-tempatan-uzmasat-1-berjaya-dilancar-pada-rabu-video_index.html",
+      "destination": "content/satelit-penderiaan-jauh-keluaran-syarikat-tempatan-uzmasat-1-berjaya-dilancar-pada-rabu-video.html"
+    },
+    {
+      "file": "satelit-penderiaan-jauh-malaysia-uzmasat-1-dilancar_index.html",
+      "destination": "content/satelit-penderiaan-jauh-malaysia-uzmasat-1-dilancar.html"
+    },
+    {
+      "file": "satelit-uzmasat-1-boleh-lihat-jelas-kereta-dari-ketinggian-500km-di-angkasa_index.html",
+      "destination": "content/satelit-uzmasat-1-boleh-lihat-jelas-kereta-dari-ketinggian-500km-di-angkasa.html"
+    },
+    {
+      "file": "satelit-uzmasat-1-jadi-pemantau-bumi_index.html",
+      "destination": "content/satelit-uzmasat-1-jadi-pemantau-bumi.html"
+    },
+    {
+      "file": "satellite-imagery_index.html",
+      "destination": "content/satellite-imagery.html"
+    },
+    {
+      "file": "services_index.html",
+      "destination": "content/services.html"
+    },
+    {
+      "file": "solutions_index.html",
+      "destination": "content/solutions.html"
+    },
+    {
+      "file": "sustainableforestrymanagement_index.html",
+      "destination": "content/sustainableforestrymanagement.html"
+    },
+    {
+      "file": "training-consultation_index.html",
+      "destination": "content/training-consultation.html"
+    },
+    {
+      "file": "urban-planning-development_index.html",
+      "destination": "content/urban-planning-development.html"
+    },
+    {
+      "file": "uzma-and-satellogic-sign-multi-million-dollar-3-year-agreement_index.html",
+      "destination": "content/uzma-and-satellogic-sign-multi-million-dollar-3-year-agreement.html"
+    },
+    {
+      "file": "uzma-berhad-cetus-era-baharu-teknologi-angkasa-negara-melalui-pelancaran-satelit-uzmasat-1_index.html",
+      "destination": "content/uzma-berhad-cetus-era-baharu-teknologi-angkasa-negara-melalui-pelancaran-satelit-uzmasat-1.html"
+    },
+    {
+      "file": "uzma-berhad-launches-malaysias-first-high-resolution-earth-observation-satellite-uzmasat-1_index.html",
+      "destination": "content/uzma-berhad-launches-malaysias-first-high-resolution-earth-observation-satellite-uzmasat-1.html"
+    },
+    {
+      "file": "uzma-berhad-marks-a-historic-milestone-with-the-launch-of-uzmasat-1_index.html",
+      "destination": "content/uzma-berhad-marks-a-historic-milestone-with-the-launch-of-uzmasat-1.html"
+    },
+    {
+      "file": "uzma-berhad-pioneers-the-uzmasat-1-programme-for-advanced-geospatial-intelligence-2_index.html",
+      "destination": "content/uzma-berhad-pioneers-the-uzmasat-1-programme-for-advanced-geospatial-intelligence-2.html"
+    },
+    {
+      "file": "uzma-berhad-unveils-uzmasat-1-a-new-era-in-geospatial-technology_index.html",
+      "destination": "content/uzma-berhad-unveils-uzmasat-1-a-new-era-in-geospatial-technology.html"
+    },
+    {
+      "file": "uzma-gears-up-for-the-launch-of-uzmasat-1-satellite_index.html",
+      "destination": "content/uzma-gears-up-for-the-launch-of-uzmasat-1-satellite.html"
+    },
+    {
+      "file": "uzma-launches-malaysias-first-commercial-earth-observation-satellite-uzmasat-1_index.html",
+      "destination": "content/uzma-launches-malaysias-first-commercial-earth-observation-satellite-uzmasat-1.html"
+    },
+    {
+      "file": "uzma-partners-with-key-organisations-to-advance-malaysias-geospatial-industry_index.html",
+      "destination": "content/uzma-partners-with-key-organisations-to-advance-malaysias-geospatial-industry.html"
+    },
+    {
+      "file": "uzmasat-1-beri-nilai-tambah-pembangunan-satelit-negara_index.html",
+      "destination": "content/uzmasat-1-beri-nilai-tambah-pembangunan-satelit-negara.html"
+    },
+    {
+      "file": "uzmasat-1-berjaya-dilancarkan_index.html",
+      "destination": "content/uzmasat-1-berjaya-dilancarkan.html"
+    },
+    {
+      "file": "uzmasat-1_index.html",
+      "destination": "content/uzmasat-1.html"
+    },
+    {
+      "file": "virtualchallenge.html",
+      "destination": null,
+      "reason": "404 response; campaign poster and community link retained on homepage."
+    }
+  ],
+  "assetResults": [
+    {
+      "url": "https://assets.bharian.com.my/images/articles/telit_1723540809.jpg",
+      "status": "source-link-retained",
+      "reason": "HTTP 403"
+    },
+    {
+      "url": "https://sentinels.copernicus.eu/documents/4634164/71d033cf-f108-1d25-d7b1-57b66f96306a",
+      "status": "source-link-retained",
+      "reason": "The operation was aborted due to timeout"
+    },
+    {
+      "url": "https://international-review.icrc.org/sites/default/files/styles/media_image_caption/public/fig/1701681651/IRC_105_3/S1816383123000383_fig1.png?itok=9Q5z9Jin",
+      "status": "source-link-retained",
+      "reason": "HTTP 403"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1476231682828-37e571bc172f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDR8fGNhcmJvbiUyMHNpbmslMjBmb3Jlc3R8ZW58MHx8fHwxNjcwODg0MDc4&ixlib=rb-4.0.3&q=80&w=2000",
+      "status": "saved"
+    },
+    {
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqAV9cHLrXVhDIEWPQeq07g9nHPo8Bp4aWy-09J5wp9Mvb5sUBkAzCYx3klxa8dMcTrWA&usqp=CAU",
+      "status": "source-link-retained",
+      "reason": "HTTP 404"
+    },
+    {
+      "url": "https://dq8l4o3au0fto.cloudfront.net/images/news/ImageForNews_2289_17043321174156203.png",
+      "status": "source-link-retained",
+      "reason": "fetch failed"
+    }
+  ]
+}
