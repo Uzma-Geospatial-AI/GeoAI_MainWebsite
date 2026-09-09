@@ -192,8 +192,9 @@ test('all original product insight images and capability sections are available'
   await expect.poll(()=>gallery.evaluate(el=>el.scrollLeft)).toBeGreaterThan(0);
   await gallery.focus();
   await page.keyboard.press('End');
-  await page.locator('.insight-card').last().scrollIntoViewIfNeeded();
   await expect(page.locator('.insight-card').last()).toBeInViewport();
   await page.locator('.insight-card img').last().evaluate(image=>image.decode());
+  await page.keyboard.press('Home');
+  await expect(page.locator('.insight-card').first()).toBeInViewport();
   await expect(page.locator('.waiting-section a')).toHaveAttribute('href','https://uzmagroup.com/uzmasat-1/');
 });

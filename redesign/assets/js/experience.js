@@ -7,6 +7,13 @@
   let context;
   let disposed = false;
   const gallery = document.querySelector('.insight-gallery');
+  gallery.addEventListener('keydown', event => {
+    if (event.target !== gallery || !['Home', 'End', 'ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    const step = gallery.querySelector('.insight-card').getBoundingClientRect().width + parseFloat(getComputedStyle(gallery).gap);
+    const left = event.key === 'Home' ? 0 : event.key === 'End' ? gallery.scrollWidth : gallery.scrollLeft + (event.key === 'ArrowLeft' ? -step : step);
+    gallery.scrollTo({ left, behavior: paused || preference.matches ? 'instant' : 'smooth' });
+  });
   document.querySelectorAll('[data-gallery-direction]').forEach(control => {
     control.addEventListener('click', () => gallery.scrollBy({left: Number(control.dataset.galleryDirection) * (gallery.querySelector('.insight-card').getBoundingClientRect().width + 25), behavior: paused || preference.matches ? 'instant' : 'smooth'}));
   });
