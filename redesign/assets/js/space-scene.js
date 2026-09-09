@@ -118,17 +118,18 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   scene.add(satellite);
   const craft = new THREE.Group();
   satellite.add(craft);
+  let assembly = craft;
 
-  function mesh(geometry, material, x = 0, y = 0, z = 0, parent = craft) {
+  function mesh(geometry, material, x = 0, y = 0, z = 0, parent = assembly) {
     const result = new THREE.Mesh(geometry, material);
     result.position.set(x, y, z);
     parent.add(result);
     return result;
   }
-  function box(width, height, depth, material, x = 0, y = 0, z = 0, parent = craft) {
+  function box(width, height, depth, material, x = 0, y = 0, z = 0, parent = assembly) {
     return mesh(new THREE.BoxGeometry(width, height, depth), material, x, y, z, parent);
   }
-  function cylinder(radius, length, material, x, y, z, parent = craft) {
+  function cylinder(radius, length, material, x, y, z, parent = assembly) {
     return mesh(new THREE.CylinderGeometry(radius, radius, length, 48), material, x, y, z, parent);
   }
   function ring(radius, tube, material, y) {
@@ -206,6 +207,13 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
     group.add(panelBolts);
   }
 
+  // Shorter optical assembly follows the latest physical-model reference.
+  // Scale about the bus interface so the aperture, cavity and electronics stay aligned.
+  const optics = new THREE.Group();
+  optics.scale.y = 0.72;
+  optics.position.y = 0.065 * (1 - 0.72);
+  craft.add(optics);
+  assembly = optics;
   // Subtle machining texture follows the barrel without adding a download.
   const brushedMap = canvasTexture(128, 256, (ctx, width, height) => {
     ctx.fillStyle = '#888888';
@@ -253,7 +261,7 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   box(0.045, 1.25, 1.2, copper, 0.772, -0.64, -0.25);
   const instrument = new THREE.Group();
   instrument.position.set(0.08, -0.65, 0.732);
-  craft.add(instrument);
+  optics.add(instrument);
   box(0.62, 0.65, 0.047, graphite, 0, 0, 0, instrument);
   const patchShape = new THREE.Shape();
   patchShape.moveTo(-0.018, -0.018);
@@ -276,7 +284,7 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   instrument.add(contacts);
   const sensorPlate = new THREE.Group();
   sensorPlate.position.set(0.04, -1.36, 0.741);
-  craft.add(sensorPlate);
+  optics.add(sensorPlate);
   box(0.44, 0.36, 0.036, graphite, 0, 0, 0, sensorPlate);
   for (const x of [-0.127, 0.127]) {
     for (const y of [-0.09, 0.09]) box(0.09, 0.084, 0.006, gold, x, y, 0.021, sensorPlate);
@@ -287,7 +295,7 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   const rearBay = new THREE.Group();
   rearBay.position.set(0, -0.72, -0.9);
   rearBay.rotation.y = Math.PI;
-  craft.add(rearBay);
+  optics.add(rearBay);
   box(0.8, 0.59, 0.029, silver, 0, 0.03, 0, rearBay);
   box(0.39, 0.43, 0.022, graphite, -0.48, -0.08, 0.02, rearBay);
   box(0.36, 0.045, 0.15, gold, -0.17, 0.41, 0.065, rearBay);
@@ -304,9 +312,20 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   const electronics = new THREE.MeshStandardMaterial({ map: electronicsMap, metalness: 0.45, roughness: 0.6 });
   box(0.4, 0.68, 0.008, electronics, -0.13, -0.045, 0.025, rearBay);
   box(0.34, 0.4, 0.008, electronics, 0.265, -0.04, 0.025, rearBay);
-  // Compact conical fitting seen on the rear bus; no speculative long antennas.
-  const fitting = mesh(new THREE.ConeGeometry(0.11, 0.17, 24, 1, true), silver, -0.42, 1.64, 0.32);
-  fitting.rotation.z = 0.15;
+  assembly = craft;
+  // Rear-side optical baffle: opposite the main camera end, per the user's correction.
+  const starTracker = new THREE.Group();
+  starTracker.position.set(-0.8, 1.22, 0.15);
+  starTracker.rotation.z = Math.PI / 2;
+  craft.add(starTracker);
+  box(0.34, 0.035, 0.32, silver, 0, 0, 0, starTracker);
+  cylinder(0.115, 0.14, gold, 0, 0.08, 0, starTracker);
+  mesh(new THREE.CylinderGeometry(0.19, 0.125, 0.24, 40, 1, true), silver, 0, 0.25, 0, starTracker);
+  mesh(new THREE.CylinderGeometry(0.172, 0.11, 0.205, 40, 1, true), cavityMaterial, 0, 0.25, 0, starTracker);
+  const trackerRim = mesh(new THREE.TorusGeometry(0.182, 0.012, 8, 40), brightSilver, 0, 0.37, 0, starTracker);
+  trackerRim.rotation.x = Math.PI / 2;
+  const trackerLens = mesh(new THREE.CircleGeometry(0.105, 40), glass, 0, 0.19, 0, starTracker);
+  trackerLens.rotation.x = -Math.PI / 2;
   box(0.25, 0.006, 0.25, gold, 0.38, 1.563, -0.33);
 
 

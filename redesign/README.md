@@ -1,9 +1,10 @@
 # UZMA-Sat 1 landing page
 
-A bright, photographic landing page for Uzma Geospatial AI. Logo navy and orange
-anchor warm white, sky blue and peach sections. Three lazy-loaded 3D scenes,
-scroll-linked landscape imagery and photographic galleries connect the satellite
-to its Earth observation applications.
+A minimal, professional landing page for Uzma Digital Earth and Geospatial AI.
+The supplied UZMA 2024 and Digital Earth guides determine the official logo,
+corporate orange/grey palette, supporting Digital Earth blue and Calibri-first
+typography. Three lazy 3D scenes and imagery galleries explain the satellite and
+its Earth observation applications. See BRAND-IMPLEMENTATION.md for source details.
 
 ## Local preview
 
@@ -23,7 +24,8 @@ ES modules, which browsers restrict on `file://` URLs.
 | --- | --- |
 | `index.html` | Content, navigation, accessible controls and fallback imagery. |
 | `assets/css/style.css` | Base layout and accessible controls. |
-| `assets/css/editorial.css` | Bright photographic redesign, responsive galleries and product content. |
+| `assets/css/editorial.css` | Photographic layouts, responsive galleries and product content. |
+| `assets/css/brand.css` | Final supplied-guide brand tokens, typography and minimal visual treatment. |
 | `assets/js/experience.js` | Scroll layers, global pause, additional lazy 3D scenes and gallery controls. |
 | `assets/js/main.js` | Page interactions, scroll choreography and scene integration. |
 | `assets/js/space-scene.js` | Three.js satellite and Earth illustration. |
@@ -145,11 +147,24 @@ GitHub Pages first. Credentials must never be stored in this repository.
 `assets/img/uzmasat/` contains optimized copies of the original product graphics
 from `uzmagroup.com/wp-content/uploads/2024/02/` and the ten original `image1.jpg`
 through `image10.jpg` files from `www.uzmageoai.com/wp-content/uploads/2024/02/`.
-The file `editorial/perspective.webp` is generated conceptual landscape artwork,
-labelled as such on the page, and is not presented as satellite imagery. Other
+The earlier generated `editorial/perspective.webp` asset is retained but no longer
+used by the page. The landscape scroll section now uses the original attributed
+Pulau Bohayen satellite image. Other
 editorial images come from the company’s existing asset collection.
 
 Motion uses the existing local GSAP/Three.js distributions. All three scenes stop
 rendering offscreen; global pause and reduced-motion settings apply across scenes
 and scroll effects. The product slider still permits deliberate angle changes
 with motion disabled. The extra scenes retain image/CSS fallbacks if WebGL fails.
+
+## Current branding refinement
+
+The latest supplied PDF guides supersede the earlier website-derived palette and
+bright pastel direction documented above. Official Digital Earth light/dark marks
+are exported directly from the PDF and never recolored, distorted, rotated or
+shadowed. Local Calibri is preferred; self-hosted, OFL-licensed Carlito provides a
+metric-compatible web fallback. No Microsoft font binaries are redistributed.
+
+The optical assembly has been shortened 28% around its bus interface. A silver,
+flared star-tracker-style optical baffle is mounted on the rear-left side, following
+the user’s physical-model photograph. Component dimensions remain illustrative.

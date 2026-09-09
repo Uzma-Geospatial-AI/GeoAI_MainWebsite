@@ -12,6 +12,7 @@ test('satellite renders, responds to scroll and pauses', async ({ page }) => {
   await page.waitForTimeout(1800);
   await page.getByRole('button', { name: 'Pause animation', exact: true }).click();
   await expect(page.getByRole('button', { name: 'Resume animation', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  expect(await page.locator('.hero-copy > *').evaluateAll(items => items.every(item => getComputedStyle(item).opacity === '1'))).toBe(true);
   await page.waitForTimeout(150);
   const pausedFrame = fingerprint(await page.screenshot({ clip: { x: 780, y: 150, width: 600, height: 600 } }));
   await page.waitForTimeout(200);
@@ -52,7 +53,7 @@ test('industry selector updates the image, explanation and destination', async (
   await expect(page.locator('#solution-image')).toHaveAttribute('src', 'assets/img/solutions/ground-movement.webp');
 });
 
-test('restored offerings and original brand palette stay complete', async ({ page }) => {
+test('restored offerings and supplied brand palette stay complete', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/#solutions');
   const buttons = page.locator('[data-solution]');
@@ -70,8 +71,8 @@ test('restored offerings and original brand palette stay complete', async ({ pag
   await expect(page.locator('.vision-mission')).toContainText('2030');
   await expect(page.locator('.film-link')).toHaveAttribute('href', 'https://youtu.be/T0oPHhV7D4Q');
   await expect(page.locator('.contact-appointment')).toHaveAttribute('href', 'https://wa.me/601156770921');
-  await expect(page.locator('#services')).toHaveCSS('background-color', 'rgb(42, 62, 88)');
-  await expect(page.locator('.hero-actions .button')).toHaveCSS('background-color', 'rgb(242, 101, 34)');
+  await expect(page.locator('#services')).toHaveCSS('background-color', 'rgb(8, 57, 89)');
+  await expect(page.locator('.hero-actions .button')).toHaveCSS('background-color', 'rgb(226, 111, 57)');
 });
 
 test('mobile menu opens, closes on Escape and follows section links', async ({ page }) => {

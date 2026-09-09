@@ -41,7 +41,11 @@
     document.getElementById('motion-label').textContent = motionPreference.matches ? 'Reduced motion' : paused ? 'Resume motion' : 'Pause motion';
     document.getElementById('motion-icon').textContent = paused ? '▷' : 'Ⅱ';
     scene?.setPaused(paused);
-    if (paused) gsapContext?.getTweens().forEach(tween => tween.progress(1));
+    if (paused) {
+      // Do not replay completed gsap.from/set tweens: that can hide finished text.
+      gsapContext?.getTweens().forEach(tween => { if (tween.isActive()) tween.progress(1); });
+      window.gsap?.set('.hero-copy > *', { clearProps: 'opacity,transform' });
+    }
     if (!paused) scene?.setProgress(progress);
     document.body.classList.toggle('motion-paused', paused);
     document.dispatchEvent(new CustomEvent('geo-motion', { detail: { paused, reduced: motionPreference.matches } }));
