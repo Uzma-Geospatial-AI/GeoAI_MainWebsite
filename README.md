@@ -87,14 +87,18 @@ product image is decoded and only when its container approaches the viewport.
 
 ## Deployment
 
-There is **no automatic deployment configured in this repository**. A GitHub push
-updates the repository and runs validation; it does not publish the site.
+GitHub Pages is enabled through the repository's Pages settings. Pushes to the
+publishing branch trigger GitHub's **pages build and deployment** workflow,
+alongside the CI checks in this repository.
+
+Published site: **https://uzma-geospatial-ai.github.io/GeoAI_MainWebsite/**.
+The root `index.html` forwards visitors to `redesign/`, where the landing page
+and its assets live. Check the Pages workflow before assuming a push is live.
 
 Upload the contents of `redesign/` to a static host. There is no build step. Keep
 the asset directory structure intact and serve `.js` files with a JavaScript MIME
 type so the local ES modules can load. Relative URLs support both a domain root
-and a repository subpath. GitHub Pages or another hosting service can be configured
-separately when a deployment destination is chosen.
+and a repository subpath. These instructions also support an independent static host.
 
 ## Reference mirror tooling
 

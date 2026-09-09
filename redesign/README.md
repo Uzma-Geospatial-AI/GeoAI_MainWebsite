@@ -91,8 +91,11 @@ text assets; enable gzip or Brotli when configuring production hosting.
 
 ## Hosting
 
-This is a static site with **no build step and no automatic deployment**. Pushing
-to GitHub validates the committed files but does not publish a website.
+This is a static site with **no application build step**. GitHub Pages is enabled
+in the repository settings and publishes through GitHub's Pages workflow after a
+push to the publishing branch. The repository root `index.html` forwards to this
+folder. The public URL is https://uzma-geospatial-ai.github.io/GeoAI_MainWebsite/.
+Check the deployment workflow to confirm the latest version is published.
 
 Upload this folder's contents to a static host and retain the directory structure.
 Use a host that serves `.js` as JavaScript and `.woff2` as a font. Assets use relative
