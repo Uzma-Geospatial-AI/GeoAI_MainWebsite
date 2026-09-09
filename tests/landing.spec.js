@@ -149,12 +149,14 @@ test('desktop and mobile have no serious accessibility violations or missing ima
 
 
 test('additional 3D scenes, manual rotation and global pause work', async ({ page }) => {
+  // Software WebGL on CI needs more time to compile each lazy scene.
+  test.setTimeout(60000);
   const errors=[];
   page.on('pageerror',error=>errors.push(error.message));
   await page.goto('/');
   const product=page.locator('[data-scene="product"]');
   await product.scrollIntoViewIfNeeded();
-  await expect(product).toHaveClass(/scene-ready/);
+  await expect(product).toHaveClass(/scene-ready/, { timeout: 20000 });
   await page.getByRole('button',{name:'Pause all motion',exact:true}).click();
   await expect(page.locator('body')).toHaveClass(/motion-paused/);
   const before=fingerprint(await product.screenshot());
@@ -165,7 +167,7 @@ test('additional 3D scenes, manual rotation and global pause work', async ({ pag
   expect(fingerprint(await product.screenshot())).toEqual(still);
   const planet=page.locator('[data-scene="planet"]');
   await planet.scrollIntoViewIfNeeded();
-  await expect(planet).toHaveClass(/scene-ready/);
+  await expect(planet).toHaveClass(/scene-ready/, { timeout: 20000 });
   const globe=fingerprint(await planet.screenshot());
   await page.waitForTimeout(200);
   expect(fingerprint(await planet.screenshot())).toEqual(globe);
