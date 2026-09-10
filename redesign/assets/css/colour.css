@@ -60,3 +60,11 @@ h3,h4{line-height:1.2}
 .spec:nth-child(2){border-top-color:var(--de-blue)!important}
 .spec:nth-child(3){border-top-color:var(--de-yellow)!important}
 .spec:nth-child(4){border-top-color:var(--de-red)!important}
+
+/* News archive, grouped by year. */
+.journal-years{display:grid;gap:45px;margin-top:30px}
+.journal-year-label{display:flex;align-items:baseline;gap:18px;font-size:clamp(30px,3.4vw,46px);line-height:1.1;letter-spacing:-.04em;color:var(--de-blue);margin:0;padding-bottom:14px;border-bottom:1px solid var(--hairline)}
+.journal-year-label span{font-size:14px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--de-grey)}
+.journal-year .journal-grid{margin-top:22px}
+.journal-copy h4{font-weight:700;letter-spacing:-.035em}
+@media(max-width:767px){.journal-years{gap:32px}.journal-year-label{gap:12px;padding-bottom:10px}.journal-year-label span{font-size:12px}}

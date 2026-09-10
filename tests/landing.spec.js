@@ -227,6 +227,12 @@ test('all news stories are available from the homepage', async ({ page }) => {
   await page.goto('/#blog');
   await expect(page.locator('.journal-card')).toHaveCount(21);
   await page.locator('.journal-archive summary').click();
+  const years = page.locator('.journal-year');
+  await expect(years).toHaveCount(3);
+  await expect(years.first().locator('.journal-year-label')).toContainText('2025');
+  await expect(years.first().locator('.journal-card')).toHaveCount(10);
+  await expect(years.nth(1).locator('.journal-year-label')).toContainText('2024');
+  await expect(years.last().locator('.journal-card .eyebrow')).toHaveText('24 December 2023');
   await expect(page.locator('.journal-grid .journal-card').last()).toBeVisible();
   await page.locator('.journal-grid .journal-card').last().getByRole('link').click();
   await expect(page.locator('article')).toContainText('Satellogic');
