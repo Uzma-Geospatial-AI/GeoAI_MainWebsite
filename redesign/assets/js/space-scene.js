@@ -445,9 +445,9 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
     return line;
   }
   arc(3.68, 1.52, 0, Math.PI * 2, 0x7593a5, 0.19);
-  arc(3.71, 1.54, 0.7, 1.75, 0xe57d50, 0.75);
+  arc(3.71, 1.54, 0.7, 1.75, 0xf26623, 0.72);
   arc(4.14, 1.87, -0.6, 3.55, 0x547785, 0.11);
-  const marker = mesh(new THREE.SphereGeometry(0.036, 10, 8), new THREE.MeshBasicMaterial({ color: 0xf48d5d }), Math.cos(0.7) * 3.71, Math.sin(0.7) * 1.54, 0, orbit);
+  const marker = mesh(new THREE.SphereGeometry(0.036, 10, 8), new THREE.MeshBasicMaterial({ color: 0xf4834a }), Math.cos(0.7) * 3.71, Math.sin(0.7) * 1.54, 0, orbit);
 
   const starPositions = [];
   for (let i = 0; i < 90; i++) starPositions.push((random() - 0.5) * 22, (random() - 0.2) * 15, -8 - random() * 10);

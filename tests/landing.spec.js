@@ -84,9 +84,13 @@ test('restored offerings and supplied brand palette stay complete', async ({ pag
   await expect(page.locator('.vision-mission')).toContainText('2030');
   await expect(page.locator('.film-link')).toHaveAttribute('href', 'https://youtu.be/T0oPHhV7D4Q');
   await expect(page.locator('.contact-appointment')).toHaveAttribute('data-booking', '');
-  await expect(page.locator('#services')).toHaveCSS('background-color', 'rgb(225, 231, 236)');
+  await expect(page.locator('#services')).toHaveCSS('background-color', 'rgb(255, 255, 255)');
   await expect(page.locator('.nav .brand img')).toHaveCount(2);
   await expect(page.locator('.hero-actions .button')).toHaveCSS('background-color', 'rgb(242, 102, 35)');
+  await expect(page.locator('#hero-title')).toHaveCSS('color', 'rgb(53, 53, 53)');
+  await expect(page.locator('#hero-title span')).toHaveCSS('color', 'rgb(8, 57, 89)');
+  await expect(page.locator('#satellite-title')).toHaveCSS('font-weight', '700');
+  await expect(page.locator('.mission-heading .section-intro')).toHaveCSS('font-weight', '400');
 });
 
 test('mobile menu opens, closes on Escape and follows section links', async ({ page }) => {
