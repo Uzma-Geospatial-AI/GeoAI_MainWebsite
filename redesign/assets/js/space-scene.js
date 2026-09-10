@@ -381,9 +381,15 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
         float clouds = noise(vPosition * 4.0) * 0.55 + noise(vPosition * 11.0) * 0.3 + noise(vPosition * 24.0) * 0.15;
         float wisps = smoothstep(0.5, 0.8, clouds);
         vec3 surface = mix(vec3(0.009,0.03,0.052), vec3(0.033,0.082,0.12), clouds);
-        surface += vec3(0.1, 0.16, 0.18) * wisps * day * 0.45;
+        // Satin navy globe: broad relief and fine cartographic lines, not clouds.
+        surface = mix(vec3(0.012,0.024,0.036), vec3(0.018,0.055,0.085), smoothstep(0.34,0.72,clouds));
+        float latitude = asin(normalize(vPosition).y);
+        float longitude = atan(vPosition.z,vPosition.x);
+        float parallels = 1.0-smoothstep(0.008,0.02,abs(sin(latitude*18.0)));
+        float meridians = 1.0-smoothstep(0.008,0.02,abs(sin(longitude*18.0)));
+        surface += vec3(0.025,0.035,0.043)*max(parallels,meridians)*0.3;
         surface *= 0.22 + day * 0.85;
-        surface += vec3(0.025, 0.2, 0.31) * edge * (0.3 + day * 0.7);
+        surface += vec3(0.09, 0.115, 0.135) * edge * (0.3 + day * 0.7);
         // A brighter illustrative globe for the peach contact section.
         float land = smoothstep(0.51, 0.56, noise(vPosition * 0.6));
         vec3 brightSurface = mix(vec3(0.035, 0.3, 0.48), vec3(0.26, 0.48, 0.26), land);
@@ -409,7 +415,7 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
       void main() {
         vec3 view = normalize(cameraPosition - vWorld);
         float rim = pow(1.0 - max(dot(normalize(vNormal), view), 0.0), 5.8);
-        gl_FragColor = vec4(0.13, 0.55, 0.8, rim * 0.39);
+        gl_FragColor = vec4(0.55, 0.64, 0.7, rim * 0.22);
       }
     `,
     transparent: true,
