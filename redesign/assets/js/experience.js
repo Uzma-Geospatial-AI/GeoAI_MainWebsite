@@ -36,6 +36,19 @@
         gsap.fromTo(card,{y:45,rotateX:9},{y:0,rotateX:0,ease:'none',scrollTrigger:{trigger:card,start:'top bottom',end:'center center',scrub:1}});
       });
       // The component explorer is deliberately still until a component is chosen.
+      document.querySelectorAll('.spec,.reach-strip>p,.client-projects dl>div').forEach((item,index) => {
+        gsap.fromTo(item,{y:35},{y:0,ease:'none',scrollTrigger:{trigger:item,start:'top 95%',end:'top 55%',scrub:0.7}});
+      });
+      document.querySelectorAll('.journal-photo img').forEach(photo => {
+        gsap.fromTo(photo,{scale:1.13,yPercent:-3},{scale:1,yPercent:0,ease:'none',scrollTrigger:{trigger:photo.parentElement,start:'top bottom',end:'bottom 25%',scrub:1}});
+      });
+      document.querySelectorAll('.roadmap-track figure').forEach((item,index) => {
+        gsap.fromTo(item,{y:35,rotateY:index ? -9 : 9},{y:0,rotateY:0,ease:'none',scrollTrigger:{trigger:'.roadmap-track',start:'top 90%',end:'center 45%',scrub:1}});
+      });
+      gsap.fromTo('.roadmap-connection svg',{scale:0.65,rotation:-35},{scale:1,rotation:0,ease:'none',scrollTrigger:{trigger:'.roadmap-track',start:'top 90%',end:'center 45%',scrub:1}});
+      document.querySelectorAll('.solution-thumb').forEach(photo => {
+        gsap.fromTo(photo,{y:25},{y:0,ease:'none',scrollTrigger:{trigger:photo,start:'top bottom',end:'center 55%',scrub:0.8}});
+      });
     });
   }
   function sync() {

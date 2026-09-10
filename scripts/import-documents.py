@@ -12,8 +12,6 @@ asset_root = Path('redesign/assets/documents')
 asset_root.mkdir(parents=True, exist_ok=True)
 source_root = Path('redesign/resources')
 source_root.mkdir(parents=True, exist_ok=True)
-shutil.copyfile(pdf_path, source_root/'geoai-brochure-2026.pdf')
-shutil.copyfile(pptx_path, source_root/'geoai-projects-news.pptx')
 def digest(data): return hashlib.sha256(data).hexdigest()
 def webp(image, name, width=1600):
     image.thumbnail((width, width*2), Image.Resampling.LANCZOS)
