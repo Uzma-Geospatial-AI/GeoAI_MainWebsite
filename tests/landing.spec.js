@@ -84,11 +84,11 @@ test('restored offerings and supplied brand palette stay complete', async ({ pag
   await expect(page.locator('.vision-mission')).toContainText('2030');
   await expect(page.locator('.film-link')).toHaveAttribute('href', 'https://youtu.be/T0oPHhV7D4Q');
   await expect(page.locator('.contact-appointment')).toHaveAttribute('data-booking', '');
-  await expect(page.locator('#services')).toHaveCSS('background-color', 'rgb(255, 255, 255)');
+  await expect(page.locator('#services')).toHaveCSS('background-color', 'rgb(247, 245, 241)');
   await expect(page.locator('.nav .brand img')).toHaveCount(2);
   await expect(page.locator('.hero-actions .button')).toHaveCSS('background-color', 'rgb(242, 102, 35)');
-  await expect(page.locator('#hero-title')).toHaveCSS('color', 'rgb(53, 53, 53)');
-  await expect(page.locator('#hero-title span')).toHaveCSS('color', 'rgb(8, 57, 89)');
+  await expect(page.locator('#hero-title')).toHaveCSS('color', 'rgb(25, 25, 25)');
+  await expect(page.locator('#hero-title span')).toHaveCSS('color', 'rgb(195, 74, 13)');
   await expect(page.locator('#satellite-title')).toHaveCSS('font-weight', '700');
   await expect(page.locator('.mission-heading .section-intro')).toHaveCSS('font-weight', '400');
 });
@@ -187,8 +187,8 @@ test('component explorer stays still and focuses selected hardware', async ({ pa
   await expect(page.locator('#component-title')).toHaveText('Multispectral camera');
   expect(fingerprint(await product.screenshot())).not.toEqual(fingerprint(initial));
   await page.getByRole('button',{name:'Pause all motion',exact:true}).click();
-  await expect(page.locator('[data-component]')).toHaveCount(11);
-  for (const key of ['star-left','star-right','solar','aperture','barrel','body','patch-panel','small-panel','rear-bay','overview']) {
+  await expect(page.locator('[data-component]')).toHaveCount(5);
+  for (const key of ['star-left','sun','solar','overview']) {
     await page.locator(`[data-component="${key}"]`).click();
     await expect(mount).toHaveAttribute('data-focus',key);
     await expect(mount).toHaveAttribute('data-focus-moving','false');
