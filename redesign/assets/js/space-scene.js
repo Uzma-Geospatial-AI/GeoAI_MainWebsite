@@ -405,6 +405,8 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   const earth = new THREE.Group();
   earth.position.set(1.6, -7.05, -4.0);
   scene.add(earth);
+  // Product studio hero: no Earth backdrop.
+  if (variant === 'hero') earth.visible = false;
   const earthGeometry = new THREE.SphereGeometry(6.05, 64, 40);
   mesh(earthGeometry, earthMaterial, 0, 0, 0, earth);
   const atmosphereMaterial = new THREE.ShaderMaterial({
@@ -429,6 +431,7 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   orbit.position.set(0.08, -0.15, -1.8);
   orbit.rotation.set(0.36, -0.14, -0.4);
   scene.add(orbit);
+  if (variant === 'hero') orbit.visible = false;
   function arc(radiusX, radiusY, start, end, color, opacity, parent = orbit) {
     const points = [];
     const steps = Math.ceil((end - start) * 40);
@@ -453,7 +456,7 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   const stars = new THREE.Points(starGeometry, new THREE.PointsMaterial({ color: 0xb9d0df, size: 0.027, transparent: true, opacity: 0.45, sizeAttenuation: true, depthWrite: false }));
   scene.add(stars);
 
-  if (variant !== 'hero') stars.visible = false;
+  stars.visible = false;
   if (variant === 'product') earth.visible = false;
   if (variant === 'planet') {
     satellite.visible = false;
