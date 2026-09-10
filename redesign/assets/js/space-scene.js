@@ -115,6 +115,8 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   const glass = new THREE.MeshPhysicalMaterial({ color: 0x071323, metalness: 0.75, roughness: 0.15, clearcoat: 1, clearcoatRoughness: 0.06 });
 
   const satellite = new THREE.Group();
+  satellite.name = "UZMASAT-1 Mark-5 reference illustration";
+  container.dataset.model = "mark-5";
   scene.add(satellite);
   const craft = new THREE.Group();
   satellite.add(craft);
@@ -146,9 +148,9 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   box(1.42, 0.05, 1.38, copper, 0, 0.065, 0);
 
   const cellShape = new THREE.Shape();
-  const cellWidth = 0.274;
+  const cellWidth = 0.259;
   const cellHeight = 0.249;
-  const cut = 0.046;
+  const cut = 0.029;
   cellShape.moveTo(-cellWidth / 2 + cut, -cellHeight / 2);
   cellShape.lineTo(cellWidth / 2 - cut, -cellHeight / 2);
   cellShape.lineTo(cellWidth / 2, -cellHeight / 2 + cut);
@@ -169,7 +171,7 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
     { position: [-0.767, 0.76, 0], rotation: -Math.PI / 2 },
     { position: [0.767, 0.76, 0], rotation: Math.PI / 2 },
   ];
-  const panelBacking = new THREE.MeshStandardMaterial({ color: 0x999b92, metalness: 0.7, roughness: 0.52 });
+  const panelBacking = new THREE.MeshStandardMaterial({ color: 0x777977, metalness: 0.58, roughness: 0.65 });
   const connectorGeometry = new THREE.BoxGeometry(0.016, 0.028, 0.004);
   for (const panel of panelTransforms) {
     const group = new THREE.Group();
@@ -185,7 +187,8 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
         const index = row * 5 + col;
         const x = (col - 2) * 0.286;
         const y = (row - 2.5) * 0.264;
-        transform.makeTranslation(x, y, 0);
+        transform.makeRotationZ(row === 5 ? Math.PI / 2 : 0);
+        transform.setPosition(x, y, 0);
         cells.setMatrixAt(index, transform);
         for (let side = 0; side < 2; side++) {
           transform.makeTranslation(x + (side ? 0.094 : -0.094), y + 0.127, 0.005);
@@ -206,6 +209,27 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
     }
     group.add(panelBolts);
   }
+
+  // Mark-5: a separate solar-covered plate bridges the exposed camera side.
+  // Geometry follows the supplied view; dimensions are illustrative.
+  const forwardSolar = new THREE.Group();
+  forwardSolar.name = 'mark5-forward-solar-panel';
+  forwardSolar.position.set(-0.815, -0.48, 0.08);
+  forwardSolar.rotation.y = -Math.PI / 2;
+  craft.add(forwardSolar);
+  box(1.2, 0.91, 0.027, panelBacking, 0, 0, 0, forwardSolar);
+  for (let row = 0; row < 3; row++) {
+    for (let col = 0; col < 4; col++) {
+      const cell = mesh(cellGeometry, solar, (col - 1.5) * 0.277, (row - 1) * 0.269, 0.017, forwardSolar);
+      cell.rotation.z = row === 2 ? Math.PI / 2 : 0;
+    }
+  }
+  for (const x of [-0.56, 0.56]) for (const y of [-0.405, 0, 0.405]) {
+    mesh(new THREE.SphereGeometry(0.012, 6, 4), graphite, x, y, 0.023, forwardSolar);
+  }
+  // Two compact mounting brackets keep a visible gap between the bus and plate.
+  box(0.08, 0.12, 0.24, graphite, -0.755, 0.005, -0.35, craft);
+  box(0.08, 0.12, 0.24, graphite, -0.755, 0.005, 0.45, craft);
 
   // Shorter optical assembly follows the latest physical-model reference.
   // Scale about the bus interface so the aperture, cavity and electronics stay aligned.
@@ -316,8 +340,9 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   // Star sensor on the adjacent right-hand panel in the supplied view.
   const starTracker = new THREE.Group();
   starTracker.name = 'star-tracker';
-  starTracker.position.set(0.18, 1.22, 0.8);
-  starTracker.rotation.x = Math.PI / 2;
+  starTracker.position.set(0.805, 0.18, -0.43);
+  starTracker.rotation.z = -Math.PI / 2;
+  starTracker.scale.setScalar(0.72);
   craft.add(starTracker);
   box(0.34, 0.035, 0.32, silver, 0, 0, 0, starTracker);
   cylinder(0.115, 0.14, gold, 0, 0.08, 0, starTracker);
@@ -331,8 +356,8 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   // it onto the facing panel. The former pair on the X sides is removed.
   const facingTracker = starTracker.clone(true);
   facingTracker.name = 'sun-tracker';
-  facingTracker.position.set(0.18, 1.22, -0.8);
-  facingTracker.rotation.x = -Math.PI / 2;
+  facingTracker.position.set(-0.805, 0.18, -0.43);
+  facingTracker.rotation.set(0, 0, Math.PI / 2);
   craft.add(facingTracker);
   box(0.25, 0.006, 0.25, gold, 0.38, 1.563, -0.33);
 
@@ -488,9 +513,9 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   let focusImmediate = true;
   const focusLook = new THREE.Vector3(0.08, 0.25, 0);
   const focusPositions = {
+    'star-left': { point: [1.02, 0.18, -0.43], normal: [1, 0.12, 0], distance: 2.4 },
     camera: { point: [0, -1.02, 0], normal: [0, -1, 0], distance: 3.8 },
-    'star-left': { point: [0.18, 1.22, 1.03], normal: [0, 0.12, 1], distance: 2.4 },
-    sun: { point: [0.18, 1.22, -1.03], normal: [0, 0.12, -1], distance: 2.4 },
+    sun: { point: [-1.02, 0.18, -0.43], normal: [-1, 0.12, 0], distance: 2.4 },
     solar: { point: [-0.77, 0.76, 0], normal: [-1, 0.2, 0.2], distance: 4.6 },
   };
 
