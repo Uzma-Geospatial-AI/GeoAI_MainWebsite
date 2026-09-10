@@ -483,6 +483,12 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
     'star-left': { point: [0.18, 1.22, 1.03], normal: [0, 0.12, 1], distance: 2.4 },
     'star-right': { point: [0.18, 1.22, -1.03], normal: [0, 0.12, -1], distance: 2.4 },
     solar: { point: [-0.77, 0.76, 0], normal: [-1, 0.2, 0.2], distance: 4.6 },
+    aperture: { point: [0, -1.21, 0], normal: [0.12, -1, 0.12], distance: 2.9 },
+    barrel: { point: [0, -0.55, 0.55], normal: [0.3, -0.1, 1], distance: 3.4 },
+    body: { point: [0, 0.55, 0], normal: [-1, 0.2, -0.4], distance: 4.6 },
+    'patch-panel': { point: [0.08, -0.45, 0.76], normal: [0, 0, 1], distance: 2.2 },
+    'small-panel': { point: [0.04, -0.96, 0.77], normal: [0, -0.1, 1], distance: 1.9 },
+    'rear-bay': { point: [0, -0.5, -0.92], normal: [0, 0, -1], distance: 2.8 },
   };
 
   function applyPose(delta) {

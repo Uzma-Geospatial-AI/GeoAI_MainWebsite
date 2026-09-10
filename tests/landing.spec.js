@@ -84,9 +84,9 @@ test('restored offerings and supplied brand palette stay complete', async ({ pag
   await expect(page.locator('.vision-mission')).toContainText('2030');
   await expect(page.locator('.film-link')).toHaveAttribute('href', 'https://youtu.be/T0oPHhV7D4Q');
   await expect(page.locator('.contact-appointment')).toHaveAttribute('data-booking', '');
-  await expect(page.locator('#services')).toHaveCSS('background-color', 'rgb(224, 234, 240)');
+  await expect(page.locator('#services')).toHaveCSS('background-color', 'rgb(225, 231, 236)');
   await expect(page.locator('.nav .brand img')).toHaveCount(2);
-  await expect(page.locator('.hero-actions .button')).toHaveCSS('background-color', 'rgb(226, 111, 57)');
+  await expect(page.locator('.hero-actions .button')).toHaveCSS('background-color', 'rgb(242, 102, 35)');
 });
 
 test('mobile menu opens, closes on Escape and follows section links', async ({ page }) => {
@@ -183,7 +183,8 @@ test('component explorer stays still and focuses selected hardware', async ({ pa
   await expect(page.locator('#component-title')).toHaveText('Multispectral camera');
   expect(fingerprint(await product.screenshot())).not.toEqual(fingerprint(initial));
   await page.getByRole('button',{name:'Pause all motion',exact:true}).click();
-  for (const key of ['star-left','star-right','solar','overview']) {
+  await expect(page.locator('[data-component]')).toHaveCount(11);
+  for (const key of ['star-left','star-right','solar','aperture','barrel','body','patch-panel','small-panel','rear-bay','overview']) {
     await page.locator(`[data-component="${key}"]`).click();
     await expect(mount).toHaveAttribute('data-focus',key);
     await expect(mount).toHaveAttribute('data-focus-moving','false');
