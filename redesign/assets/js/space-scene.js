@@ -99,9 +99,9 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   const solarMap = canvasTexture(128, 128, (ctx, width, height) => {
     ctx.fillStyle = '#141516';
     ctx.fillRect(0, 0, width, height);
-    ctx.strokeStyle = '#303131';
+    ctx.strokeStyle = '#393938';
     ctx.lineWidth = 0.75;
-    for (let y = 8; y < height; y += 8) {
+    for (let y = 8; y < height; y += 4) {
       ctx.beginPath();
       ctx.moveTo(0, y);
       ctx.lineTo(width, y);
@@ -165,71 +165,65 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   for (let i = 0; i < uv.count; i++) uv.setXY(i, (uv.getX(i) + cellWidth / 2) / cellWidth, (uv.getY(i) + cellHeight / 2) / cellHeight);
   uv.needsUpdate = true;
 
-  const panelTransforms = [
-    { position: [0, 0.76, 0.767], rotation: 0 },
-    { position: [0, 0.76, -0.767], rotation: Math.PI },
-    { position: [-0.767, 0.76, 0], rotation: -Math.PI / 2 },
-    { position: [0.767, 0.76, 0], rotation: Math.PI / 2 },
-  ];
-  const panelBacking = new THREE.MeshStandardMaterial({ color: 0x777977, metalness: 0.58, roughness: 0.65 });
-  const connectorGeometry = new THREE.BoxGeometry(0.016, 0.028, 0.004);
-  for (const panel of panelTransforms) {
-    const group = new THREE.Group();
-    group.position.set(...panel.position);
-    group.rotation.y = panel.rotation;
-    craft.add(group);
-    box(1.48, 1.66, 0.023, panelBacking, 0, 0, -0.016, group);
-    const cells = new THREE.InstancedMesh(cellGeometry, solar, 30);
-    const connectors = new THREE.InstancedMesh(connectorGeometry, brightSilver, 60);
-    const transform = new THREE.Matrix4();
-    for (let row = 0; row < 6; row++) {
-      for (let col = 0; col < 5; col++) {
-        const index = row * 5 + col;
-        const x = (col - 2) * 0.286;
-        const y = (row - 2.5) * 0.264;
-        transform.makeRotationZ(row === 5 ? Math.PI / 2 : 0);
-        transform.setPosition(x, y, 0);
-        cells.setMatrixAt(index, transform);
-        for (let side = 0; side < 2; side++) {
-          transform.makeTranslation(x + (side ? 0.094 : -0.094), y + 0.127, 0.005);
-          connectors.setMatrixAt(index * 2 + side, transform);
-        }
+  // Separate layouts reproduce the asymmetric panel faces in the Mark-5 view.
+  const panelBacking = new THREE.MeshStandardMaterial({color:0x454542,metalness:0.45,roughness:0.78});
+  function solarCell(parent,x,y,w,h,vertical=false) {
+    const cell=mesh(cellGeometry,solar,x,y,0.019,parent);
+    if(vertical){cell.rotation.z=Math.PI/2;cell.scale.set(h/cellWidth,w/cellHeight,1);}
+    else cell.scale.set(w/cellWidth,h/cellHeight,1);
+  }
+  function fastener(parent,x,y,r=0.011) {
+    const bolt=mesh(new THREE.CircleGeometry(r,10),graphite,x,y,0.021,parent);
+    return bolt;
+  }
+  const panels=[];
+  for(const [side,position,rotation] of [
+    ['main',[-0.775,0.76,0],-Math.PI/2],
+    ['side',[0,0.65,0.775],0],
+    ['reverse',[0.775,0.76,0],Math.PI/2],
+    ['rear',[0,0.65,-0.775],Math.PI]
+  ]) {
+    const panel=new THREE.Group();panel.name='mark5-solar-'+side;
+    panel.position.set(...position);panel.rotation.y=rotation;craft.add(panel);panels.push(panel);
+    const long=side==='side'||side==='rear';
+    box(1.48,long?1.88:1.66,0.026,panelBacking,0,0,-0.013,panel);
+    if(!long) {
+      // Upper bank: vertical cells and a foil patch in the upper-left corner.
+      for(let row=0;row<2;row++)for(let col=0;col<6;col++) {
+        if(row===1&&col===0)continue;
+        solarCell(panel,-0.59+col*0.237,0.34+row*0.285,0.205,0.258,true);
       }
-    }
-    group.add(cells, connectors);
-    // Small foil patch and perimeter fasteners visible in the source images.
-    box(0.2, 0.15, 0.005, gold, 0.6, 0.74, 0.004, group);
-    const panelBolts = new THREE.InstancedMesh(new THREE.SphereGeometry(0.01, 6, 4), silver, 12);
-    let index = 0;
-    for (const x of [-0.726, 0.726]) {
-      for (let row = 0; row < 6; row++) {
-        transform.makeTranslation(x, -0.76 + row * 0.304, 0.007);
-        panelBolts.setMatrixAt(index++, transform);
+      // Lower bank: five distinct horizontal rows, with a broad separator.
+      for(let row=0;row<5;row++)for(let col=0;col<4;col++)
+        solarCell(panel,-0.525+col*0.35,-0.68+row*0.174,0.316,0.147);
+      box(0.20,0.245,0.006,gold,-0.59,0.625,0.021,panel);
+    } else {
+      // Twin cell banks separated by the wide structural spine.
+      for(let row=0;row<6;row++)for(let col=0;col<4;col++) {
+        if(row<2&&col===3)continue; // exposed copper instrument recess
+        const x=[-0.56,-0.29,0.16,0.43][col];
+        solarCell(panel,x,-0.73+row*0.285,0.224,0.252,true);
       }
+      box(0.31,0.51,0.028,copper,0.47,-0.62,0.016,panel);
     }
-    group.add(panelBolts);
+    for(const x of [-0.71,0.71])for(let row=0;row<8;row++)fastener(panel,x,(long?-0.87:-0.77)+row*(long?0.248:0.22));
+    for(const x of [-0.48,0,0.48])fastener(panel,x,long?0.89:0.78);
   }
-
-  // Mark-5: a separate solar-covered plate bridges the exposed camera side.
-  // Geometry follows the supplied view; dimensions are illustrative.
-  const forwardSolar = new THREE.Group();
-  forwardSolar.name = 'mark5-forward-solar-panel';
-  forwardSolar.position.set(-0.815, -0.48, 0.08);
-  forwardSolar.rotation.y = -Math.PI / 2;
-  craft.add(forwardSolar);
-  box(1.2, 0.91, 0.027, panelBacking, 0, 0, 0, forwardSolar);
-  for (let row = 0; row < 3; row++) {
-    for (let col = 0; col < 4; col++) {
-      const cell = mesh(cellGeometry, solar, (col - 1.5) * 0.277, (row - 1) * 0.269, 0.017, forwardSolar);
-      cell.rotation.z = row === 2 ? Math.PI / 2 : 0;
-    }
+  // Rounded forward panel: three unequal banks, with a clear hinge gap.
+  const forwardSolar=new THREE.Group();forwardSolar.name='mark5-forward-solar-panel';
+  forwardSolar.position.set(-0.815,-0.5,0);forwardSolar.rotation.y=-Math.PI/2;craft.add(forwardSolar);
+  const outline=new THREE.Shape();const fw=0.74,fh=0.47,fr=0.08;
+  outline.moveTo(-fw+fr,-fh);outline.lineTo(fw-fr,-fh);outline.quadraticCurveTo(fw,-fh,fw,-fh+fr);
+  outline.lineTo(fw,fh-fr);outline.quadraticCurveTo(fw,fh,fw-fr,fh);outline.lineTo(-fw+fr,fh);
+  outline.quadraticCurveTo(-fw,fh,-fw,fh-fr);outline.lineTo(-fw,-fh+fr);outline.quadraticCurveTo(-fw,-fh,-fw+fr,-fh);
+  mesh(new THREE.ExtrudeGeometry(outline,{depth:0.024,bevelEnabled:false}),panelBacking,0,0,-0.013,forwardSolar);
+  for(let row=0;row<3;row++)for(let col=0;col<4;col++) {
+    const x=[-0.55,-0.23,0.17,0.53][col];
+    solarCell(forwardSolar,x,(row-1)*0.278,row===1?0.29:0.22,row===1?0.21:0.245,row!==1);
   }
-  for (const x of [-0.56, 0.56]) for (const y of [-0.405, 0, 0.405]) {
-    mesh(new THREE.SphereGeometry(0.012, 6, 4), graphite, x, y, 0.023, forwardSolar);
-  }
-  // Two compact mounting brackets keep a visible gap between the bus and plate.
-  box(0.08, 0.12, 0.24, graphite, -0.755, 0.005, -0.35, craft);
-  box(0.08, 0.12, 0.24, graphite, -0.755, 0.005, 0.45, craft);
+  for(const x of [-0.68,-0.39,0.36,0.68])for(const y of [-0.405,0,0.405])fastener(forwardSolar,x,y,0.014);
+  box(0.08,0.12,0.24,graphite,-0.755,0.005,-0.35,craft);
+  box(0.08,0.12,0.24,graphite,-0.755,0.005,0.45,craft);
 
   // Shorter optical assembly follows the latest physical-model reference.
   // Scale about the bus interface so the aperture, cavity and electronics stay aligned.
@@ -340,8 +334,8 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   // Star sensor on the adjacent right-hand panel in the supplied view.
   const starTracker = new THREE.Group();
   starTracker.name = 'star-tracker';
-  starTracker.position.set(0.805, 0.18, -0.43);
-  starTracker.rotation.z = -Math.PI / 2;
+  starTracker.position.set(0.47, 0.03, 0.815);
+  starTracker.rotation.x = Math.PI / 2;
   starTracker.scale.setScalar(0.72);
   craft.add(starTracker);
   box(0.34, 0.035, 0.32, silver, 0, 0, 0, starTracker);
@@ -356,8 +350,8 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   // it onto the facing panel. The former pair on the X sides is removed.
   const facingTracker = starTracker.clone(true);
   facingTracker.name = 'sun-tracker';
-  facingTracker.position.set(-0.805, 0.18, -0.43);
-  facingTracker.rotation.set(0, 0, Math.PI / 2);
+  facingTracker.position.set(0.47, 0.03, -0.815);
+  facingTracker.rotation.set(-Math.PI / 2, 0, 0);
   craft.add(facingTracker);
   box(0.25, 0.006, 0.25, gold, 0.38, 1.563, -0.33);
 
@@ -513,9 +507,9 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   let focusImmediate = true;
   const focusLook = new THREE.Vector3(0.08, 0.25, 0);
   const focusPositions = {
-    'star-left': { point: [1.02, 0.18, -0.43], normal: [1, 0.12, 0], distance: 2.4 },
+    'star-left': { point: [0.47, 0.03, 1.02], normal: [0, 0.12, 1], distance: 2.4 },
     camera: { point: [0, -1.02, 0], normal: [0, -1, 0], distance: 3.8 },
-    sun: { point: [-1.02, 0.18, -0.43], normal: [-1, 0.12, 0], distance: 2.4 },
+    sun: { point: [0.47, 0.03, -1.02], normal: [0, 0.12, -1], distance: 2.4 },
     solar: { point: [-0.77, 0.76, 0], normal: [-1, 0.2, 0.2], distance: 4.6 },
   };
 
@@ -528,7 +522,7 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
       cameraY += (pointerY - cameraY) * smoothing;
     }
     const scroll = manualPose ? progress : reducedMotion ? 0 : progress;
-    craft.rotation.set(-0.77 + scroll * 0.22, 0.39 + scroll * Math.PI * 1.82, 0.58 - scroll * 0.32);
+    craft.rotation.set(0.2 + scroll * 0.22, 1.0 + scroll * Math.PI * 1.82, -1.0 - scroll * 0.32);
     satellite.position.set(0.15, -0.12 + (!reducedMotion ? Math.sin(elapsed * 0.45) * 0.064 : 0), 0);
     satellite.rotation.y = !reducedMotion ? Math.sin(elapsed * 0.22) * 0.045 : 0;
     earth.rotation.y = scroll * 0.18;
@@ -540,7 +534,7 @@ export async function initSpaceScene({ container, reducedMotion = false, variant
   }
 
   function applyFocus(delta) {
-    craft.rotation.set(-0.77, 0.39, 0.58);
+    craft.rotation.set(0.2, 1.0, -1.0);
     satellite.position.set(0.15, 0.2, 0);
     satellite.rotation.set(0, 0, 0);
     orbit.visible = false;
